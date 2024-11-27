@@ -73,7 +73,17 @@ import java_cup.runtime.*;
 LineTerminator	= \r|\n|\r\n
 WhiteSpace		= {LineTerminator} | [ \t]
 INTEGER			= 0 | [1-9][0-9]*
-ID				= [a-z]+
+ID				= [a-zA-Z][a-zA-Z0-9]*
+START_COMMENT 	= \/\*
+END_COMMENT		= \*\/
+LINE_COMMENT 	= "//" [a-zA-Z0-9\t\+\-\*\/\.\;\(\)\[\]\{\}\?\!\t ]* {LineTerminator}
+STRING  		= \"[a-zA-Z]*\" //\"(\\.|[^\"\\])*\"
+COMMENT_CHAR	= [a-zA-Z0-9\t\r|\n|\r\n\+\-\*\/\.\;\(\)\[\]\{\}\s\?\!]
+ERROR			= "//" {COMMENT_CHAR}* {STRING} {COMMENT_CHAR}* {LineTerminator}
+
+%state COMMENT
+%state STRING
+
 
 /******************************/
 /* DOLAR DOLAR - DON'T TOUCH! */
@@ -92,15 +102,51 @@ ID				= [a-z]+
 /**************************************************************/
 
 <YYINITIAL> {
-
-"+"					{ return symbol(TokenNames.PLUS);}
-"-"					{ return symbol(TokenNames.MINUS);}
-"PPP"				{ return symbol(TokenNames.TIMES);}
-"/"					{ return symbol(TokenNames.DIVIDE);}
-"("					{ return symbol(TokenNames.LPAREN);}
-")"					{ return symbol(TokenNames.RPAREN);}
-{INTEGER}			{ return symbol(TokenNames.NUMBER, new Integer(yytext()));}
-{ID}				{ return symbol(TokenNames.ID,     new String( yytext()));}   
-{WhiteSpace}		{ /* just skip what was found, do nothing */ }
-<<EOF>>				{ return symbol(TokenNames.EOF);}
+	"/"					{ return symbol(TokenNames.DIVIDE);}
+	"("					{ return symbol(TokenNames.LPAREN);}
+	")"					{ return symbol(TokenNames.RPAREN);}
+	"["					{ return symbol(TokenNames.LBRACK);}
+	"]" 				{ return symbol(TokenNames.RBRACK);}
+	"{"					{ return symbol(TokenNames.LBRACE);}
+	"}"					{ return symbol(TokenNames.RBRACE);}
+	"nil"				{ return symbol(TokenNames.NIL);}
+	"+"					{ return symbol(TokenNames.PLUS);}
+	"-"					{ return symbol(TokenNames.MINUS);}
+	"*"					{ return symbol(TokenNames.TIMES);}
+	","					{ return symbol(TokenNames.COMMA);}
+	"."					{ return symbol(TokenNames.DOT);}
+	";"					{ return symbol(TokenNames.SEMICOLON);}
+	"int"				{ return symbol(TokenNames.TYPE_INT);}
+	"void"				{ return symbol(TokenNames.TYPE_VOID);}
+	":="				{ return symbol(TokenNames.ASSIGN);}
+	"="					{ return symbol(TokenNames.EQ);}
+	"<"					{ return symbol(TokenNames.LT);}
+	">"					{ return symbol(TokenNames.GT);}
+	"class"				{ return symbol(TokenNames.CLASS);}
+	"array"				{ return symbol(TokenNames.ARRAY);}
+	"extends"			{ return symbol(TokenNames.EXTENDS);}
+	"return"			{ return symbol(TokenNames.RETURN);}
+	"while"				{ return symbol(TokenNames.WHILE);}
+	"if"				{ return symbol(TokenNames.IF);}
+	"new"				{ return symbol(TokenNames.NEW);}
+	"string"			{ return symbol(TokenNames.TYPE_STRING);}
+	"class"				{ return symbol(TokenNames.CLASS);}
+	{INTEGER}			{ return symbol(TokenNames.INT, new String(yytext()));}
+	{ID}				{ return symbol(TokenNames.ID, new String( yytext()));}  
+	{LineTerminator}	{ } 
+	{WhiteSpace}		{ /* just skip what was found, do nothing */ }
+	{LINE_COMMENT}		{ }
+	{START_COMMENT}		{ yybegin(COMMENT);  return symbol(TokenNames.START_COMMENT); }
+	{STRING}			{ return symbol(TokenNames.STRING, new String( yytext())); }
+	<<EOF>>				{ return symbol(TokenNames.EOF);}
 }
+
+<COMMENT> {
+	"*"					{}
+	{COMMENT_CHAR}		{}
+	"*/"				{ yybegin(YYINITIAL); return symbol(TokenNames.END_COMMENT); }
+
+}
+
+{ERROR}					{ return symbol(TokenNames.ERROR, new String( yytext()));}
+.						{ return symbol(TokenNames.ERROR, new String( yytext()));}
