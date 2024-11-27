@@ -72,7 +72,7 @@ import java_cup.runtime.*;
 /***********************/
 LineTerminator	= \r|\n|\r\n
 WhiteSpace		= {LineTerminator} | [ \t]
-INTEGER			= 0 | [1-9][0-9]*
+INT		     	= [0-9]+
 ID				= [a-zA-Z][a-zA-Z0-9]*
 START_COMMENT 	= \/\*
 END_COMMENT		= \*\/
@@ -131,7 +131,7 @@ ERROR			= "//" {COMMENT_CHAR}* {STRING} {COMMENT_CHAR}* {LineTerminator}
 	"new"				{ return symbol(TokenNames.NEW);}
 	"string"			{ return symbol(TokenNames.TYPE_STRING);}
 	"class"				{ return symbol(TokenNames.CLASS);}
-	{INTEGER}			{ return symbol(TokenNames.INT, new String(yytext()));}
+	{INT}	    		{ return symbol(TokenNames.INT, new String(yytext()));}
 	{ID}				{ return symbol(TokenNames.ID, new String( yytext()));}  
 	{LineTerminator}	{ } 
 	{WhiteSpace}		{ /* just skip what was found, do nothing */ }
