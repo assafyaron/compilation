@@ -162,8 +162,8 @@ varDec:var_dec {: RESULT = new AST_VARDEC(var_dec); :}
 
 
 classDec ::=
-CLASS ID:name LBRACE cFIELD:cF cFieldRec:cFR  RBRACE {: RESULT = new AST_CLASS_DEC(name, cF, cFR); :}
-| CLASS ID:name1 EXTENDS ID:name2 LBRACE cFIELD:cF cFieldRec:cFR  RBRACE {: RESULT = new AST_CLASS_DEC_EXTENDS(name1, name2, cF, cFR); :}
+CLASS ID:name LBRACE cFieldRec:cFR  RBRACE {: RESULT = new AST_CLASS_DEC(name, cFR); :}
+| CLASS ID:name1 EXTENDS ID:name2 LBRACE cFieldRec:cFR  RBRACE {: RESULT = new AST_CLASS_DEC_EXTENDS(name1, name2, cFR); :}
 ;
 
 
