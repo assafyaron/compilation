@@ -131,6 +131,12 @@ varDec: var_dec {: RESULT = new AST_VAR_DEC(var_dec); :}
 | classDec: class_dec {: RESULT = new AST_CLASS_DEC(class_dec); :}
 | arrayTypeDef: array_type_def {: RESULT = new AST_ARRAY_TYPE_DEF(array_type_def); :}
 
+type ::=
+typeInt:type_int {: RESULT new AST_TYPE_INT(); :}
+| typeString:type_string {: RESULT new AST_TYPE_STRING(); :}
+| typeVoid:type_void {: RESULT new AST_TYPE_VOID(); :}
+| typeId:type_id {: RESULT new AST_TYPE_ID(type_id); :}
+
 stmtList ::=	
 stmt:s	stmtList:l {: RESULT = new AST_STMT_LIST(s,l); :}
 | stmt:s {: RESULT = new AST_STMT_LIST(s,null); :}
