@@ -125,6 +125,19 @@ program ::=
 dec:d {: RESULT = new AST_PROGRAM(d, null); :}
 | dec:d program:p {: RESULT = new AST_PROGRAM(d,p); :}
 
+dec ::=
+varDec:var_dec {: RESULT = new AST_VAR_DEC(var_dec); :}
+| funcDec:func_dec {: RESULT = new AST_FUNC_DEC(func_dec); :}
+| classDec:class_dec {: RESULT = new AST_CLASS_DEC(class_dec); :}
+| arrayTypedef:array_type_def {: RESULT = new AST_CLASS_ARRAY_TYPE_DEF(array_type_def); :}
+;
+
+type ::=
+TYPE_INT {: RESULT = new AST_TYPE_INT(); :}
+| TYPE_STRING {: RESULT = new AST_TYPE_STRING(); :}
+| TYPE_VOID {: RESULT = new AST_TYPE_VOID(); :}
+| ID {: RESULT = new AST_ID(); :}
+
 stmtList ::=	
 stmt:s	stmtList:l {: RESULT = new AST_STMT_LIST(s,l); :}
 | stmt:s {: RESULT = new AST_STMT_LIST(s,null); :}
