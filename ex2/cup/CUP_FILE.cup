@@ -12,6 +12,7 @@ parser code
 	{
 		super(lexer);
 		this.lexer = lexer;
+		this.lexerError = false;
 	}
 	public void report_error(String message, Object info)
 	{
@@ -24,7 +25,11 @@ parser code
 		System.out.print(char_pos);
 		System.out.print("] ");
 		String message = String.format("%d:%d", line_number, char_pos);
-		throw new Exception(message);
+		if (this.lexerError) {
+			throw new LexicalException(message);
+		} else {
+			throw new SyntaxException(message);
+		}
 	}
 :}
 
@@ -36,6 +41,9 @@ scan with
 	Symbol s;
 	s = lexer.next_token();
 	//System.out.print(s.sym);
+	if (s.sym == tokenNames.error) {
+		this.lexerError = true;
+	}
 	System.out.print("[");
 	System.out.print(lexer.getLine());
 	System.out.print(":");
