@@ -125,6 +125,12 @@ program ::=
 dec:declaration {: RESULT = new AST_PROGRAM(declaration, null); :}
 | dec:declaration program:p {: RESULT = new AST_PROGRAM(declaration, p); :}
 
+dec ::=
+varDec: var_dec {: RESULT = new AST_VAR_DEC(var_dec); :}
+| funcDec: func_dec {: RESULT = new AST_FUNC_DEC(func_dec); :}
+| classDec: class_dec {: RESULT = new AST_CLASS_DEC(class_dec); :}
+| arrayTypeDef: array_type_def {: RESULT = new AST_ARRAY_TYPE_DEF(array_type_def); :}
+
 stmtList ::=	
 stmt:s	stmtList:l {: RESULT = new AST_STMT_LIST(s,l); :}
 | stmt:s {: RESULT = new AST_STMT_LIST(s,null); :}
