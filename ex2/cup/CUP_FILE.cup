@@ -219,8 +219,8 @@ NEW type:t {: RESULT = new AST_TYPE_NEW(t); :}
 ;
 
 cField ::=
-varDec:var_dec {: RESULT = new AST_VARDEC(var_dec); :}
-| funcDec:func_dec {: RESULT = new AST_FUNCDEC(func_dec); :}
+varDec:var_dec {: RESULT = new AST_VAR_DEC(var_dec); :}
+| funcDec:func_dec {: RESULT = new AST_FUNC_DEC(func_dec); :}
 ;
 
 function ::=
