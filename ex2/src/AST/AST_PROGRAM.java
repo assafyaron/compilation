@@ -1,6 +1,6 @@
 package AST;
 
-public abstract class AST_PROGRAM
+public class AST_PROGRAM
 {
 	/*********************************************************/
 	/* The default message for an unknown AST statement node */
