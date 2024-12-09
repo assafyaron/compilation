@@ -52,22 +52,43 @@ scan with
 /*************/
 /* TERMINALS */
 /*************/
-terminal IF;
-terminal EQ;
-terminal DOT;
+terminal EOF;
 terminal PLUS;
 terminal MINUS;
 terminal TIMES;
-terminal WHILE;
 terminal DIVIDE;
 terminal LPAREN;
 terminal RPAREN;
+terminal NUMBER;
 terminal LBRACK;
 terminal RBRACK;
-terminal LBRACE;
-terminal RBRACE;
+terminal COMMA;
+terminal DOT;
 terminal SEMICOLON;
+terminal TYPE_INT;
+terminal TYPE_VOID;
 terminal ASSIGN;
+terminal EQ;
+terminal LT;
+terminal GT;
+terminal CLASS;
+terminal ARRAY;
+terminal EXTENDS;
+terminal RETURN;
+terminal WHILE;
+terminal IF;
+terminal NEW;
+terminal TYPE_STRING;
+terminal NIL;
+terminal RBRACE;
+terminal LBRACE;
+terminal LINE_TERMINATOR;
+terminal LINE_COMMENT;
+terminal START_COMMENT;
+terminal END_COMMENT;
+terminal ERROR;
+terminal STRING;
+
 
 /*************/
 /* TERMINALS */
