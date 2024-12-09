@@ -120,7 +120,7 @@ non terminal AST_CFIELD_REC cFieldRec;
 non terminal AST_FUNC_DEC_ARGS_LIST funcDecArgs;
 non terminal AST_EXP_ARGUMENTS expArguments;
 non terminal AST_FUNCTION function;
-non terminal AST_FUNC_STMT funcStmt
+non terminal AST_FUNC_STMT funcStmt;
 
 
 
