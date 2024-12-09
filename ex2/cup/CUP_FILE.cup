@@ -122,20 +122,8 @@ start with program;
 /********************/
 
 program ::=
-dec:declaration {: RESULT = new AST_PROGRAM(declaration, null); :}
-| dec:declaration program:p {: RESULT = new AST_PROGRAM(declaration, p); :}
-
-dec ::=
-varDec: var_dec {: RESULT = new AST_VAR_DEC(var_dec); :}
-| funcDec: func_dec {: RESULT = new AST_FUNC_DEC(func_dec); :}
-| classDec: class_dec {: RESULT = new AST_CLASS_DEC(class_dec); :}
-| arrayTypeDef: array_type_def {: RESULT = new AST_ARRAY_TYPE_DEF(array_type_def); :}
-
-type ::=
-typeInt:type_int {: RESULT new AST_TYPE_INT(); :}
-| typeString:type_string {: RESULT new AST_TYPE_STRING(); :}
-| typeVoid:type_void {: RESULT new AST_TYPE_VOID(); :}
-| typeId:type_id {: RESULT new AST_TYPE_ID(type_id); :}
+dec:declaration {: RESULT = new AST_PROGRAM(declaration); :}
+| programdec:declaration {: RESULT = new AST_PROGRAM(declaration); :}
 
 stmtList ::=	
 stmt:s	stmtList:l {: RESULT = new AST_STMT_LIST(s,l); :}
@@ -149,15 +137,54 @@ ID:name	 {: RESULT = new AST_VAR_SIMPLE(name); :}
 ;
 					
 stmt ::= 
-var:v ASSIGN exp:e SEMICOLON {: RESULT = new AST_STMT_ASSIGN(v,e); :}
-| IF    LPAREN exp:cond RPAREN LBRACE stmtList:body RBRACE {: RESULT = new AST_STMT_IF(   cond,body); :}
+varDec:var_dec {: RESULT = new AST_VARDEC(var_dec); :}
+| var:v ASSIGN newExp:new_exp SEMICOLON {: RESULT = new AST_STMT_ASSIGN_NEW(v, new_exp); :}
+| var:v ASSIGN exp:e SEMICOLON {: RESULT = new AST_STMT_ASSIGN(v,e); :}
+| IF LPAREN exp:cond RPAREN LBRACE stmtList:body RBRACE {: RESULT = new AST_STMT_IF(cond,body); :}
 | WHILE LPAREN exp:cond RPAREN LBRACE stmtList:body RBRACE {: RESULT = new AST_STMT_WHILE(cond,body); :}
+| RETURN SEMICOLON {: RESULT = new AST_STMT_RETURN_NO_EXP(); :}
+| RETURN exp:e SEMICOLON {: RESULT = new AST_STMT_RETURN_EXP(e); :}
+| func_stmt:f {: RESULT = new AST_EXP_FUNC_STMT(f); :}
 ;
 
-exp ::=	   // in works
+
+classDec ::=
+CLASS ID:name LBRACE cFIELD:cF cFieldRec:cFR  RBRACE {: RESULT = new AST_CLASS_DEC(name, cF, cFR); :}
+| CLASS ID:name1 EXTENDS ID:name2 LBRACE cFIELD:cF cFieldRec:cFR  RBRACE {: RESULT = new AST_CLASS_DEC_EXTENDS(name1, name2, cF, cFR); :}
+;
+
+
+cFieldRec ::=
+cField:cF {: RESULT = new AST_CFIELD(cF); :}
+| cField:cF cFieldRec:cFR   {: RESULT = new AST_CFIELD_REC(cF, cFR); :}
+;
+
+
+funcDec ::=
+type:t ID:name LPAREN RPAREN LBRACE stmtList:body RBRACE {: RESULT = new AST_FUNC_DEC_NO_ARGS(t, name, body); :}
+| type:t1 ID:name1 LPAREN type:t2 ID:name2 funcDecArgs:args RPAREN LBRACE stmtList:body RBRACE {: RESULT = new AST_FUNC_DEC_ARGS(t1, name1, t2, name2, args, body); :}
+;
+
+funcDecArgs ::=
+COMMA type:t ID:name {: RESULT = new AST_COMMA_TYPE_ID(t, name); :}
+| COMMA type:t ID:name funcDecArgs:args  {: RESULT = new AST_COMMA_TYPE_ID_REC(t, name, args); :}
+;
+
+varDec ::=
+type:t ID:name SEMICOLON {: RESULT = new AST_VAR_DEC_NO_ARGS(t, name); :}
+| type:t ID:name ASSIGN exp:e SEMICOLON {: RESULT = new AST_VAR_DEC_ARGS(t, name, e); :}
+| type:t ID:name ASSIGN newExp:e SEMICOLON {: RESULT = new AST_VAR_DEC_NEW_EXP_ARGS(t, name, e); :}
+;
+
+arrayTypedef ::=
+ARRAY ID:name EQ type:t LBRACK RBRACK SEMICOLON {: RESULT = new AST_ARRAY_TYPE_DEF(name, t); :}
+;
+
+
+exp ::=	   
 INT:i {: RESULT = new AST_EXP_INT(i); :}
 | MINUS INT:i {: RESULT = new AST_EXP_MINUS_INT(i); :}
-| NIL {: RESULT = new AST_EXP_INT(); :}
+| NIL {: RESULT = new AST_EXP_NIL(); :}
 | STRING:s {: RESULT = new AST_EXP_STRING(s); :}
 | var:v {: RESULT = new AST_EXP_VAR(v); :}
 | exp:e1 PLUS  exp:e2 {: RESULT = new AST_EXP_BINOP(e1, e2, 0); :}
@@ -171,12 +198,35 @@ INT:i {: RESULT = new AST_EXP_INT(i); :}
 | function:f {: RESULT = new AST_EXP_FUNCTION(f); :}
 ;
 
+newExp ::=  
+NEW type:t {: RESULT = new AST_TYPE_NEW(t); :}
+| NEW type:t LBRACK exp:e RBRACK {: RESULT = new AST_TYPE_NEW_EXP_IN_BRACKS(t, e); :}
+;
+
+cField ::=
+varDec:var_dec {: RESULT = new AST_VARDEC(var_dec); :}
+| funcDec:func_dec {: RESULT = new AST_FUNCDEC(func_dec); :}
+;
 
 function ::=
 var:v DOT ID:name LPAREN expArguments:eA RPAREN {: RESULT = new AST_FUNCTION_VAR_DOT_ARGS(v, name, eA); :}
 | ID:name LPAREN expArguments:eA RPAREN {: RESULT = new AST_FUNCTION_ARGS(name, eA); :}
 | ID:name LPAREN RPAREN {: RESULT = new AST_FUNCTION_NO_ARGS(name); :}
 | var:v DOT ID:name LPAREN RPAREN {: RESULT = new AST_FUNCTION_VAR_DOT_NO_ARGS(v, name); :}
+;
 
+
+expArguments ::=
+exp:e {: RESULT = new AST_EXP(e); :}
+| exp:e COMMA expArguments:eA  {: RESULT = new AST_EXP_ARGUMENTS(e, eA); :}
+;
+
+
+func_stmt :==
+var:v DOT ID:name LPAREN expArguments:eA RPAREN SEMICOLON {: RESULT = new AST_FUNC_STMT_VAR_DOT_ARGS(v, name, eA); :}
+| ID:name LPAREN expArguments:eA RPAREN SEMICOLON {: RESULT = new AST_FUNC_STMT_ARGS(name, eA); :}
+| ID:name LPAREN RPAREN SEMICOLON {: RESULT = new AST_FUNC_STMT_NO_ARGS(name); :}
+| var:v DOT ID:name LPAREN RPAREN SEMICOLON {: RESULT = new AST_FUNC_STMT_VAR_DOT_NO_ARGS(v, name); :}
+;
 
 
