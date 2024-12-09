@@ -1,12 +1,4 @@
 package AST;
 
-public class AST_PROGRAM
-{
-	/*********************************************************/
-	/* The default message for an unknown AST statement node */
-	/*********************************************************/
-	public void PrintMe()
-	{
-		System.out.print("UNKNOWN AST STATEMENT NODE");
-	}
+public class AST_PROGRAM extends AST_Node{
 }
