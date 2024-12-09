@@ -63,6 +63,19 @@ public class Main
 			     
 		catch (Exception e)
 		{
+			if (file_writer != null) {
+				try {
+					file_writer = new PrintWriter(new FileWriter(outputFilename));
+                    			String errorMessage = e.getMessage();
+				    	file_writer.print("ERROR(");
+				    	if (errorMessage != null) {
+						file_writer.print(errorMessage);
+				    	} else {
+						file_writer.print("An unknown error occurred.");
+				    	}
+					file_writer.print(")");
+				}
+			}
 			e.printStackTrace();
 		}
 	}
