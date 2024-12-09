@@ -95,6 +95,7 @@ terminal STRING;
 /*************/
 terminal Integer INT;
 terminal String ID;
+terminal String STRING;
 
 /*****************/
 /* NON TERMINALS */
@@ -103,6 +104,7 @@ non terminal AST_EXP exp;
 non terminal AST_VAR var;
 non terminal AST_STMT stmt;
 non terminal AST_STMT_LIST stmtList;
+
 
 /***********************/
 /* OPERATOR PRECEDENCE */
@@ -122,8 +124,8 @@ start with program;
 /********************/
 
 program ::=
-dec:d {: RESULT = new AST_PROGRAM(d, null); :}
-| dec:d program:p {: RESULT = new AST_PROGRAM(d,p); :}
+dec:d {: RESULT = new AST_PROGRAM(d); :}
+| dec:d program:p {: RESULT = new AST_PROGRAM_REC(d,p); :}
 
 dec ::=
 varDec:var_dec {: RESULT = new AST_VAR_DEC(var_dec); :}
