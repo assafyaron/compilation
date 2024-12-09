@@ -144,6 +144,9 @@ var:v ASSIGN exp:e SEMICOLON {: RESULT = new AST_STMT_ASSIGN(v,e); :}
 
 exp ::=	   // in works
 INT:i {: RESULT = new AST_EXP_INT(i); :}
+| MINUS INT:i {: RESULT = new AST_EXP_MINUS_INT(i); :}
+| NIL {: RESULT = new AST_EXP_INT(); :}
+| STRING:s {: RESULT = new AST_EXP_STRING(s); :}
 | var:v {: RESULT = new AST_EXP_VAR(v); :}
 | exp:e1 PLUS  exp:e2 {: RESULT = new AST_EXP_BINOP(e1, e2, 0); :}
 | exp:e1 MINUS exp:e2 {: RESULT = new AST_EXP_BINOP(e1, e2, 1); :}
