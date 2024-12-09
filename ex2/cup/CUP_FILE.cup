@@ -113,13 +113,17 @@ precedence left TIMES;
 precedence left DIVIDE;
 
 /************************/
-/* START WITH: stmtList */
+/* START WITH: program */
 /************************/
-start with stmtList;
+start with program;
 
 /********************/
 /* DERIVATION RULES */
 /********************/
+
+program ::=
+dec:declaration {: RESULT = new AST_PROGRAM(declaration); :}
+| programdec:declaration {: RESULT = new AST_PROGRAM(declaration); :}
 
 stmtList ::=	
 stmt:s	stmtList:l {: RESULT = new AST_STMT_LIST(s,l); :}
