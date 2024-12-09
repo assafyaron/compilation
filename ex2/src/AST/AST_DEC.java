@@ -1,6 +1,6 @@
 package AST;
 
-public abstract class AST_DEC
+public class AST_DEC extends AST_PROGRAM
 {
 	/*********************************************************/
 	/* The default message for an unknown AST statement node */
