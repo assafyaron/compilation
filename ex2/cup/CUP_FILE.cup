@@ -195,11 +195,8 @@ ARRAY ID:name EQ type:t LBRACK RBRACK SEMICOLON {: RESULT = new AST_ARRAY_TYPE_D
 
 
 exp ::=	   
-INT:i {: RESULT = new AST_EXP_INT(i); :}
-| MINUS INT:i {: RESULT = new AST_EXP_MINUS_INT(i); :}
-| NIL {: RESULT = new AST_EXP_NIL(); :}
-| STRING:s {: RESULT = new AST_EXP_STRING(s); :}
-| var:v {: RESULT = new AST_EXP_VAR(v); :}
+var:v {: RESULT = new AST_EXP_VAR(v); :}
+| LPAREN exp:e RPARENK {: RESULT = new AST_EXP_INSIDE_PAREN(e); :} 
 | exp:e1 PLUS  exp:e2 {: RESULT = new AST_EXP_BINOP(e1, e2, 0); :}
 | exp:e1 MINUS exp:e2 {: RESULT = new AST_EXP_BINOP(e1, e2, 1); :}
 | exp:e1 TIMES  exp:e2 {: RESULT = new AST_EXP_BINOP(e1, e2, 2); :}
@@ -207,8 +204,11 @@ INT:i {: RESULT = new AST_EXP_INT(i); :}
 | exp:e1 LT  exp:e2 {: RESULT = new AST_EXP_BINOP(e1, e2, 4); :}
 | exp:e1 GT exp:e2 {: RESULT = new AST_EXP_BINOP(e1, e2, 5);:}
 | exp:e1 EQ exp:e2 {: RESULT = new AST_EXP_BINOP(e1, e2, 6);:}
-| LPAREN exp:e RPARENK {: RESULT = new AST_EXP_INSIDE_PAREN(e); :} 
 | function:f {: RESULT = new AST_EXP_FUNCTION(f); :}
+| INT:i {: RESULT = new AST_EXP_INT(i); :}
+| MINUS INT:i {: RESULT = new AST_EXP_MINUS_INT(i); :}
+| NIL {: RESULT = new AST_EXP_NIL(); :}
+| STRING:s {: RESULT = new AST_EXP_STRING(s); :}
 ;
 
 newExp ::=  
