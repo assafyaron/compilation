@@ -116,6 +116,13 @@ non terminal AST_STMT_LIST stmtList;
 non terminal AST_CFIELD cField;
 non terminal AST_EXP exp;
 non terminal AST_NEW_EXP newExp;
+non terminal AST_CFIELD_REC cFieldRec;
+non terminal AST_FUNC_DEC_ARGS_LIST funcDecArgs;
+non terminal AST_EXP_ARGUMENTS expArguments;
+non terminal AST_FUNCTION function;
+non terminal AST_FUNC_STMT funcStmt
+
+
 
 
 /***********************/
@@ -171,7 +178,7 @@ varDec:var_dec {: RESULT = new AST_VAR_DEC(var_dec); :}
 | RETURN exp:e SEMICOLON {: RESULT = new AST_STMT_RETURN_EXP(e); :}
 | IF LPAREN exp:cond RPAREN LBRACE stmtList:body RBRACE {: RESULT = new AST_STMT_IF(cond,body); :}
 | WHILE LPAREN exp:cond RPAREN LBRACE stmtList:body RBRACE {: RESULT = new AST_STMT_WHILE(cond,body); :}
-| func_stmt:f {: RESULT = new AST_FUNC_STMT(f); :}
+| funcStmt:f {: RESULT = new AST_FUNC_STMT(f); :}
 ;
 
 
@@ -249,7 +256,7 @@ exp:e {: RESULT = new AST_EXP_ARGUMENTS(e, null); :}
 ;
 
 
-func_stmt :==
+funcStmt :==
 ID:name LPAREN RPAREN SEMICOLON {: RESULT = new AST_FUNC_STMT_NO_ARGS(name); :}
 | var:v DOT ID:name LPAREN RPAREN SEMICOLON {: RESULT = new AST_FUNC_STMT_VAR_DOT_NO_ARGS(v, name); :}
 | ID:name LPAREN expArguments:eA RPAREN SEMICOLON {: RESULT = new AST_FUNC_STMT_ARGS(name, eA); :}
