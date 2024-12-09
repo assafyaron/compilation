@@ -59,26 +59,68 @@ public class Main
 			/* [8] Finalize AST GRAPHIZ DOT file */
 			/*************************************/
 			AST_GRAPHVIZ.getInstance().finalizeFile();
-    	}
+    		}
 			     
-		catch (Exception e)
-		{
-			if (file_writer != null) {
-				try {
+		catch (SyntaxException e) {
+            		if (file_writer != null) {
+                		try {
 					file_writer = new PrintWriter(new FileWriter(outputFilename));
-                    			String errorMessage = e.getMessage();
-				    	file_writer.print("ERROR(");
-				    	if (errorMessage != null) {
-						file_writer.print(errorMessage);
-				    	} else {
-						file_writer.print("An unknown error occurred.");
-				    	}
+					file_writer.print("ERROR(");
+					file_writer.print(e.getMessage());
 					file_writer.print(")");
-				}
-			}
-			e.printStackTrace();
-		}
-	}
+					file_writer.close();
+                		} catch (IOException ioException) {
+                    			System.out.println("ERROR: Unable to write error message to file.");
+                    			ioException.printStackTrace();
+                		}
+            		}
+            		e.printStackTrace();
+        	}
+		catch (LexicalError e) {
+            		if (file_writer != null) {
+                		file_writer.print("ERROR");
+                		file_writer.close();
+            		}
+            		e.printStackTrace();
+        	} 
+	        catch (IOException e) {
+            		System.out.println("ERROR: File not found or cannot be read/written.");
+            		e.printStackTrace();
+        	}
+        	catch (Exception e) {
+	    		if (file_writer != null) {
+                		try {
+                    			file_writer = new PrintWriter(new FileWriter(outputFilename));
+                    			file_writer.print("ERROR(");
+                    			file_writer.print(e.getMessage() != null ? e.getMessage() : "An unknown error occurred.");
+                    			file_writer.print(")");
+                    			file_writer.close();
+                		} catch (IOException ioException) {
+                    			System.out.println("ERROR: Unable to write error message to file.");
+                    			ioException.printStackTrace();
+                		}
+            		}
+            		e.printStackTrace();
+        	}
+        	finally {
+            		try {
+                		if (file_reader != null) file_reader.close();
+                		if (file_writer != null) file_writer.close();
+            		} catch (IOException e) {
+                		e.printStackTrace();
+            		}
+        	}
+    	}
 }
 
+public class SyntaxException extends Exception {
+    public SyntaxError(String message) {
+        super(message);
+    }
+}
 
+public class LexicalException extends Exception {
+    public LexicalError(String message) {
+        super(message);
+    }
+}
