@@ -122,8 +122,8 @@ start with program;
 /********************/
 
 program ::=
-dec:declaration {: RESULT = new AST_PROGRAM(declaration); :}
-| programdec:declaration {: RESULT = new AST_PROGRAM(declaration); :}
+dec:d {: RESULT = new AST_PROGRAM(d, null); :}
+| dec:d program:p {: RESULT = new AST_PROGRAM(d,p); :}
 
 stmtList ::=	
 stmt:s	stmtList:l {: RESULT = new AST_STMT_LIST(s,l); :}
