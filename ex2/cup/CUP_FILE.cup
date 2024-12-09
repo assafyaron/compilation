@@ -136,7 +136,7 @@ type ::=
 TYPE_INT {: RESULT = new AST_TYPE_INT(); :}
 | TYPE_STRING {: RESULT = new AST_TYPE_STRING(); :}
 | TYPE_VOID {: RESULT = new AST_TYPE_VOID(); :}
-| ID {: RESULT = new AST_ID(); :}
+| ID:name {: RESULT = new AST_ID(name); :}
 
 stmtList ::=	
 stmt:s	stmtList:l {: RESULT = new AST_STMT_LIST(s,l); :}
