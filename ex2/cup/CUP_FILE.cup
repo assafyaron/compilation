@@ -123,7 +123,7 @@ start with program;
 
 program ::=
 dec:declaration {: RESULT = new AST_PROGRAM(declaration, null); :}
-| program: p dec:declaration {: RESULT = new AST_PROGRAM(declaration, p); :}
+| dec:declaration program:p {: RESULT = new AST_PROGRAM(declaration, p); :}
 
 stmtList ::=	
 stmt:s	stmtList:l {: RESULT = new AST_STMT_LIST(s,l); :}
