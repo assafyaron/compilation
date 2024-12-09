@@ -76,7 +76,7 @@ public class Main
             		}
             		e.printStackTrace();
         	}
-		catch (LexicalError e) {
+		catch (LexicalException e) {
             		if (file_writer != null) {
                 		file_writer.print("ERROR");
                 		file_writer.close();
