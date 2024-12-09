@@ -143,7 +143,7 @@ stmt:s	stmtList:l {: RESULT = new AST_STMT_LIST(s,l); :}
 | stmt:s {: RESULT = new AST_STMT_LIST(s,null); :}
 ;
 
-var ::=				      // done!
+var ::=				     
 ID:name	 {: RESULT = new AST_VAR_SIMPLE(name); :}
 | var:v DOT ID:fieldName {: RESULT = new AST_VAR_FIELD(v,fieldName); :} 
 | var:v LBRACK exp:e RBRACK {: RESULT = new AST_VAR_SUBSCRIPT(v,e); :} 
@@ -151,12 +151,12 @@ ID:name	 {: RESULT = new AST_VAR_SIMPLE(name); :}
 					
 stmt ::= 
 varDec:var_dec {: RESULT = new AST_VARDEC(var_dec); :}
-| var:v ASSIGN newExp:new_exp SEMICOLON {: RESULT = new AST_STMT_ASSIGN_NEW(v, new_exp); :}
 | var:v ASSIGN exp:e SEMICOLON {: RESULT = new AST_STMT_ASSIGN(v,e); :}
-| IF LPAREN exp:cond RPAREN LBRACE stmtList:body RBRACE {: RESULT = new AST_STMT_IF(cond,body); :}
-| WHILE LPAREN exp:cond RPAREN LBRACE stmtList:body RBRACE {: RESULT = new AST_STMT_WHILE(cond,body); :}
+| var:v ASSIGN newExp:new_exp SEMICOLON {: RESULT = new AST_STMT_ASSIGN_NEW(v, new_exp); :}
 | RETURN SEMICOLON {: RESULT = new AST_STMT_RETURN_NO_EXP(); :}
 | RETURN exp:e SEMICOLON {: RESULT = new AST_STMT_RETURN_EXP(e); :}
+| IF LPAREN exp:cond RPAREN LBRACE stmtList:body RBRACE {: RESULT = new AST_STMT_IF(cond,body); :}
+| WHILE LPAREN exp:cond RPAREN LBRACE stmtList:body RBRACE {: RESULT = new AST_STMT_WHILE(cond,body); :}
 | func_stmt:f {: RESULT = new AST_EXP_FUNC_STMT(f); :}
 ;
 
@@ -236,10 +236,10 @@ exp:e {: RESULT = new AST_EXP(e); :}
 
 
 func_stmt :==
-var:v DOT ID:name LPAREN expArguments:eA RPAREN SEMICOLON {: RESULT = new AST_FUNC_STMT_VAR_DOT_ARGS(v, name, eA); :}
-| ID:name LPAREN expArguments:eA RPAREN SEMICOLON {: RESULT = new AST_FUNC_STMT_ARGS(name, eA); :}
-| ID:name LPAREN RPAREN SEMICOLON {: RESULT = new AST_FUNC_STMT_NO_ARGS(name); :}
+ID:name LPAREN RPAREN SEMICOLON {: RESULT = new AST_FUNC_STMT_NO_ARGS(name); :}
 | var:v DOT ID:name LPAREN RPAREN SEMICOLON {: RESULT = new AST_FUNC_STMT_VAR_DOT_NO_ARGS(v, name); :}
+| ID:name LPAREN expArguments:eA RPAREN SEMICOLON {: RESULT = new AST_FUNC_STMT_ARGS(name, eA); :}
+| var:v DOT ID:name LPAREN expArguments:eA RPAREN SEMICOLON {: RESULT = new AST_FUNC_STMT_VAR_DOT_ARGS(v, name, eA); :}
 ;
 
 
