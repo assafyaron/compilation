@@ -158,4 +158,10 @@ INT:i {: RESULT = new AST_EXP_INT(i); :}
 
 
 function ::=
+var:v DOT ID:name LPAREN expArguments:eA RPAREN {: RESULT = new AST_FUNCTION_VAR_DOT_ARGS(v, name, eA); :}
+| ID:name LPAREN expArguments:eA RPAREN {: RESULT = new AST_FUNCTION_ARGS(name, eA); :}
+| ID:name LPAREN RPAREN {: RESULT = new AST_FUNCTION_NO_ARGS(name); :}
+| var:v DOT ID:name LPAREN RPAREN {: RESULT = new AST_FUNCTION_VAR_DOT_NO_ARGS(v, name); :}
+
+
 
