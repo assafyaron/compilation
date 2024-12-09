@@ -1,13 +1,13 @@
 package AST;
 
-public class AST_EXP_IN_PARENTHESIS extends AST_EXP
+public class AST_EXP_INSIDE_PAREN extends AST_EXP
 {
     public AST_EXP e;
 
     /******************/
     /* CONSTRUCTOR(S) */
     /******************/
-    public AST_EXP_IN_PARENTHESIS(AST_EXP e)
+    public AST_EXP_INSIDE_PAREN(AST_EXP e)
     {
         /******************************/
         /* SET A UNIQUE SERIAL NUMBER */
@@ -31,9 +31,9 @@ public class AST_EXP_IN_PARENTHESIS extends AST_EXP
     public void PrintMe()
     {
         /*********************************/
-        /* AST NODE TYPE = EXPRESSION IN PARENTHESIS */
+        /* AST NODE TYPE = EXPRESSION INSIDE PARENTHESIS */
         /*********************************/
-        System.out.println("AST NODE EXPRESSION IN PARENTHESIS");
+        System.out.println("AST NODE EXPRESSION INSIDE PARENTHESIS");
 
         /******************************************/
         /* RECURSIVELY PRINT e ... */
@@ -45,7 +45,7 @@ public class AST_EXP_IN_PARENTHESIS extends AST_EXP
         /***************************************/
         AST_GRAPHVIZ.getInstance().logNode(
             SerialNumber,
-            "EXPRESSION\nIN PARENTHESIS");
+            "EXPRESSION\nINSIDE PARENTHESIS");
 
         /****************************************/
         /* PRINT Edges to AST GRAPHVIZ DOT file */
