@@ -126,7 +126,7 @@ stmt:s	stmtList:l {: RESULT = new AST_STMT_LIST(s,l); :}
 | stmt:s {: RESULT = new AST_STMT_LIST(s,null); :}
 ;
 
-var ::=				
+var ::=				      // done!
 ID:name	 {: RESULT = new AST_VAR_SIMPLE(name); :}
 | var:v DOT ID:fieldName {: RESULT = new AST_VAR_FIELD(v,fieldName); :} 
 | var:v LBRACK exp:e RBRACK {: RESULT = new AST_VAR_SUBSCRIPT(v,e); :} 
@@ -148,5 +148,10 @@ INT:i {: RESULT = new AST_EXP_INT(i); :}
 | exp:e1 LT  exp:e2 {: RESULT = new AST_EXP_BINOP(e1, e2, 4); :}
 | exp:e1 GT exp:e2 {: RESULT = new AST_EXP_BINOP(e1, e2, 5);:}
 | exp:e1 EQ exp:e2 {: RESULT = new AST_EXP_BINOP(e1, e2, 6);:}
-| LBRACK exp:e RBRACK {: RESULT = new AST_VAR_SUBSCRIPT(v,e); :} 
+| LPAREN exp:e RPARENK {: RESULT = new AST_EXP_INSIDE_PAREN(e); :} 
+| function:f {: RESULT = new AST_EXP_FUNCTION(f); :}
 ;
+
+
+function ::=
+
