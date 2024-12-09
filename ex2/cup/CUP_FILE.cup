@@ -17,11 +17,14 @@ parser code
 	{
 		System.out.print("ERROR >> ");		
 		System.out.print("[");
-		System.out.print(lexer.getLine());
+		int line_number = lexer.getLine();
+		System.out.print(line_number);
 		System.out.print(":");
-		System.out.print(lexer.getCharPos());
+		int char_pos = lexer.getCharPos();
+		System.out.print(char_pos);
 		System.out.print("] ");
-		System.exit(0);
+		String message = String.format("%d:%d", line_number, char_pos);
+		throw new Exception(message);
 	}
 :}
 
