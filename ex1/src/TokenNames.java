@@ -33,11 +33,9 @@ public interface TokenNames {
   public static final int LBRACE = 30;
   public static final int LINE_TERMINATOR = 31;
   public static final int LINE_COMMENT = 32;
-  public static final int LCOMMENT = 33;
-  public static final int RCOMMENT = 34;
-  public static final int INT = 35;
-  public static final int START_COMMENT = 36;
-  public static final int END_COMMENT = 37;
-  public static final int ERROR = 38;
-  public static final int STRING = 39;
+  public static final int INT = 33;
+  public static final int START_COMMENT = 34;
+  public static final int END_COMMENT =35;
+  public static final int ERROR = 36;
+  public static final int STRING = 37;
 }
