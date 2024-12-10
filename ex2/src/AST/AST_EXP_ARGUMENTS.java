@@ -21,8 +21,8 @@ public class AST_EXP_ARGUMENTS extends AST_Node
 		/***************************************/
 		/* PRINT CORRESPONDING DERIVATION RULE */
 		/***************************************/
-		if (tail != null) System.out.print("====================== expArguments -> exp expArguments\n");
-		if (tail == null) System.out.print("====================== expArguments -> exp\n");
+		if (eA != null) System.out.print("====================== expArguments -> exp expArguments\n");
+		if (eA == null) System.out.print("====================== expArguments -> exp\n");
 
 		/*******************************/
 		/* COPY INPUT DATA NENBERS ... */
