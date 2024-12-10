@@ -17,7 +17,7 @@ public class AST_DEC_VAR_DEC extends AST_DEC
         /***************************************/
         /* PRINT CORRESPONDING DERIVATION RULE */
         /***************************************/
-        System.out.format("====================== dec -> varDec");
+        System.out.format("====================== dec -> varDec\n");
 
         /*******************************/
         /* COPY INPUT DATA MEMBERS ... */
