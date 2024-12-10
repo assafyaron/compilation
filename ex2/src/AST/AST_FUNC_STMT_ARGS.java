@@ -3,12 +3,12 @@ package AST;
 public class AST_FUNC_STMT_ARGS extends AST_FUNC_STMT
 {
     public String name;
-    public AST_EXP_ARGUMENTS expArgs;
+    public AST_EXP_ARGUMENTS eA;
 
     /******************/
     /* CONSTRUCTOR(S) */
     /******************/
-    public AST_FUNC_STMT_ARGS(String name, AST_EXP_ARGUMENTS expArgs)
+    public AST_FUNC_STMT_ARGS(String name, AST_EXP_ARGUMENTS eA)
     {
         /******************************/
         /* SET A UNIQUE SERIAL NUMBER */
@@ -24,7 +24,7 @@ public class AST_FUNC_STMT_ARGS extends AST_FUNC_STMT
         /* COPY INPUT DATA MEMBERS ... */
         /*******************************/
         this.name = name;
-        this.expArgs = expArgs;
+        this.eA = eA;
     }
 
     /***************************************************/
