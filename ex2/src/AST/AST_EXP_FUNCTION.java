@@ -18,7 +18,7 @@ public class AST_EXP_FUNCTION extends AST_EXP
         /***************************************/
         /* PRINT CORRESPONDING DERIVATION RULE */
         /***************************************/
-        System.out.format("====================== exp -> fuction");
+        System.out.format("====================== exp -> fuction\n");
 
         /*******************************/
         /* COPY INPUT DATA MEMBERS ... */
