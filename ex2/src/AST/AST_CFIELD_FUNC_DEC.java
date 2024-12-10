@@ -17,7 +17,7 @@ public class AST_CFIELD_FUNC_DEC extends AST_CFIELD
         /***************************************/
         /* PRINT CORRESPONDING DERIVATION RULE */
         /***************************************/
-        System.out.println("====================== cField -> funcDec");
+        System.out.println("====================== cField -> funcDec\n");
 
         /*******************************/
         /* COPY INPUT DATA MEMBERS ... */
