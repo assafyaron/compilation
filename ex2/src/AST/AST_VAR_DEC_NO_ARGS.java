@@ -18,7 +18,7 @@ public class AST_VAR_DEC_NO_ARGS extends AST_VAR_DEC
         /***************************************/
         /* PRINT CORRESPONDING DERIVATION RULE */
         /***************************************/
-        System.out.println("====================== varDec -> type ID SEMICOLON");
+        System.out.println("====================== varDec -> type ID SEMICOLON\n");
 
         /*******************************/
         /* COPY INPUT DATA MEMBERS ... */
