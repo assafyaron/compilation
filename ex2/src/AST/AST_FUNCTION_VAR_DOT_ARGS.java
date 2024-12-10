@@ -6,12 +6,12 @@ public class AST_FUNCTION_VAR_DOT_ARGS extends AST_FUNCTION
 {
     public AST_VAR v;
     public string name;
-    public expArguments eA;
+    public AST_EXP_ARGUMENTS eA;
     
     /******************/
     /* CONSTRUCTOR(S) */
     /******************/
-    public AST_FUNCTION_VAR_DOT_ARGS(AST_VAR v, string name, expArguments eA)
+    public AST_FUNCTION_VAR_DOT_ARGS(AST_VAR v, string name, AST_EXP_ARGUMENTS eA)
     {
         /******************************/
         /* SET A UNIQUE SERIAL NUMBER */
