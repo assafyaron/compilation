@@ -241,8 +241,8 @@ var:v {: RESULT = new AST_EXP_VAR(v); :}
 ;
 
 newExp ::=  
-NEW type:t {: RESULT = new AST_TYPE_NEW(t); :}
-| NEW type:t LBRACK exp:e RBRACK {: RESULT = new AST_TYPE_NEW_EXP_IN_BRACKS(t, e); :}
+NEW type:t {: RESULT = new AST_NEW_TYPE(t); :}
+| NEW type:t LBRACK exp:e RBRACK {: RESULT = new AST_NEW_TYPE_EXP_IN_BRACKS(t, e); :}
 ;
 
 cField ::=
