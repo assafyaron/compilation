@@ -186,7 +186,7 @@ varDec:var_dec {: RESULT = new AST_VAR_DEC(var_dec); :}
 | RETURN exp:e SEMICOLON {: RESULT = new AST_STMT_RETURN_EXP(e); :}
 | IF LPAREN exp:cond RPAREN LBRACE stmtList:body RBRACE {: RESULT = new AST_STMT_IF(cond,body); :}
 | WHILE LPAREN exp:cond RPAREN LBRACE stmtList:body RBRACE {: RESULT = new AST_STMT_WHILE(cond,body); :}
-| funcStmt:f {: RESULT = new AST_STMT_FUNC(f); :}
+| funcStmt:f {: RESULT = new AST_FUNC_STMT(f); :}
 ;
 
 
