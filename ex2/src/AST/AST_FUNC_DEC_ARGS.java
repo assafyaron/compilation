@@ -27,12 +27,12 @@ public class AST_FUNC_DEC_ARGS extends AST_EXP
         /*******************************/
         /* COPY INPUT DATA MEMBERS ... */
         /*******************************/
-        this.t1 = t1.
-        this.name1 = name1.
-        this.t2 = t2.
-        this.name2 = name2.
-        this.args = args.
-        this.body = body.
+        this.t1 = t1;
+        this.name1 = name1;
+        this.t2 = t2;
+        this.name2 = name2;
+        this.args = args;
+        this.body = body;
 
 
     }
