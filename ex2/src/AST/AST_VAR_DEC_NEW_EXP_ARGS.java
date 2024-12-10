@@ -19,7 +19,7 @@ public class AST_VAR_DEC_NEW_EXP_ARGS extends AST_VAR_DEC
         /***************************************/
         /* PRINT CORRESPONDING DERIVATION RULE */
         /***************************************/
-        System.out.println("====================== varDec -> type ID ASSIGN newExp SEMICOLON");
+        System.out.println("====================== varDec -> type ID ASSIGN newExp SEMICOLON\n");
 
         /*******************************/
         /* COPY INPUT DATA MEMBERS ... */
