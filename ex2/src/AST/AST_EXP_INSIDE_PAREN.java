@@ -17,7 +17,7 @@ public class AST_EXP_INSIDE_PAREN extends AST_EXP
         /***************************************/
         /* PRINT CORRESPONDING DERIVATION RULE */
         /***************************************/
-        System.out.println("====================== exp -> LPAREN exp RPAREN");
+        System.out.println("====================== exp -> LPAREN exp RPAREN\n");
 
         /*******************************/
         /* COPY INPUT DATA MEMBERS ... */
