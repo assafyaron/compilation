@@ -2,12 +2,12 @@ package AST;
 
 public class AST_FUNCTION_NO_ARGS extends AST_FUNCTION
 {
-    public string name;
+    public String name;
 
     /******************/
     /* CONSTRUCTOR(S) */
     /******************/
-    public AST_FUNCTION_NO_ARGS(string name)
+    public AST_FUNCTION_NO_ARGS(String name)
     {
         /******************************/
         /* SET A UNIQUE SERIAL NUMBER */
@@ -17,7 +17,7 @@ public class AST_FUNCTION_NO_ARGS extends AST_FUNCTION
         /***************************************/
         /* PRINT CORRESPONDING DERIVATION RULE */
         /***************************************/
-        System.out.format("====================== function -> fuction no args");
+        System.out.format("====================== function -> fuction no args\n");
 
         /*******************************/
         /* COPY INPUT DATA MEMBERS ... */
