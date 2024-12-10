@@ -19,13 +19,13 @@ public class AST_FUNC_DEC_NO_ARGS extends AST_FUNC_DEC
         /***************************************/
         /* PRINT CORRESPONDING DERIVATION RULE */
         /***************************************/
-        System.out.format("====================== funcDec -> func dec no args");
+        System.out.format("====================== funcDec -> func dec no args\n");
 
         /*******************************/
         /* COPY INPUT DATA MEMBERS ... */
         /*******************************/
-        this.t1 = t1;
-        this.name1 = name;
+        this.t = t;
+        this.name = name;
         this.body = body;
 
 
