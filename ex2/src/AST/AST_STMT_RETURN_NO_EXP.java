@@ -16,7 +16,7 @@ public class AST_STMT_RETURN_NO_EXP extends AST_STMT
         /***************************************/
         /* PRINT CORRESPONDING DERIVATION RULE */
         /***************************************/
-        System.out.println("====================== stmt -> RETURN SEMICOLON");
+        System.out.println("====================== stmt -> RETURN SEMICOLON\n");
 
     }
 
