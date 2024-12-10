@@ -3,12 +3,12 @@ package AST;
 
 public class AST_EXP_FUNCTION extends AST_EXP
 {
-    public AST_FUNCTION class_dec;
+    public AST_FUNCTION f;
 
     /******************/
     /* CONSTRUCTOR(S) */
     /******************/
-    public AST_EXP_FUNCTION(AST_CLASS_DEC class_dec)
+    public AST_EXP_FUNCTION(AST_FUNCTION f)
     {
         /******************************/
         /* SET A UNIQUE SERIAL NUMBER */
@@ -18,12 +18,12 @@ public class AST_EXP_FUNCTION extends AST_EXP
         /***************************************/
         /* PRINT CORRESPONDING DERIVATION RULE */
         /***************************************/
-        System.out.format("====================== dec -> classDec");
+        System.out.format("====================== exp -> fuction");
 
         /*******************************/
         /* COPY INPUT DATA MEMBERS ... */
         /*******************************/
-        this.class_dec = class_dec;
+        this.f = f;
 
     }
 
