@@ -15,7 +15,7 @@ public class AST_TYPE_INT extends AST_TYPE
         /***************************************/
         /* PRINT CORRESPONDING DERIVATION RULE */
         /***************************************/
-        System.out.println("====================== type -> TYPE_INT");
+        System.out.println("====================== type -> TYPE_INT\n");
 
     }
 
