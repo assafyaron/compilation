@@ -1,6 +1,6 @@
 package AST;
 
-public class AST_FUNC_DEC_NO_ARGS extends AST_EXP
+public class AST_FUNC_DEC_NO_ARGS extends AST_FUNC_DEC
 {
     public AST_TYPE t;
     public String name;
