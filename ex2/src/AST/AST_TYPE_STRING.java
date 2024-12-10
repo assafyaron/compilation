@@ -15,7 +15,7 @@ public class AST_TYPE_STRING extends AST_TYPE
         /***************************************/
         /* PRINT CORRESPONDING DERIVATION RULE */
         /***************************************/
-        System.out.println("====================== type -> TYPE_STRING");
+        System.out.println("====================== type -> TYPE_STRING\n");
 
     }
 
