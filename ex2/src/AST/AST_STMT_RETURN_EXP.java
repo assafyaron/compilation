@@ -2,12 +2,12 @@ package AST;
 
 public class AST_STMT_RETURN_EXP extends AST_STMT
 {
-    public AST_EXP exp;
+    public AST_EXP e;
 
     /******************/
     /* CONSTRUCTOR(S) */
     /******************/
-    public AST_STMT_RETURN_EXP(AST_EXP exp)
+    public AST_STMT_RETURN_EXP(AST_EXP e)
     {
         /******************************/
         /* SET A UNIQUE SERIAL NUMBER */
@@ -17,12 +17,12 @@ public class AST_STMT_RETURN_EXP extends AST_STMT
         /***************************************/
         /* PRINT CORRESPONDING DERIVATION RULE */
         /***************************************/
-        System.out.println("====================== stmt -> RETURN exp SEMICOLON");
+        System.out.println("====================== stmt -> RETURN exp SEMICOLON\n");
 
         /*******************************/
         /* COPY INPUT DATA MEMBERS ... */
         /*******************************/
-        this.exp = exp;
+        this.e = e;
     }
 
     /***************************************************/
