@@ -2,12 +2,12 @@ package AST;
 
 public class AST_NEW_TYPE extends AST_NEW_EXP
 {
-    public AST_TYPE type;
+    public AST_TYPE t;
 
     /******************/
     /* CONSTRUCTOR(S) */
     /******************/
-    public AST_NEW_TYPE(AST_TYPE type)
+    public AST_NEW_TYPE(AST_TYPE t)
     {
         /******************************/
         /* SET A UNIQUE SERIAL NUMBER */
@@ -17,12 +17,12 @@ public class AST_NEW_TYPE extends AST_NEW_EXP
         /***************************************/
         /* PRINT CORRESPONDING DERIVATION RULE */
         /***************************************/
-        System.out.println("====================== newExp -> NEW type");
+        System.out.println("====================== newExp -> NEW type\n");
 
         /*******************************/
         /* COPY INPUT DATA MEMBERS ... */
         /*******************************/
-        this.type = type;
+        this.t = t;
     }
 
     /***************************************************/
