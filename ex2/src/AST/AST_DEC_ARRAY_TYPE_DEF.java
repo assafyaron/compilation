@@ -1,13 +1,13 @@
 package AST;
 
-public class AST_ARRAY_TYPE_DEF extends AST_DEC
+public class AST_DEC_ARRAY_TYPE_DEF extends AST_DEC
 {
-    public AST_VAR_DEC var_dec;
+    public AST_ARRAY_TYPE_DEF array_type_def;
 
     /******************/
     /* CONSTRUCTOR(S) */
     /******************/
-    public AST_ARRAY_TYPE_DE(AST_VAR_DEC var_dec)
+    public AST_DEC_ARRAY_TYPE_DEF(AST_ARRAY_TYPE_DEF array_type_def)
     {
         /******************************/
         /* SET A UNIQUE SERIAL NUMBER */
@@ -17,12 +17,12 @@ public class AST_ARRAY_TYPE_DEF extends AST_DEC
         /***************************************/
         /* PRINT CORRESPONDING DERIVATION RULE */
         /***************************************/
-        System.out.format("====================== dec -> varDec");
+        System.out.format("====================== dec -> arrayTypeDef\n");
 
         /*******************************/
         /* COPY INPUT DATA MEMBERS ... */
         /*******************************/
-        this.var_dec = var_dec;
+        this.array_type_def = array_type_def;
 
     }
 
