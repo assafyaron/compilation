@@ -15,7 +15,7 @@ public class AST_TYPE_VOID extends AST_TYPE
         /***************************************/
         /* PRINT CORRESPONDING DERIVATION RULE */
         /***************************************/
-        System.out.println("====================== type -> TYPE_VOID");
+        System.out.println("====================== type -> TYPE_VOID\n");
 
     }
 
