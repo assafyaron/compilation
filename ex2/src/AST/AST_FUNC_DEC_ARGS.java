@@ -3,16 +3,16 @@ package AST;
 public class AST_FUNC_DEC_ARGS extends AST_EXP
 {
     public AST_TYPE t1;
-    public string name1;
+    public String name1;
     public AST_TYPE t2;
-    public string name2;
+    public String name2;
     public AST_FUNC_DEC_ARGS_LIST args;
     public AST_STMT_LIST body;
 
     /******************/
     /* CONSTRUCTOR(S) */
     /******************/
-    public AST_FUNC_DEC_ARGS(AST_TYPE t1, string name1, AST_TYPE t2, string name2, AST_FUNC_DEC_ARGS_LIST args, AST_STMT_LIST body)
+    public AST_FUNC_DEC_ARGS(AST_TYPE t1, String name1, AST_TYPE t2, String name2, AST_FUNC_DEC_ARGS_LIST args, AST_STMT_LIST body)
     {
         /******************************/
         /* SET A UNIQUE SERIAL NUMBER */
@@ -22,7 +22,7 @@ public class AST_FUNC_DEC_ARGS extends AST_EXP
         /***************************************/
         /* PRINT CORRESPONDING DERIVATION RULE */
         /***************************************/
-        System.out.format("====================== funcDec -> func dec args");
+        System.out.format("====================== funcDec -> func dec args\n");
 
         /*******************************/
         /* COPY INPUT DATA MEMBERS ... */
