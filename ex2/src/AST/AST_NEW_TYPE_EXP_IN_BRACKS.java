@@ -2,13 +2,13 @@ package AST;
 
 public class AST_NEW_TYPE_EXP_IN_BRACKS extends AST_NEW_EXP
 {
-    public AST_TYPE type;
-    public AST_EXP exp;
+    public AST_TYPE t;
+    public AST_EXP e;
 
     /******************/
     /* CONSTRUCTOR(S) */
     /******************/
-    public AST_NEW_TYPE_EXP_IN_BRACKS(AST_TYPE type, AST_EXP exp)
+    public AST_NEW_TYPE_EXP_IN_BRACKS(AST_TYPE t, AST_EXP e)
     {
         /******************************/
         /* SET A UNIQUE SERIAL NUMBER */
@@ -18,13 +18,13 @@ public class AST_NEW_TYPE_EXP_IN_BRACKS extends AST_NEW_EXP
         /***************************************/
         /* PRINT CORRESPONDING DERIVATION RULE */
         /***************************************/
-        System.out.println("====================== newExp -> NEW type [exp]");
+        System.out.println("====================== newExp -> NEW type [exp]\n");
 
         /*******************************/
         /* COPY INPUT DATA MEMBERS ... */
         /*******************************/
-        this.type = type;
-        this.exp = exp;
+        this.t = t;
+        this.e = e;
     }
 
     /***************************************************/
