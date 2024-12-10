@@ -3,13 +3,13 @@ package AST;
 public class AST_FUNC_DEC_NO_ARGS extends AST_EXP
 {
     public AST_TYPE t;
-    public string name;
+    public String name;
     public AST_STMT_LIST body;
 
     /******************/
     /* CONSTRUCTOR(S) */
     /******************/
-    public AST_FUNC_DEC_ARGS(AST_TYPE t, string name, AST_STMT_LIST body)
+    public AST_FUNC_DEC_ARGS(AST_TYPE t, String name, AST_STMT_LIST body)
     {
         /******************************/
         /* SET A UNIQUE SERIAL NUMBER */
