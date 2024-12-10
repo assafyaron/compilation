@@ -17,7 +17,7 @@ public class AST_CFIELD_VAR_DEC extends AST_CFIELD
 		/***************************************/
 		/* PRINT CORRESPONDING DERIVATION RULE */
 		/***************************************/
-		System.out.format("====================== cField -> varDec");
+		System.out.format("====================== cField -> varDec\n");
 
 		/*******************************/
 		/* COPY INPUT DATA NENBERS ... */
