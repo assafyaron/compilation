@@ -6,13 +6,13 @@ public class AST_FUNC_DEC_ARGS_LIST extends AST_Node
 	/* DATA MEMBERS */
 	/****************/
 	public AST_TYPE t;
-  	public string name;
+  	public String name;
 	public AST_FUNC_DEC_ARGS_LIST args;
 
 	/******************/
 	/* CONSTRUCTOR(S) */
 	/******************/
-	public AST_FUNC_DEC_ARGS_LIST(AST_TYPE t, string name, AST_FUNC_DEC_ARGS_LIST args)
+	public AST_FUNC_DEC_ARGS_LIST(AST_TYPE t, String name, AST_FUNC_DEC_ARGS_LIST args)
 	{
 		/******************************/
 		/* SET A UNIQUE SERIAL NUMBER */
