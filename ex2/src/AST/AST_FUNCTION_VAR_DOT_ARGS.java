@@ -4,13 +4,14 @@ package AST;
 
 public class AST_FUNCTION_VAR_DOT_ARGS extends AST_FUNCTION
 {
-    public expArguments eA;
+    public AST_VAR v;
     public string name;
-
+    public expArguments eA;
+    
     /******************/
     /* CONSTRUCTOR(S) */
     /******************/
-    public AST_FUNCTION_VAR_DOT_ARGS(expArguments eA, string name)
+    public AST_FUNCTION_VAR_DOT_ARGS(AST_VAR v, string name, expArguments eA)
     {
         /******************************/
         /* SET A UNIQUE SERIAL NUMBER */
@@ -20,13 +21,14 @@ public class AST_FUNCTION_VAR_DOT_ARGS extends AST_FUNCTION
         /***************************************/
         /* PRINT CORRESPONDING DERIVATION RULE */
         /***************************************/
-        System.out.format("====================== function -> fuction args");
+        System.out.format("====================== function -> fuction var dot args");
 
         /*******************************/
         /* COPY INPUT DATA MEMBERS ... */
         /*******************************/
-        this.eA = eA;
+        this.v = v;
         this.name = name;
+        this.eA = eA;
     }
 
     /***************************************************/
