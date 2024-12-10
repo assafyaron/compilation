@@ -6,7 +6,7 @@ public class AST_FUNC_DEC_ARGS_LIST extends AST_Node
 	/* DATA MEMBERS */
 	/****************/
 	public AST_TYPE t;
-  public string name;
+  	public string name;
 	public AST_FUNC_DEC_ARGS_LIST args;
 
 	/******************/
@@ -30,7 +30,7 @@ public class AST_FUNC_DEC_ARGS_LIST extends AST_Node
 		/*******************************/
 		this.t = t;
 		this.name = name;
-    this.args = args;
+    		this.args = args;
 	}
 
 	/******************************************************/
