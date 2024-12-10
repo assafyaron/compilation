@@ -3,7 +3,7 @@ package AST;
 public class AST_ARRAY_TYPE_DEF_SIMPLE extends AST_ARRAY_TYPE_DEF
 {
 	public String name;
-  public AST_TYPE t;
+  	public AST_TYPE t;
 	
 	/******************/
 	/* CONSTRUCTOR(S) */
@@ -24,7 +24,7 @@ public class AST_ARRAY_TYPE_DEF_SIMPLE extends AST_ARRAY_TYPE_DEF
 		/* COPY INPUT DATA MEMBERS ... */
 		/*******************************/
 		this.name = name;
-    this.t = t;
+    		this.t = t;
 	}
 
 	/************************************************/
