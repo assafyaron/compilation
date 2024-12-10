@@ -4,14 +4,14 @@ package AST;
 
 public class AST_FUNCTION_ARGS extends AST_FUNCTION
 {
-    public string name;
+    public String name;
     public AST_EXP_ARGUMENTS eA;
 
 
     /******************/
     /* CONSTRUCTOR(S) */
     /******************/
-    public AST_FUNCTION_ARGS(string name, AST_EXP_ARGUMENTS eA)
+    public AST_FUNCTION_ARGS(String name, AST_EXP_ARGUMENTS eA)
     {
         /******************************/
         /* SET A UNIQUE SERIAL NUMBER */
@@ -21,7 +21,7 @@ public class AST_FUNCTION_ARGS extends AST_FUNCTION
         /***************************************/
         /* PRINT CORRESPONDING DERIVATION RULE */
         /***************************************/
-        System.out.format("====================== function -> fuction args");
+        System.out.format("====================== function -> fuction args\n");
 
         /*******************************/
         /* COPY INPUT DATA MEMBERS ... */
