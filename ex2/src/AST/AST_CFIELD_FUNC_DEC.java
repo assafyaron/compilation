@@ -2,12 +2,12 @@ package AST;
 
 public class AST_CFIELD_FUNC_DEC extends AST_CFIELD
 {
-    public AST_FUNC_DEC funcDec;
+    public AST_FUNC_DEC func_dec;
 
     /******************/
     /* CONSTRUCTOR(S) */
     /******************/
-    public AST_CFIELD_FUNC_DEC(AST_FUNC_DEC funcDec)
+    public AST_CFIELD_FUNC_DEC(AST_FUNC_DEC func_dec)
     {
         /******************************/
         /* SET A UNIQUE SERIAL NUMBER */
@@ -22,7 +22,7 @@ public class AST_CFIELD_FUNC_DEC extends AST_CFIELD
         /*******************************/
         /* COPY INPUT DATA MEMBERS ... */
         /*******************************/
-        this.funcDec = funcDec;
+        this.func_dec = func_dec;
     }
 
     /***************************************************/
