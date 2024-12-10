@@ -5,13 +5,13 @@ package AST;
 public class AST_FUNCTION_ARGS extends AST_FUNCTION
 {
     public string name;
-    public expArguments eA;
+    public AST_EXP_ARGUMENTS eA;
 
 
     /******************/
     /* CONSTRUCTOR(S) */
     /******************/
-    public AST_FUNCTION_ARGS(string name, expArguments eA)
+    public AST_FUNCTION_ARGS(string name, AST_EXP_ARGUMENTS eA)
     {
         /******************************/
         /* SET A UNIQUE SERIAL NUMBER */
