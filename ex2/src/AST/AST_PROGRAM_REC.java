@@ -11,7 +11,7 @@ public class AST_PROGRAM_REC extends AST_PROGRAM {
     /******************/
     /* CONSTRUCTOR(S) */
     /******************/
-    public AST_PROGRAM_LIST(AST_DEC dec, AST_PROGRAM prog)
+    public AST_PROGRAM_REC(AST_DEC dec, AST_PROGRAM prog)
     {
         /******************************/
         /* SET A UNIQUE SERIAL NUMBER */
