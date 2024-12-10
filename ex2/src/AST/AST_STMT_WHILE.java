@@ -18,7 +18,7 @@ public class AST_STMT_WHILE extends AST_STMT
         /***************************************/
         /* PRINT CORRESPONDING DERIVATION RULE */
         /***************************************/
-        System.out.println("====================== stmt -> WHILE LPAREN exp RPAREN LBRACE stmtList RBRACE");
+        System.out.println("====================== stmt -> WHILE LPAREN exp RPAREN LBRACE stmtList RBRACE\n");
 
         /*******************************/
         /* COPY INPUT DATA MEMBERS ... */
