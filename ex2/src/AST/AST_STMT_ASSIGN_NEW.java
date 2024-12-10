@@ -18,7 +18,7 @@ public class AST_STMT_ASSIGN_NEW extends AST_STMT
         /***************************************/
         /* PRINT CORRESPONDING DERIVATION RULE */
         /***************************************/
-        System.out.println("====================== stmt -> var ASSIGN newExp SEMICOLON");
+        System.out.println("====================== stmt -> var ASSIGN newExp SEMICOLON\n");
 
         /*******************************/
         /* COPY INPUT DATA MEMBERS ... */
