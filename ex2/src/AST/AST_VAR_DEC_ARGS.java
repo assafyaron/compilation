@@ -3,13 +3,14 @@ package AST;
 public class AST_VAR_DEC_ARGS extends AST_VAR_DEC
 {
 	public AST_TYPE type;
+	public String name;
 	public AST_EXP exp;
-  public String name
+  	
 	
 	/******************/
 	/* CONSTRUCTOR(S) */
 	/******************/
-	public AST_VAR_DEC_ARGS(AST_TYPE type,AST_EXP exp, String name)
+	public AST_VAR_DEC_ARGS(AST_TYPE type, String name, AST_EXP exp)
 	{
 		/******************************/
 		/* SET A UNIQUE SERIAL NUMBER */
@@ -25,8 +26,9 @@ public class AST_VAR_DEC_ARGS extends AST_VAR_DEC
 		/* COPY INPUT DATA NENBERS ... */
 		/*******************************/
 		this.type = type;
+		this.name = name;
 		this.exp = exp;
-    this.name = name;
+    
 	}
 
 	/*****************************************************/
