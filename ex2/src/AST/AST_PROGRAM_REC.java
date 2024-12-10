@@ -21,8 +21,8 @@ public class AST_PROGRAM_REC extends AST_PROGRAM {
         /***************************************/
         /* PRINT CORRESPONDING DERIVATION RULE */
         /***************************************/
-        if(prog == null) System.out.println("====================== program -> dec      \n");
-        else System.out.println("====================== program -> dec program");
+        if(prog == null) System.out.println("====================== program -> dec\n");
+        else System.out.println("====================== program -> dec program\n");
 
         /*******************************/
         /* COPY INPUT DATA NENBERS ... */
