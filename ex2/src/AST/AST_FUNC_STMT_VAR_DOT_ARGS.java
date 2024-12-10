@@ -19,7 +19,7 @@ public class AST_FUNC_STMT_VAR_DOT_ARGS extends AST_FUNC_STMT
         /***************************************/
         /* PRINT CORRESPONDING DERIVATION RULE */
         /***************************************/
-        System.out.println("====================== callFunc -> varDot ID LPAREN expArgs RPAREN\n");
+        System.out.println("====================== callFunc -> var Dot ID LPAREN expArgs RPAREN\n");
 
         /*******************************/
         /* COPY INPUT DATA MEMBERS ... */
@@ -60,7 +60,7 @@ public class AST_FUNC_STMT_VAR_DOT_ARGS extends AST_FUNC_STMT
         /****************************************/
         /* PRINT Edges to AST GRAPHVIZ DOT file */
         /****************************************/
-        if (varDot != null) AST_GRAPHVIZ.getInstance().logEdge(SerialNumber, var.SerialNumber);
+        if (var != null) AST_GRAPHVIZ.getInstance().logEdge(SerialNumber, var.SerialNumber);
         if (expArgs != null) AST_GRAPHVIZ.getInstance().logEdge(SerialNumber, expArgs.SerialNumber);
     }
 }
