@@ -17,7 +17,7 @@ public class AST_DEC_FUNC_DEC extends AST_DEC
         /***************************************/
         /* PRINT CORRESPONDING DERIVATION RULE */
         /***************************************/
-        System.out.format("====================== dec -> funcDec");
+        System.out.format("====================== dec -> funcDec\n");
 
         /*******************************/
         /* COPY INPUT DATA MEMBERS ... */
