@@ -2,12 +2,12 @@ package AST;
 
 public class AST_EXP_STRING extends AST_EXP
 {
-	public string s;
+	public String s;
 	
 	/******************/
 	/* CONSTRUCTOR(S) */
 	/******************/
-	public AST_EXP_STRING(string s)
+	public AST_EXP_STRING(String s)
 	{
 		/******************************/
 		/* SET A UNIQUE SERIAL NUMBER */
