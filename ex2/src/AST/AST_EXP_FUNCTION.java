@@ -40,20 +40,19 @@ public class AST_EXP_FUNCTION extends AST_EXP
         /******************************************/
         /* PRINT class name1, name2, and clist rec... */
         /******************************************/
-        System.out.format("CLASS 1 NAME( %s )\n", name1);
-        System.out.format("CLASS 2 NAME( %s )\n", name2);
-        if (cFR != null) cFR.PrintMe();
+        System.out.format("Function\n", f);
+        if (f != null) f.PrintMe();
 
         /***************************************/
         /* PRINT Node to AST GRAPHVIZ DOT file */
         /***************************************/
         AST_GRAPHVIZ.getInstance().logNode(
             SerialNumber,
-            String.format("CLASS DEC\n EXTENDS\n...->%s", name1));
+            String.format("CLASS DEC\n EXTENDS\n...->%s", f));
 
         /****************************************/
         /* PRINT Edges to AST GRAPHVIZ DOT file */
         /****************************************/
-        if (cFR != null) AST_GRAPHVIZ.getInstance().logEdge(SerialNumber, cFR.SerialNumber);
+        if (f != null) AST_GRAPHVIZ.getInstance().logEdge(SerialNumber, f.SerialNumber);
     }
 }

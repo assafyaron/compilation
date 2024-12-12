@@ -38,7 +38,7 @@ public class AST_STMT_RETURN_EXP extends AST_STMT
         /******************************************/
         /* RECURSIVELY PRINT exp ... */
         /******************************************/
-        if (exp != null) exp.PrintMe();
+        if (e != null) e.PrintMe();
 
         /***************************************/
         /* PRINT Node to AST GRAPHVIZ DOT file */
@@ -50,6 +50,6 @@ public class AST_STMT_RETURN_EXP extends AST_STMT
         /****************************************/
         /* PRINT Edges to AST GRAPHVIZ DOT file */
         /****************************************/
-        if (exp != null) AST_GRAPHVIZ.getInstance().logEdge(SerialNumber, exp.SerialNumber);
+        if (e != null) AST_GRAPHVIZ.getInstance().logEdge(SerialNumber, e.SerialNumber);
     }
 }

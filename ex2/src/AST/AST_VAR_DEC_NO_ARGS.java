@@ -27,33 +27,4 @@ public class AST_VAR_DEC_NO_ARGS extends AST_VAR_DEC
         this.name = name;
     }
 
-    /***************************************************/
-    /* The printing message for a variable declaration with type and ID AST node */
-    /***************************************************/
-    public void PrintMe()
-    {
-        /*********************************/
-        /* AST NODE TYPE = VARDEC TYPE AND ID */
-        /*********************************/
-        System.out.println("AST NODE VARDEC TYPE AND ID");
-
-        /******************************************/
-        /* RECURSIVELY PRINT typAndId ... */
-        /******************************************/
-        if (type != null) type.PrintMe();
-        if (name != null) name.PrintMe();
-
-        /***************************************/
-        /* PRINT Node to AST GRAPHVIZ DOT file */
-        /***************************************/
-        AST_GRAPHVIZ.getInstance().logNode(
-            SerialNumber,
-            "VARDEC\nTYPE\nAND\nID");
-
-        /****************************************/
-        /* PRINT Edges to AST GRAPHVIZ DOT file */
-        /****************************************/
-        if (type != null) AST_GRAPHVIZ.getInstance().logEdge(SerialNumber, type.SerialNumber);
-        if (name != null) AST_GRAPHVIZ.getInstance().logEdge(SerialNumber, name.SerialNumber);
-    }
 }

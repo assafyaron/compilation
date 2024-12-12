@@ -48,7 +48,7 @@ public class AST_FUNC_STMT_VAR_DOT_ARGS extends AST_FUNC_STMT
         /******************************************/
         /* RECURSIVELY PRINT expArgs */
         /******************************************/
-        if (expArgs != null) expArgs.PrintMe();
+        if (eA != null) eA.PrintMe();
 
         /***************************************/
         /* PRINT Node to AST GRAPHVIZ DOT file */
@@ -61,6 +61,6 @@ public class AST_FUNC_STMT_VAR_DOT_ARGS extends AST_FUNC_STMT
         /* PRINT Edges to AST GRAPHVIZ DOT file */
         /****************************************/
         if (var != null) AST_GRAPHVIZ.getInstance().logEdge(SerialNumber, var.SerialNumber);
-        if (expArgs != null) AST_GRAPHVIZ.getInstance().logEdge(SerialNumber, expArgs.SerialNumber);
+        if (eA != null) AST_GRAPHVIZ.getInstance().logEdge(SerialNumber, eA.SerialNumber);
     }
 }

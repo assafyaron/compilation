@@ -40,8 +40,8 @@ public class AST_NEW_TYPE_EXP_IN_BRACKS extends AST_NEW_EXP
         /******************************************/
         /* RECURSIVELY PRINT type and exp ... */
         /******************************************/
-        if (type != null) type.PrintMe();
-        if (exp != null) exp.PrintMe();
+        if (t != null) t.PrintMe();
+        if (e != null) e.PrintMe();
 
         /***************************************/
         /* PRINT Node to AST GRAPHVIZ DOT file */
@@ -53,7 +53,7 @@ public class AST_NEW_TYPE_EXP_IN_BRACKS extends AST_NEW_EXP
         /****************************************/
         /* PRINT Edges to AST GRAPHVIZ DOT file */
         /****************************************/
-        if (type != null) AST_GRAPHVIZ.getInstance().logEdge(SerialNumber, type.SerialNumber);
-        if (exp != null) AST_GRAPHVIZ.getInstance().logEdge(SerialNumber, exp.SerialNumber);
+        if (t != null) AST_GRAPHVIZ.getInstance().logEdge(SerialNumber, t.SerialNumber);
+        if (e != null) AST_GRAPHVIZ.getInstance().logEdge(SerialNumber, e.SerialNumber);
     }
 }

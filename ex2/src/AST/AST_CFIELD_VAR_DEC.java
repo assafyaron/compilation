@@ -40,6 +40,6 @@ public class AST_CFIELD_VAR_DEC extends AST_CFIELD
 		/*********************************/
 		AST_GRAPHVIZ.getInstance().logNode(
 			SerialNumber,
-			String.format("cField varDec");
+			String.format("cField varDec"));
 	}
 }

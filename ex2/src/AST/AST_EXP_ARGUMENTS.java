@@ -11,7 +11,7 @@ public class AST_EXP_ARGUMENTS extends AST_Node
 	/******************/
 	/* CONSTRUCTOR(S) */
 	/******************/
-	public AST_STMT_LIST(AST_EXP e, AST_EXP_ARGUMENTS eA)
+	public AST_EXP_ARGUMENTS(AST_EXP e, AST_EXP_ARGUMENTS eA)
 	{
 		/******************************/
 		/* SET A UNIQUE SERIAL NUMBER */
@@ -44,8 +44,8 @@ public class AST_EXP_ARGUMENTS extends AST_Node
 		/*************************************/
 		/* RECURSIVELY PRINT HEAD + TAIL ... */
 		/*************************************/
-		if (head != null) head.PrintMe();
-		if (tail != null) tail.PrintMe();
+		if (e != null) e.PrintMe();
+		if (eA != null) eA.PrintMe();
 
 		/**********************************/
 		/* PRINT to AST GRAPHVIZ DOT file */
@@ -57,8 +57,7 @@ public class AST_EXP_ARGUMENTS extends AST_Node
 		/****************************************/
 		/* PRINT Edges to AST GRAPHVIZ DOT file */
 		/****************************************/
-		if (head != null) AST_GRAPHVIZ.getInstance().logEdge(SerialNumber,head.SerialNumber);
-		if (tail != null) AST_GRAPHVIZ.getInstance().logEdge(SerialNumber,tail.SerialNumber);
+		if (e != null) AST_GRAPHVIZ.getInstance().logEdge(SerialNumber,e.SerialNumber);
+		if (eA != null) AST_GRAPHVIZ.getInstance().logEdge(SerialNumber,eA.SerialNumber);
 	}
-	
 }

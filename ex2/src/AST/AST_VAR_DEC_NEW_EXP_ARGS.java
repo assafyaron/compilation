@@ -42,9 +42,8 @@ public class AST_VAR_DEC_NEW_EXP_ARGS extends AST_VAR_DEC
         /******************************************/
         /* RECURSIVELY PRINT typAndId and nex ... */
         /******************************************/
-        if (typAndId != null) typAndId.PrintMe();
-        if (nex != null) nex.PrintMe();
-
+        if (type != null) type.PrintMe();
+        if (newExp != null) newExp.PrintMe();
         /***************************************/
         /* PRINT Node to AST GRAPHVIZ DOT file */
         /***************************************/
@@ -57,6 +56,5 @@ public class AST_VAR_DEC_NEW_EXP_ARGS extends AST_VAR_DEC
         /****************************************/
         if (type != null) AST_GRAPHVIZ.getInstance().logEdge(SerialNumber, type.SerialNumber);
         if (newExp != null) AST_GRAPHVIZ.getInstance().logEdge(SerialNumber, newExp.SerialNumber);
-        if (name != null) AST_GRAPHVIZ.getInstance().logEdge(SerialNumber, name.SerialNumber);
     }
 }

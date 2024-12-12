@@ -9,7 +9,7 @@ public class AST_CLASS_DEC_EXTENDS extends AST_CLASS_DEC
     /******************/
     /* CONSTRUCTOR(S) */
     /******************/
-    public AST_CLASSDEC_INHERITANCE(String name1, String name2, AST_CFIELD_REC cFR)
+    public AST_CLASS_DEC_EXTENDS(String name1, String name2, AST_CFIELD_REC cFR)
     {
         /******************************/
         /* SET A UNIQUE SERIAL NUMBER */

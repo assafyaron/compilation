@@ -38,7 +38,7 @@ public class AST_CFIELD_FUNC_DEC extends AST_CFIELD
         /******************************************/
         /* RECURSIVELY PRINT funcDec ... */
         /******************************************/
-        if (funcDec != null) funcDec.PrintMe();
+        if (func_dec != null) func_dec.PrintMe();
 
         /***************************************/
         /* PRINT Node to AST GRAPHVIZ DOT file */
@@ -50,6 +50,6 @@ public class AST_CFIELD_FUNC_DEC extends AST_CFIELD
         /****************************************/
         /* PRINT Edges to AST GRAPHVIZ DOT file */
         /****************************************/
-        if (funcDec != null) AST_GRAPHVIZ.getInstance().logEdge(SerialNumber, funcDec.SerialNumber);
+        if (func_dec != null) AST_GRAPHVIZ.getInstance().logEdge(SerialNumber, func_dec.SerialNumber);
     }
 }

@@ -33,13 +33,13 @@ public class AST_EXP_STRING extends AST_EXP
 		/*******************************/
 		/* AST NODE TYPE = AST INT EXP */
 		/*******************************/
-		System.out.format("AST NODE INT( %d )\n",value);
+		System.out.format("AST STRING( %s )\n",s);
 
 		/*********************************/
 		/* Print to AST GRAPHIZ DOT file */
 		/*********************************/
 		AST_GRAPHVIZ.getInstance().logNode(
 			SerialNumber,
-			String.format("INT(%d)",value));
+			String.format("STRING(%s)", s));
 	}
 }

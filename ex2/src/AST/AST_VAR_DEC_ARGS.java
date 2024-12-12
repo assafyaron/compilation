@@ -31,33 +31,4 @@ public class AST_VAR_DEC_ARGS extends AST_VAR_DEC
     
 	}
 
-	/*****************************************************/
-  /* The printing message for a variable declaration with type, ID, and expression AST node */
-	/*****************************************************/
-	public void PrintMe()
-	{
-		/*************************************/
-		/* AST NODE TYPE = AST SUBSCRIPT VAR */
-		/*************************************/
-		System.out.print("AST NODE SUBSCRIPT VAR\n");
-
-		/****************************************/
-		/* RECURSIVELY PRINT VAR + SUBSRIPT ... */
-		/****************************************/
-		if (var != null) var.PrintMe();
-		if (subscript != null) subscript.PrintMe();
-		
-		/***************************************/
-		/* PRINT Node to AST GRAPHVIZ DOT file */
-		/***************************************/
-		AST_GRAPHVIZ.getInstance().logNode(
-			SerialNumber,
-			"SUBSCRIPT\nVAR\n...[...]");
-		
-		/****************************************/
-		/* PRINT Edges to AST GRAPHVIZ DOT file */
-		/****************************************/
-		if (var       != null) AST_GRAPHVIZ.getInstance().logEdge(SerialNumber,var.SerialNumber);
-		if (subscript != null) AST_GRAPHVIZ.getInstance().logEdge(SerialNumber,subscript.SerialNumber);
-	}
 }

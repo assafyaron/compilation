@@ -38,7 +38,7 @@ public class AST_NEW_TYPE extends AST_NEW_EXP
         /******************************************/
         /* RECURSIVELY PRINT type ... */
         /******************************************/
-        if (type != null) type.PrintMe();
+        if (t != null) t.PrintMe();
 
         /***************************************/
         /* PRINT Node to AST GRAPHVIZ DOT file */
@@ -50,6 +50,6 @@ public class AST_NEW_TYPE extends AST_NEW_EXP
         /****************************************/
         /* PRINT Edges to AST GRAPHVIZ DOT file */
         /****************************************/
-        if (type != null) AST_GRAPHVIZ.getInstance().logEdge(SerialNumber, type.SerialNumber);
+        if (t != null) AST_GRAPHVIZ.getInstance().logEdge(SerialNumber, t.SerialNumber);
     }
 }

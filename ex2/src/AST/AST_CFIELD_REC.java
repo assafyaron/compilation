@@ -44,8 +44,8 @@ public class AST_CFIELD_REC extends AST_Node
 		/*************************************/
 		/* RECURSIVELY PRINT HEAD + TAIL ... */
 		/*************************************/
-		if (head != null) head.PrintMe();
-		if (tail != null) tail.PrintMe();
+		if (cF != null) cF.PrintMe();
+		if (cFR != null) cFR.PrintMe();
 
 		/**********************************/
 		/* PRINT to AST GRAPHVIZ DOT file */
@@ -57,8 +57,8 @@ public class AST_CFIELD_REC extends AST_Node
 		/****************************************/
 		/* PRINT Edges to AST GRAPHVIZ DOT file */
 		/****************************************/
-		if (head != null) AST_GRAPHVIZ.getInstance().logEdge(SerialNumber,head.SerialNumber);
-		if (tail != null) AST_GRAPHVIZ.getInstance().logEdge(SerialNumber,tail.SerialNumber);
+		if (cF != null) AST_GRAPHVIZ.getInstance().logEdge(SerialNumber,cF.SerialNumber);
+		if (cFR != null) AST_GRAPHVIZ.getInstance().logEdge(SerialNumber,cFR.SerialNumber);
 	}
 	
 }

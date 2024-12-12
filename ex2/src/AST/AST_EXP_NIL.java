@@ -17,28 +17,11 @@ public class AST_EXP_NIL extends AST_EXP
 		/***************************************/
 		/* PRINT CORRESPONDING DERIVATION RULE */
 		/***************************************/
-		System.out.format("====================== exp -> NIL\n";
+		System.out.format("====================== exp -> NIL\n");
 
 		/*******************************/
 		/* COPY INPUT DATA NENBERS ... */
 		/*******************************/
 	}
 
-	/************************************************/
-	/* The printing message for an INT EXP AST node */
-	/************************************************/
-	public void PrintMe()
-	{
-		/*******************************/
-		/* AST NODE TYPE = AST INT EXP */
-		/*******************************/
-		System.out.format("AST NODE INT( %d )\n",value);
-
-		/*********************************/
-		/* Print to AST GRAPHIZ DOT file */
-		/*********************************/
-		AST_GRAPHVIZ.getInstance().logNode(
-			SerialNumber,
-			String.format("INT(%d)",value));
-	}
 }

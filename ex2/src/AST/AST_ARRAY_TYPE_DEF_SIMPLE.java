@@ -42,7 +42,7 @@ public class AST_ARRAY_TYPE_DEF_SIMPLE extends AST_ARRAY_TYPE_DEF
         /******************************************/
         System.out.format("ARRAY NAME( %s )\n", name);
         System.out.print("TYPE:\n");
-        if (typ != null) typ.PrintMe();
+        if (t != null) t.PrintMe();
 
         /***************************************/
         /* PRINT Node to AST GRAPHVIZ DOT file */
@@ -54,6 +54,6 @@ public class AST_ARRAY_TYPE_DEF_SIMPLE extends AST_ARRAY_TYPE_DEF
         /****************************************/
         /* PRINT Edges to AST GRAPHVIZ DOT file */
         /****************************************/
-        if (typ != null) AST_GRAPHVIZ.getInstance().logEdge(SerialNumber, typ.SerialNumber);
+        if (t != null) AST_GRAPHVIZ.getInstance().logEdge(SerialNumber, t.SerialNumber);
     }
 }

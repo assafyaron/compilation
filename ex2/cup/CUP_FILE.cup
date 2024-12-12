@@ -12,24 +12,16 @@ parser code
 	{
 		super(lexer);
 		this.lexer = lexer;
-		this.lexerError = false;
 	}
 	public void report_error(String message, Object info)
 	{
 		System.out.print("ERROR >> ");		
 		System.out.print("[");
-		int line_number = lexer.getLine();
-		System.out.print(line_number);
+		System.out.print(lexer.getLine());
 		System.out.print(":");
-		int char_pos = lexer.getCharPos();
-		System.out.print(char_pos);
-		System.out.print("] ");
-		String message = String.format("%d:%d", line_number, char_pos);
-		if (this.lexerError) {
-			throw new LexicalException(message);
-		} else {
-			throw new SyntaxException(message);
-		}
+		System.out.print(lexer.getCharPos());
+		System.out.print("] ");		
+		System.exit(0);
 	}
 :}
 
@@ -41,9 +33,6 @@ scan with
 	Symbol s;
 	s = lexer.next_token();
 	//System.out.print(s.sym);
-	if (s.sym == tokenNames.error) {
-		this.lexerError = true;
-	}
 	System.out.print("[");
 	System.out.print(lexer.getLine());
 	System.out.print(":");
@@ -63,14 +52,13 @@ scan with
 /*************/
 /* TERMINALS */
 /*************/
-terminal EOF;
+
 terminal PLUS;
 terminal MINUS;
 terminal TIMES;
 terminal DIVIDE;
 terminal LPAREN;
 terminal RPAREN;
-terminal NUMBER;
 terminal LBRACK;
 terminal RBRACK;
 terminal COMMA;
@@ -78,6 +66,7 @@ terminal DOT;
 terminal SEMICOLON;
 terminal TYPE_INT;
 terminal TYPE_VOID;
+terminal TYPE_STRING;
 terminal ASSIGN;
 terminal EQ;
 terminal LT;
@@ -89,16 +78,12 @@ terminal RETURN;
 terminal WHILE;
 terminal IF;
 terminal NEW;
-terminal TYPE_STRING;
 terminal NIL;
 terminal RBRACE;
-terminal LBRACE;
-terminal LINE_TERMINATOR;
-terminal LINE_COMMENT;
+terminal LBRACE;
+terminal ERROR;
 terminal START_COMMENT;
 terminal END_COMMENT;
-terminal ERROR;
-terminal STRING;
 
 
 /*************/
@@ -157,6 +142,7 @@ start with program;
 program ::=
 dec:d {: RESULT = new AST_PROGRAM_REC(d, null); :}
 | dec:d program:p {: RESULT = new AST_PROGRAM_REC(d,p); :}
+;
 
 dec ::=
 varDec:var_dec {: RESULT = new AST_DEC_VAR_DEC(var_dec); :}
@@ -170,6 +156,7 @@ TYPE_INT {: RESULT = new AST_TYPE_INT(); :}
 | TYPE_STRING {: RESULT = new AST_TYPE_STRING(); :}
 | TYPE_VOID {: RESULT = new AST_TYPE_VOID(); :}
 | ID:name {: RESULT = new AST_TYPE_ID(name); :}
+;
 
 stmtList ::=	
 stmt:s	stmtList:l {: RESULT = new AST_STMT_LIST(s,l); :}
@@ -183,14 +170,14 @@ ID:name	 {: RESULT = new AST_VAR_SIMPLE(name); :}
 ;
 					
 stmt ::= 
-varDec:var_dec {: RESULT = new AST_VAR_DEC(var_dec); :}
+varDec:var_dec {: RESULT = new AST_STMT_VAR_DEC(var_dec); :}
 | var:v ASSIGN exp:e SEMICOLON {: RESULT = new AST_STMT_ASSIGN(v,e); :}
 | var:v ASSIGN newExp:new_exp SEMICOLON {: RESULT = new AST_STMT_ASSIGN_NEW(v, new_exp); :}
 | RETURN SEMICOLON {: RESULT = new AST_STMT_RETURN_NO_EXP(); :}
 | RETURN exp:e SEMICOLON {: RESULT = new AST_STMT_RETURN_EXP(e); :}
 | IF LPAREN exp:cond RPAREN LBRACE stmtList:body RBRACE {: RESULT = new AST_STMT_IF(cond,body); :}
 | WHILE LPAREN exp:cond RPAREN LBRACE stmtList:body RBRACE {: RESULT = new AST_STMT_WHILE(cond,body); :}
-| funcStmt:f {: RESULT = new AST_FUNC_STMT(f); :}
+| funcStmt:f {: RESULT = new AST_STMT_FUNC_STMT(f); :}
 ;
 
 
@@ -229,7 +216,7 @@ ARRAY ID:name EQ type:t LBRACK RBRACK SEMICOLON {: RESULT = new AST_ARRAY_TYPE_D
 
 exp ::=	   
 var:v {: RESULT = new AST_EXP_VAR(v); :}
-| LPAREN exp:e RPARENK {: RESULT = new AST_EXP_INSIDE_PAREN(e); :} 
+| LPAREN exp:e RPAREN {: RESULT = new AST_EXP_INSIDE_PAREN(e); :} 
 | exp:e1 PLUS  exp:e2 {: RESULT = new AST_EXP_BINOP(e1, e2, 0); :}
 | exp:e1 MINUS exp:e2 {: RESULT = new AST_EXP_BINOP(e1, e2, 1); :}
 | exp:e1 TIMES  exp:e2 {: RESULT = new AST_EXP_BINOP(e1, e2, 2); :}
@@ -268,7 +255,7 @@ exp:e {: RESULT = new AST_EXP_ARGUMENTS(e, null); :}
 ;
 
 
-funcStmt :==
+funcStmt ::=
 ID:name LPAREN RPAREN SEMICOLON {: RESULT = new AST_FUNC_STMT_NO_ARGS(name); :}
 | var:v DOT ID:name LPAREN RPAREN SEMICOLON {: RESULT = new AST_FUNC_STMT_VAR_DOT_NO_ARGS(v, name); :}
 | ID:name LPAREN expArguments:eA RPAREN SEMICOLON {: RESULT = new AST_FUNC_STMT_ARGS(name, eA); :}

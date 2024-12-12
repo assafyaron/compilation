@@ -35,7 +35,7 @@ public class AST_FUNC_STMT_ARGS extends AST_FUNC_STMT
         /*********************************/
         /* AST NODE TYPE = FUNCTION CALL WITH ARGUMENTS */
         /*********************************/
-        System.out.println("AST NODE FUNCTION CALL WITH ARGUMENTS");
+        System.out.println("AST NODE FUNCTION STATEMENT WITH ARGUMENTS");
 
         /******************************************/
         /* PRINT name */
@@ -45,7 +45,7 @@ public class AST_FUNC_STMT_ARGS extends AST_FUNC_STMT
         /******************************************/
         /* RECURSIVELY PRINT expArgs */
         /******************************************/
-        if (expArgs != null) expArgs.PrintMe();
+        if (eA != null) eA.PrintMe();
 
         /***************************************/
         /* PRINT Node to AST GRAPHVIZ DOT file */
@@ -57,6 +57,6 @@ public class AST_FUNC_STMT_ARGS extends AST_FUNC_STMT
         /****************************************/
         /* PRINT Edges to AST GRAPHVIZ DOT file */
         /****************************************/
-        if (expArgs != null) AST_GRAPHVIZ.getInstance().logEdge(SerialNumber, expArgs.SerialNumber);
+        if (eA != null) AST_GRAPHVIZ.getInstance().logEdge(SerialNumber, eA.SerialNumber);
     }
 }
