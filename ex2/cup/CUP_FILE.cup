@@ -20,8 +20,8 @@ parser code
 		System.out.print(lexer.getLine());
 		System.out.print(":");
 		System.out.print(lexer.getCharPos());
-		System.out.print("] ");		
-		System.exit(0);
+		System.out.print("] ");	
+		throw new syError("msg");
 	}
 :}
 
