@@ -37,32 +37,66 @@ public class Main
 			/*******************************/
 			/* [4] Initialize a new parser */
 			/*******************************/
-			p = new Parser(l);
+			try {
+				p = new Parser(l);
+	
+				/***********************************/
+				/* [5] 3 ... 2 ... 1 ... Parse !!! */
+				/***********************************/
+				AST = (AST_STMT_LIST) p.parse().value;
+				
+				/*************************/
+				/* [6] Print the AST ... */
+				/*************************/
+				AST.PrintMe();
+				
+				/*************************/
+				/* [7] Close output file */
+				/*************************/
+				file_writer.close();
+				
+				/*************************************/
+				/* [8] Finalize AST GRAPHIZ DOT file */
+				/*************************************/
+				AST_GRAPHVIZ.getInstance().finalizeFile();
+			}
+			catch (lexError ex){
+				file_writer.print("ERROR");
+				file_writer.close();
+			}
+			catch (syError ex){
+				file_writer.print("ERROR(");
+				file_writer.print(l.getLine());
+				file_writer.print(")");
+				file_writer.close();
+			}
 
-			/***********************************/
-			/* [5] 3 ... 2 ... 1 ... Parse !!! */
-			/***********************************/
-			AST = (AST_STMT_LIST) p.parse().value;
-			
-			/*************************/
-			/* [6] Print the AST ... */
-			/*************************/
-			AST.PrintMe();
-			
-			/*************************/
-			/* [7] Close output file */
-			/*************************/
-			file_writer.close();
-			
-			/*************************************/
-			/* [8] Finalize AST GRAPHIZ DOT file */
-			/*************************************/
-			AST_GRAPHVIZ.getInstance().finalizeFile();
+			catch (RuntimeException ex){
+				file_writer.print("ERROR(");
+				file_writer.print(ex.getMessage());
+				file_writer.print(")");
+				file_writer.close();
+				AST_GRAPHVIZ.getInstance().finalizeFile();
+			}
     	}
 			     
 		catch (Exception e)
 		{
 			e.printStackTrace();
 		}
+	}
+}
+
+class syError extends RuntimeException 
+{
+	public syError(	String msg){
+		super(msg);
+	}
+}
+
+class lexError extends RuntimeException 
+{
+	public lexError(	String msg){
+		super(msg);
 	}
 }
