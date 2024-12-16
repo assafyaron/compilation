@@ -148,5 +148,5 @@ ERROR			= "//" {COMMENT_CHAR}* {STRING} {COMMENT_CHAR}* {LineTerminator}
 
 }
 
-{ERROR}					{ return symbol(TokenNames.ERROR, new String( yytext()));}
+{ERROR}					{ throw new lexError("ERROR");}
 .						{ return symbol(TokenNames.ERROR, new String( yytext()));}
