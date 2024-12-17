@@ -82,8 +82,8 @@ terminal NIL;
 terminal RBRACE;
 terminal LBRACE;
 terminal ERROR;
-/*terminal START_COMMENT;
-terminal END_COMMENT;*/
+terminal START_COMMENT;
+terminal END_COMMENT;
 
 
 /*************/
