@@ -131,14 +131,14 @@ ERROR			= "//" {COMMENT_CHAR}* {STRING} {COMMENT_CHAR}* {LineTerminator}
 	"new"				{ return symbol(TokenNames.NEW);}
 	"string"			{ return symbol(TokenNames.TYPE_STRING);}
 	"class"				{ return symbol(TokenNames.CLASS);}
-	{INT}	    		{ return symbol(TokenNames.INT, new String(yytext()));}
+	{INT}	    		{ return symbol(TokenNames.INT, Integer.parseInt(yytext()));}
 	{ID}				{ return symbol(TokenNames.ID, new String( yytext()));}  
 	{LineTerminator}	{ } 
-	{WhiteSpace}		{ /* just skip what was found, do nothing */ }
+	{WhiteSpace}		{ }
 	{LINE_COMMENT}		{ }
 	{START_COMMENT}		{ yybegin(COMMENT);  return symbol(TokenNames.START_COMMENT); }
 	{STRING}			{ return symbol(TokenNames.STRING, new String( yytext())); }
-	<<EOF>>				{ return symbol(TokenNames.EOF);}
+	<<EOF>>				{ return symbol(TokenNames.EOF); }
 }
 
 <COMMENT> {

@@ -37,7 +37,7 @@ scan with
 	System.out.print(lexer.getLine());
 	System.out.print(":");
 	System.out.print(lexer.getCharPos());
-	System.out.print("] ");
+	System.out.print("]");
 	System.out.print(TokenNames.terminalNames[s.sym]);
 	if (s.value != null)
 	{
@@ -80,10 +80,10 @@ terminal IF;
 terminal NEW;
 terminal NIL;
 terminal RBRACE;
-terminal LBRACE;
+terminal LBRACE;
 terminal ERROR;
-terminal START_COMMENT;
-terminal END_COMMENT;
+/*terminal START_COMMENT;
+terminal END_COMMENT;*/
 
 
 /*************/
@@ -195,12 +195,12 @@ cField:cF {: RESULT = new AST_CFIELD_REC(cF, null); :}
 
 funcDec ::=
 type:t ID:name LPAREN RPAREN LBRACE stmtList:body RBRACE {: RESULT = new AST_FUNC_DEC_NO_ARGS(t, name, body); :}
-| type:t1 ID:name1 LPAREN type:t2 ID:name2 funcDecArgs:args RPAREN LBRACE stmtList:body RBRACE {: RESULT = new AST_FUNC_DEC_ARGS(t1, name1, t2, name2, args, body); :}
+| type:t ID:name LPAREN funcDecArgs:args RPAREN LBRACE stmtList:body RBRACE {: RESULT = new AST_FUNC_DEC_ARGS(t, name, args, body); :}
 ;
 
 funcDecArgs ::=
-COMMA type:t ID:name {: RESULT = new AST_FUNC_DEC_ARGS_LIST(t, name, null); :}
-| COMMA type:t ID:name funcDecArgs:args  {: RESULT = new AST_FUNC_DEC_ARGS_LIST(t, name, args); :}
+type:t ID:name {: RESULT = new AST_FUNC_DEC_ARGS_LIST(t, name, null); :}
+| type:t ID:name COMMA funcDecArgs:args  {: RESULT = new AST_FUNC_DEC_ARGS_LIST(t, name, args); :}
 ;
 
 varDec ::=

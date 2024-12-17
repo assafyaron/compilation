@@ -30,34 +30,4 @@ public class AST_PROGRAM_REC extends AST_PROGRAM {
         this.dec = dec;
         this.prog = prog;
     }
-
-    /***************************************************/
-    /* The printing message for a program list AST node */
-    /***************************************************/
-    public void PrintMe()
-    {
-        /*********************************/
-        /* AST NODE TYPE = PROGRAM LIST */
-        /*********************************/
-        System.out.println("AST NODE PROGRAM LIST");
-
-        /******************************************/
-        /* RECURSIVELY PRINT dec, then prog ... */
-        /******************************************/
-        if (dec != null) dec.PrintMe();
-        if (prog != null) prog.PrintMe();
-
-        /***************************************/
-        /* PRINT Node to AST GRAPHVIZ DOT file */
-        /***************************************/
-        AST_GRAPHVIZ.getInstance().logNode(
-            SerialNumber,
-            "PROGRAM\nLIST");
-
-        /****************************************/
-        /* PRINT Edges to AST GRAPHVIZ DOT file */
-        /****************************************/
-        if (dec != null) AST_GRAPHVIZ.getInstance().logEdge(SerialNumber, dec.SerialNumber);
-        if (prog != null) AST_GRAPHVIZ.getInstance().logEdge(SerialNumber, prog.SerialNumber);
-    }
 }

@@ -11,7 +11,7 @@ public class Main
 		Lexer l;
 		Parser p;
 		Symbol s;
-		AST_STMT_LIST AST;
+		AST_PROGRAM AST;
 		FileReader file_reader;
 		PrintWriter file_writer;
 		String inputFilename = argv[0];
@@ -43,7 +43,9 @@ public class Main
 				/***********************************/
 				/* [5] 3 ... 2 ... 1 ... Parse !!! */
 				/***********************************/
-				AST = (AST_STMT_LIST) p.parse().value;
+				AST = (AST_PROGRAM) p.parse().value;
+
+				file_writer.write("OK\n");
 				
 				/*************************/
 				/* [6] Print the AST ... */
@@ -76,6 +78,7 @@ public class Main
 				file_writer.print(ex.getMessage());
 				file_writer.print(")");
 				file_writer.close();
+				ex.printStackTrace();
 				AST_GRAPHVIZ.getInstance().finalizeFile();
 			}
     	}
@@ -89,14 +92,14 @@ public class Main
 
 class syError extends RuntimeException 
 {
-	public syError(	String msg){
+	public syError(String msg){
 		super(msg);
 	}
 }
 
 class lexError extends RuntimeException 
 {
-	public lexError(	String msg){
+	public lexError(String msg){
 		super(msg);
 	}
 }
