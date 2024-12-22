@@ -2,13 +2,13 @@ package AST;
 
 public class AST_STMT_WHILE extends AST_STMT
 {
-    public AST_EXP cond;
+    public AST_EXP e;
     public AST_STMT_LIST body;
 
     /******************/
     /* CONSTRUCTOR(S) */
     /******************/
-    public AST_STMT_WHILE(AST_EXP cond, AST_STMT_LIST body)
+    public AST_STMT_WHILE(AST_EXP e, AST_STMT_LIST body)
     {
         /******************************/
         /* SET A UNIQUE SERIAL NUMBER */
@@ -23,7 +23,7 @@ public class AST_STMT_WHILE extends AST_STMT
         /*******************************/
         /* COPY INPUT DATA MEMBERS ... */
         /*******************************/
-        this.cond = cond;
+        this.e = e;
         this.body = body;
     }
 
@@ -33,14 +33,14 @@ public class AST_STMT_WHILE extends AST_STMT
     public void PrintMe()
     {
         /*********************************/
-        /* AST NODE TYPE = WHILE LOOP STATEMENT */
+        /* AST NODE TYPE = STMT WHILE */
         /*********************************/
-        System.out.println("AST NODE WHILE LOOP STATEMENT");
+        System.out.println("AST NODE STMT WHILE");
 
         /******************************************/
-        /* RECURSIVELY PRINT cond and body ... */
+        /* RECURSIVELY PRINT e and body ... */
         /******************************************/
-        if (cond != null) cond.PrintMe();
+        if (e != null) e.PrintMe();
         if (body != null) body.PrintMe();
 
         /***************************************/
@@ -48,12 +48,12 @@ public class AST_STMT_WHILE extends AST_STMT
         /***************************************/
         AST_GRAPHVIZ.getInstance().logNode(
             SerialNumber,
-            "WHILE LOOP STATEMENT");
+            "STMT WHILE");
 
         /****************************************/
         /* PRINT Edges to AST GRAPHVIZ DOT file */
         /****************************************/
-        if (cond != null) AST_GRAPHVIZ.getInstance().logEdge(SerialNumber, cond.SerialNumber);
+        if (e != null) AST_GRAPHVIZ.getInstance().logEdge(SerialNumber, e.SerialNumber);
         if (body != null) AST_GRAPHVIZ.getInstance().logEdge(SerialNumber, body.SerialNumber);
     }
 }
