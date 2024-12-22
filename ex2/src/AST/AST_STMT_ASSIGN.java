@@ -2,9 +2,7 @@ package AST;
 
 public class AST_STMT_ASSIGN extends AST_STMT
 {
-	/***************/
-	/*  var := exp */
-	/***************/
+
 	public AST_VAR v;
 	public AST_EXP e;
 
@@ -26,8 +24,8 @@ public class AST_STMT_ASSIGN extends AST_STMT
 		/*******************************/
 		/* COPY INPUT DATA NENBERS ... */
 		/*******************************/
-		this.var = v;
-		this.exp = e;
+		this.v = v;
+		this.e = e;
 	}
 
 	public void PrintMe()
