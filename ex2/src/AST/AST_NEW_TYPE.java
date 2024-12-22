@@ -17,7 +17,7 @@ public class AST_NEW_TYPE extends AST_NEW_EXP
         /***************************************/
         /* PRINT CORRESPONDING DERIVATION RULE */
         /***************************************/
-        System.out.println("====================== newExp -> NEW type\n");
+        System.out.println("====================== NEW EXP-> NEW TYPE\n");
 
         /*******************************/
         /* COPY INPUT DATA MEMBERS ... */
@@ -25,18 +25,16 @@ public class AST_NEW_TYPE extends AST_NEW_EXP
         this.t = t;
     }
 
-    /***************************************************/
-    /* The printing message for a new expression with type AST node */
-    /***************************************************/
+
     public void PrintMe()
     {
         /*********************************/
-        /* AST NODE TYPE = NEW EXPRESSION WITH TYPE */
+        /* AST NODE TYPE = NEW EXP */
         /*********************************/
-        System.out.println("AST NODE NEW EXPRESSION WITH TYPE");
+        System.out.println("AST NODE NEW TYPE");
 
         /******************************************/
-        /* RECURSIVELY PRINT type ... */
+        /* RECURSIVELY PRINT t ... */
         /******************************************/
         if (t != null) t.PrintMe();
 
@@ -45,7 +43,7 @@ public class AST_NEW_TYPE extends AST_NEW_EXP
         /***************************************/
         AST_GRAPHVIZ.getInstance().logNode(
             SerialNumber,
-            "NEW EXPRESSION\nWITH TYPE");
+            "NEW TYPE\n");
 
         /****************************************/
         /* PRINT Edges to AST GRAPHVIZ DOT file */
