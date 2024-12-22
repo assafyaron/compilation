@@ -25,9 +25,6 @@ public class AST_EXP_INSIDE_PAREN extends AST_EXP
         this.e = e;
     }
 
-    /***************************************************/
-    /* The printing message for an expression in parenthesis AST node */
-    /***************************************************/
     public void PrintMe()
     {
         /*********************************/
