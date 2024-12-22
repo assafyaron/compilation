@@ -17,7 +17,7 @@ public class AST_FUNCTION_NO_ARGS extends AST_FUNCTION
         /***************************************/
         /* PRINT CORRESPONDING DERIVATION RULE */
         /***************************************/
-        System.out.format("====================== function -> fuction no args\n");
+        System.out.format("====================== FUNCTION -> FUNCTION NO ARGS\n");
 
         /*******************************/
         /* COPY INPUT DATA MEMBERS ... */
@@ -25,4 +25,22 @@ public class AST_FUNCTION_NO_ARGS extends AST_FUNCTION
         this.name = name;
     }
 
+    public void PrintMe() {
+        /*********************************/
+        /* AST NODE TYPE = FUNCTION NO ARGS */
+        /*********************************/
+        System.out.println("AST NODE FUNCTION NO ARGS");
+
+        /******************************************/
+        /* PRINT name */
+        /******************************************/
+        System.out.println("FUNCTION: " + name);
+
+        /***************************************/
+        /* PRINT Node to AST GRAPHVIZ DOT file */
+        /***************************************/
+        AST_GRAPHVIZ.getInstance().logNode(
+                SerialNumber,
+                "FUNCTION NO ARGS\nFUNCTION: " + name);
+    }
 }
