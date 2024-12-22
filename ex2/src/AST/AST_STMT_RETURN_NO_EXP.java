@@ -26,16 +26,16 @@ public class AST_STMT_RETURN_NO_EXP extends AST_STMT
     public void PrintMe()
     {
         /*********************************/
-        /* AST NODE TYPE = STATEMENT RETURN */
+        /* AST NODE TYPE = STMT RETURN NO EXP */
         /*********************************/
-        System.out.println("AST NODE STATEMENT RETURN");
+        System.out.println("AST NODE STMT RETURN NO EXP");
 
         /***************************************/
         /* PRINT Node to AST GRAPHVIZ DOT file */
         /***************************************/
         AST_GRAPHVIZ.getInstance().logNode(
             SerialNumber,
-            "STATEMENT\nRETURN");
+            "STMT\nRETURN NO EXP");
 
         /****************************************/
         /* PRINT Edges to AST GRAPHVIZ DOT file */
