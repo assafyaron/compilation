@@ -25,13 +25,10 @@ public class AST_TYPE_ID extends AST_TYPE
         this.name = name;
     }
 
-    /***************************************************/
-    /* The printing message for a TYPE_ID AST node */
-    /***************************************************/
     public void PrintMe()
     {
         /*********************************/
-        /* AST NODE TYPE = TYPE_ID */
+        /* AST NODE TYPE = TYPE ID */
         /*********************************/
         System.out.println("AST NODE TYPE ID");
 
