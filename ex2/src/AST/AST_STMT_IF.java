@@ -2,13 +2,13 @@ package AST;
 
 public class AST_STMT_IF extends AST_STMT
 {
-    public AST_EXP cond;
+    public AST_EXP e;
     public AST_STMT_LIST body;
 
     /******************/
     /* CONSTRUCTOR(S) */
     /******************/
-    public AST_STMT_IF(AST_EXP cond, AST_STMT_LIST body)
+    public AST_STMT_IF(AST_EXP e, AST_STMT_LIST body)
     {
         /******************************/
         /* SET A UNIQUE SERIAL NUMBER */
@@ -23,7 +23,7 @@ public class AST_STMT_IF extends AST_STMT
         /*******************************/
         /* COPY INPUT DATA MEMBERS ... */
         /*******************************/
-        this.cond = cond;
+        this.e = e;
         this.body = body;
     }
 
@@ -33,14 +33,14 @@ public class AST_STMT_IF extends AST_STMT
     public void PrintMe()
     {
         /*********************************/
-        /* AST NODE TYPE = IF STATEMENT */
+        /* AST NODE TYPE = STMT IF */
         /*********************************/
-        System.out.println("AST NODE IF STATEMENT");
+        System.out.println("AST NODE STMT IF");
 
         /******************************************/
         /* RECURSIVELY PRINT cond and body ... */
         /******************************************/
-        if (cond != null) cond.PrintMe();
+        if (e != null) e.PrintMe();
         if (body != null) body.PrintMe();
 
         /***************************************/
@@ -48,12 +48,12 @@ public class AST_STMT_IF extends AST_STMT
         /***************************************/
         AST_GRAPHVIZ.getInstance().logNode(
             SerialNumber,
-            "IF STATEMENT");
+            "STMT IF");
 
         /****************************************/
         /* PRINT Edges to AST GRAPHVIZ DOT file */
         /****************************************/
-        if (cond != null) AST_GRAPHVIZ.getInstance().logEdge(SerialNumber, cond.SerialNumber);
+        if (e != null) AST_GRAPHVIZ.getInstance().logEdge(SerialNumber, e.SerialNumber);
         if (body != null) AST_GRAPHVIZ.getInstance().logEdge(SerialNumber, body.SerialNumber);
     }
 }
