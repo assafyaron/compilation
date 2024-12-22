@@ -28,12 +28,12 @@ public class AST_DEC_ARRAY_TYPE_DEF extends AST_DEC
     public void PrintMe()
     {
         /*********************************/
-        /* AST NODE TYPE = ARRAY TYPEDEF DECLARATION */
+        /* AST NODE TYPE = ARRAY TYPEDEF DEC */
         /*********************************/
-        System.out.println("AST NODE ARRAY TYPE DEF DECLARATION");
+        System.out.println("AST NODE ARRAY TYPE DEF DEC");
 
         /******************************************/
-        /* RECURSIVELY PRINT arrayTypedef ... */
+        /* RECURSIVELY PRINT array_type_def ... */
         /******************************************/
         if (array_type_def != null) array_type_def.PrintMe();
 
@@ -42,7 +42,7 @@ public class AST_DEC_ARRAY_TYPE_DEF extends AST_DEC
         /***************************************/
         AST_GRAPHVIZ.getInstance().logNode(
             SerialNumber,
-            "DECLARATION\nARRAY TYPE DEF");
+            "DECN\nARRAY TYPE DEF");
 
         /****************************************/
         /* PRINT Edges to AST GRAPHVIZ DOT file */
