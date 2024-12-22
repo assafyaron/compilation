@@ -32,14 +32,14 @@ public class AST_EXP_ARGUMENTS extends AST_Node
 	}
 
 	/******************************************************/
-	/* The printing message for a statement list AST node */
+	/* The printing message for an expression arguments AST node */
 	/******************************************************/
 	public void PrintMe()
 	{
 		/**************************************/
-		/* AST NODE TYPE = AST STATEMENT LIST */
+		/* AST NODE TYPE = AST EXP ARGS */
 		/**************************************/
-		System.out.print("AST NODE STMT LIST\n");
+		System.out.print("AST NODE EXP ARGS\n");
 
 		/*************************************/
 		/* RECURSIVELY PRINT HEAD + TAIL ... */
@@ -52,7 +52,7 @@ public class AST_EXP_ARGUMENTS extends AST_Node
 		/**********************************/
 		AST_GRAPHVIZ.getInstance().logNode(
 			SerialNumber,
-			"STMT\nLIST\n");
+			"EXP\ARGS\n");
 		
 		/****************************************/
 		/* PRINT Edges to AST GRAPHVIZ DOT file */
