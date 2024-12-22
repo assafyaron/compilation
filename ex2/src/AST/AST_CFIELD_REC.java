@@ -31,13 +31,10 @@ public class AST_CFIELD_REC extends AST_Node
 		this.cFR = cFR;
 	}
 
-	/******************************************************/
-	/* The printing message for a statement list AST node */
-	/******************************************************/
 	public void PrintMe()
 	{
 		/**************************************/
-		/* AST NODE TYPE = AST STATEMENT LIST */
+		/* AST NODE TYPE = AST CFIELD REC */
 		/**************************************/
 		System.out.print("AST NODE cField rec\n");
 
