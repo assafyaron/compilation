@@ -29,7 +29,7 @@ public class AST_DEC_FUNC_DEC extends AST_DEC
     public void PrintMe()
     {
         /*********************************/
-        /* AST NODE TYPE = FUN DEC*/
+        /* AST NODE TYPE = FUNC DEC*/
         /*********************************/
         System.out.println("AST NODE FUNC DEC");
 
