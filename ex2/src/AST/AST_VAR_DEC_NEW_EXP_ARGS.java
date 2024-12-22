@@ -40,6 +40,7 @@ public class AST_VAR_DEC_NEW_EXP_ARGS extends AST_VAR_DEC
         /* RECURSIVELY PRINT t and new_exp ... */
         /******************************************/
         if (t != null) t.PrintMe();
+        System.out.println("ID Name: " + name);
         if (new_exp != null) new_exp.PrintMe();
         /***************************************/
         /* PRINT Node to AST GRAPHVIZ DOT file */
