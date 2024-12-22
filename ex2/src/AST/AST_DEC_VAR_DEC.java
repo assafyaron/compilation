@@ -26,4 +26,29 @@ public class AST_DEC_VAR_DEC extends AST_DEC
 
     }
 
+    public void PrintMe()
+    {
+        /*********************************/
+        /* AST NODE TYPE = DEC VAR DEC */
+        /*********************************/
+        System.out.println("AST NODE DEC VAR DEC");
+
+        /******************************************/
+        /* RECURSIVELY PRINT var_dec ... */
+        /******************************************/
+        if (var_dec != null) var_dec.PrintMe();
+
+        /***************************************/
+        /* PRINT Node to AST GRAPHVIZ DOT file */
+        /***************************************/
+        AST_GRAPHVIZ.getInstance().logNode(
+            SerialNumber,
+            "DEC\nVAR DEC");
+
+        /****************************************/
+        /* PRINT Edges to AST GRAPHVIZ DOT file */
+        /****************************************/
+        if (var_dec != null) AST_GRAPHVIZ.getInstance().logEdge(SerialNumber, var_dec.SerialNumber);
+    }
+
 }
