@@ -15,7 +15,7 @@ public class AST_FUNC_STMT_NO_ARGS extends AST_FUNC_STMT {
         /***************************************/
         /* PRINT CORRESPONDING DERIVATION RULE */
         /***************************************/
-        System.out.println("====================== FUNC STMT -> FUNC STMT NO ARGS\n");
+        System.out.println("====================== funcStmt -> ID:name LPAREN RPAREN SEMICOLON\n");
 
         /*******************************/
         /* COPY INPUT DATA MEMBERS ... */
@@ -26,20 +26,20 @@ public class AST_FUNC_STMT_NO_ARGS extends AST_FUNC_STMT {
 
     public void PrintMe() {
         /*********************************/
-        /* AST NODE TYPE = FUNCTION CALL WITHOUT ARGUMENTS */
+        /* AST NODE TYPE = FUNC STMT NO ARGS */
         /*********************************/
         System.out.println("AST NODE FUNC STMT NO ARGS");
 
         /******************************************/
         /* PRINT name */
         /******************************************/
-        System.out.println("FUNCTION: " + name);
+        System.out.println("Function name: " + name);
 
         /***************************************/
         /* PRINT Node to AST GRAPHVIZ DOT file */
         /***************************************/
         AST_GRAPHVIZ.getInstance().logNode(
                 SerialNumber,
-                "FUNC STMT NO ARGS\nFUNCTION: " + name);
+                "FUNC STMT NO ARGS\nFunction name: " + name);
     }
 }
