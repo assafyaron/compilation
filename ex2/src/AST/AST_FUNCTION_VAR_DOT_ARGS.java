@@ -19,7 +19,7 @@ public class AST_FUNCTION_VAR_DOT_ARGS extends AST_FUNCTION
         /***************************************/
         /* PRINT CORRESPONDING DERIVATION RULE */
         /***************************************/
-        System.out.format("====================== FUNCTION -> FUNCTION VAR DOT ARGS\n");
+        System.out.format("====================== FUNCTION -> varDot ID LPAREN expArgs RPAREN\n");
 
         /*******************************/
         /* COPY INPUT DATA MEMBERS ... */
@@ -40,7 +40,7 @@ public class AST_FUNCTION_VAR_DOT_ARGS extends AST_FUNCTION
         /* RECURSIVELY PRINT v and name */
         /******************************************/
         if (v != null) v.PrintMe();
-        System.out.println("FUNCTION: " + name);
+        System.out.println("Function name: " + name);
 
         /******************************************/
         /* RECURSIVELY PRINT eA */
@@ -52,7 +52,7 @@ public class AST_FUNCTION_VAR_DOT_ARGS extends AST_FUNCTION
         /***************************************/
         AST_GRAPHVIZ.getInstance().logNode(
             SerialNumber,
-            "FUNCTION VAR DOT NO ARGS\nFUNCTION: " + name);
+            "FUNCTION VAR DOT NO ARGS\nFunction name: " + name);
 
         /****************************************/
         /* PRINT Edges to AST GRAPHVIZ DOT file */
