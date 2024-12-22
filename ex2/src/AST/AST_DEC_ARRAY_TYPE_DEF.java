@@ -42,7 +42,7 @@ public class AST_DEC_ARRAY_TYPE_DEF extends AST_DEC
         /***************************************/
         AST_GRAPHVIZ.getInstance().logNode(
             SerialNumber,
-            "DECN\nARRAY TYPE DEF");
+            "DEC\nARRAY TYPE DEF");
 
         /****************************************/
         /* PRINT Edges to AST GRAPHVIZ DOT file */
