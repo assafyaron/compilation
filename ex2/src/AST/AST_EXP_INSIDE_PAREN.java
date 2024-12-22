@@ -31,9 +31,9 @@ public class AST_EXP_INSIDE_PAREN extends AST_EXP
     public void PrintMe()
     {
         /*********************************/
-        /* AST NODE TYPE = EXPRESSION INSIDE PARENTHESIS */
+        /* AST NODE TYPE = EXP INSIDE PAREN */
         /*********************************/
-        System.out.println("AST NODE EXPRESSION INSIDE PARENTHESIS");
+        System.out.println("AST NODE EXP INSIDE PAREN");
 
         /******************************************/
         /* RECURSIVELY PRINT e ... */
@@ -45,7 +45,7 @@ public class AST_EXP_INSIDE_PAREN extends AST_EXP
         /***************************************/
         AST_GRAPHVIZ.getInstance().logNode(
             SerialNumber,
-            "EXPRESSION\nINSIDE PARENTHESIS");
+            "EXP\nINSIDE PAREN");
 
         /****************************************/
         /* PRINT Edges to AST GRAPHVIZ DOT file */
