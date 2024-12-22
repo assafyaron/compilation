@@ -19,7 +19,7 @@ public class AST_FUNC_DEC_NO_ARGS extends AST_FUNC_DEC
         /***************************************/
         /* PRINT CORRESPONDING DERIVATION RULE */
         /***************************************/
-        System.out.format("====================== funcDec -> func dec no args\n");
+        System.out.format("====================== FUNC DEC -> FUNC DEC NO ARGS\n");
 
         /*******************************/
         /* COPY INPUT DATA MEMBERS ... */
@@ -29,5 +29,32 @@ public class AST_FUNC_DEC_NO_ARGS extends AST_FUNC_DEC
         this.body = body;
 
 
+    }
+
+    public void PrintMe()
+    {
+        /*********************************/
+        /* AST NODE TYPE = FUNCDEC NO ARGS */
+        /*********************************/
+        System.out.println("AST NODE FUNC DEC NO ARGS");
+
+        /******************************************/
+        /* RECURSIVELY PRINT t and body ... */
+        /******************************************/
+        if (t != null) t.PrintMe();
+        if (body != null) body.PrintMe();
+
+        /***************************************/
+        /* PRINT Node to AST GRAPHVIZ DOT file */
+        /***************************************/
+        AST_GRAPHVIZ.getInstance().logNode(
+            SerialNumber,
+            "FUNC DEC\nNO ARGS");
+
+        /****************************************/
+        /* PRINT Edges to AST GRAPHVIZ DOT file */
+        /****************************************/
+        if (t != null) AST_GRAPHVIZ.getInstance().logEdge(SerialNumber, t.SerialNumber);
+        if (body != null) AST_GRAPHVIZ.getInstance().logEdge(SerialNumber, body.SerialNumber);
     }
 }
