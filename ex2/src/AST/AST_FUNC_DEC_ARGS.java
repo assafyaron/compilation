@@ -20,7 +20,7 @@ public class AST_FUNC_DEC_ARGS extends AST_FUNC_DEC
         /***************************************/
         /* PRINT CORRESPONDING DERIVATION RULE */
         /***************************************/
-        System.out.format("====================== FUNC DEC -> typeID LPAREN funcArgs RPAREN LBRACE stmtList RBRACE\n");
+        System.out.format("====================== funcDec -> typeID LPAREN funcArgs RPAREN LBRACE stmtList RBRACE\n");
 
         /*******************************/
         /* COPY INPUT DATA MEMBERS ... */
