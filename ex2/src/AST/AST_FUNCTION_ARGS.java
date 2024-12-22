@@ -21,7 +21,7 @@ public class AST_FUNCTION_ARGS extends AST_FUNCTION
         /***************************************/
         /* PRINT CORRESPONDING DERIVATION RULE */
         /***************************************/
-        System.out.format("====================== FUNCTION -> FUNCTION ARGS\n");
+        System.out.format("====================== FUNCTION -> ID LPAREN expArgs RPAREN\n");
 
         /*******************************/
         /* COPY INPUT DATA MEMBERS ... */
@@ -33,14 +33,14 @@ public class AST_FUNCTION_ARGS extends AST_FUNCTION
     public void PrintMe()
     {
         /*********************************/
-        /* AST NODE TYPE = FUNCTION CALL WITH ARGUMENTS */
+        /* AST NODE TYPE = FUNCTION ARGS */
         /*********************************/
         System.out.println("AST NODE FUNCTION ARGS");
 
         /******************************************/
         /* PRINT name */
         /******************************************/
-        System.out.println("FUNCTION: " + name);
+        System.out.println("Function name: " + name);
 
         /******************************************/
         /* RECURSIVELY PRINT eA */
@@ -52,7 +52,7 @@ public class AST_FUNCTION_ARGS extends AST_FUNCTION
         /***************************************/
         AST_GRAPHVIZ.getInstance().logNode(
             SerialNumber,
-            "FUNCTION ARGS\nFUNCTION: " + name);
+            "FUNCTION ARGS\nFunction name: " + name);
 
         /****************************************/
         /* PRINT Edges to AST GRAPHVIZ DOT file */
