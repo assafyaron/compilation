@@ -26,20 +26,26 @@ public class AST_EXP_STRING extends AST_EXP
 	}
 
 	/************************************************/
-	/* The printing message for an INT EXP AST node */
+	/* The printing message for an EXP STRING AST node */
 	/************************************************/
 	public void PrintMe()
 	{
+
+		/*********************************/
+        	/* AST NODE TYPE = EXPRESSION STRING */
+        	/*********************************/
+        	System.out.println("AST NODE EXP STRING");
+		
 		/*******************************/
-		/* AST NODE TYPE = AST INT EXP */
+		/* AST NODE TYPE = AST STRING EXP */
 		/*******************************/
-		System.out.format("AST STRING( %s )\n",s);
+		System.out.format("STRING VALUE( %s )\n",s);
 
 		/*********************************/
 		/* Print to AST GRAPHIZ DOT file */
 		/*********************************/
 		AST_GRAPHVIZ.getInstance().logNode(
 			SerialNumber,
-			String.format("STRING(%s)", s));
+			String.format("EXP\nSTRING\n(%s)",s));
 	}
 }
