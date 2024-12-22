@@ -18,7 +18,7 @@ public class AST_FUNC_STMT_VAR_DOT_NO_ARGS extends AST_FUNC_STMT
         /***************************************/
         /* PRINT CORRESPONDING DERIVATION RULE */
         /***************************************/
-        System.out.format("====================== FUNC STMT-> FUNC STMT VAR DOT NO ARGS\n");
+        System.out.format("====================== funcStmt-> var DOT ID LPAREN RPAREN SEMICOLON\n");
 
         /*******************************/
         /* COPY INPUT DATA MEMBERS ... */
@@ -39,14 +39,14 @@ public class AST_FUNC_STMT_VAR_DOT_NO_ARGS extends AST_FUNC_STMT
         /* RECURSIVELY PRINT var and name ... */
         /******************************************/
         if (var != null) var.PrintMe();
-        System.out.println("FUNCTION: " + name);
+        System.out.println("Function name: " + name);
 
         /***************************************/
         /* PRINT Node to AST GRAPHVIZ DOT file */
         /***************************************/
         AST_GRAPHVIZ.getInstance().logNode(
             SerialNumber,
-            "FUNC STMT VAR DOT NO ARGS\nFUNCTION: " + name);
+            "FUNC STMT VAR DOT NO ARGS\nFunction name: " + name);
 
         /****************************************/
         /* PRINT Edges to AST GRAPHVIZ DOT file */
