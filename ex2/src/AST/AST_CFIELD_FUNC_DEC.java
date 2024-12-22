@@ -36,7 +36,7 @@ public class AST_CFIELD_FUNC_DEC extends AST_CFIELD
         System.out.println("AST NODE CLASS FIELD FUNCTION DECLARATION");
 
         /******************************************/
-        /* RECURSIVELY PRINT funcDec ... */
+        /* RECURSIVELY PRINT func_dec ... */
         /******************************************/
         if (func_dec != null) func_dec.PrintMe();
 
