@@ -23,8 +23,8 @@ public class AST_STMT_ASSIGN_NEW extends AST_STMT
         /*******************************/
         /* COPY INPUT DATA MEMBERS ... */
         /*******************************/
-        this.var = v;
-        this.newExp = new_exp;
+        this.v = v;
+        this.new_exp = new_exp;
     }
 
     /***************************************************/
