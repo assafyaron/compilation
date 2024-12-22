@@ -19,7 +19,7 @@ public class AST_FUNCTION_VAR_DOT_ARGS extends AST_FUNCTION
         /***************************************/
         /* PRINT CORRESPONDING DERIVATION RULE */
         /***************************************/
-        System.out.format("====================== function -> fuction var dot args\n");
+        System.out.format("====================== FUNCTION -> FUNCTION VAR DOT NO ARGS\n");
 
         /*******************************/
         /* COPY INPUT DATA MEMBERS ... */
@@ -27,5 +27,37 @@ public class AST_FUNCTION_VAR_DOT_ARGS extends AST_FUNCTION
         this.v = v;
         this.name = name;
         this.eA = eA;
+    }
+
+    public void PrintMe()
+    {
+        /*********************************/
+        /* AST NODE TYPE = FUNCTION VAR DOT NO ARGS */
+        /*********************************/
+        System.out.println("AST NODE FUNCTION VAR DOT NO ARGS");
+
+        /******************************************/
+        /* RECURSIVELY PRINT v and name */
+        /******************************************/
+        if (v != null) v.PrintMe();
+        System.out.println("FUNCTION: " + name);
+
+        /******************************************/
+        /* RECURSIVELY PRINT eA */
+        /******************************************/
+        if (eA != null) eA.PrintMe();
+
+        /***************************************/
+        /* PRINT Node to AST GRAPHVIZ DOT file */
+        /***************************************/
+        AST_GRAPHVIZ.getInstance().logNode(
+            SerialNumber,
+            "FUNCTION VAR DOT NO ARGS\nFUNCTION: " + name);
+
+        /****************************************/
+        /* PRINT Edges to AST GRAPHVIZ DOT file */
+        /****************************************/
+        if (V != null) AST_GRAPHVIZ.getInstance().logEdge(SerialNumber, V.SerialNumber);
+        if (eA != null) AST_GRAPHVIZ.getInstance().logEdge(SerialNumber, eA.SerialNumber);
     }
 }
