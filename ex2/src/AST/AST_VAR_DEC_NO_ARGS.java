@@ -38,7 +38,7 @@ public class AST_VAR_DEC_NO_ARGS extends AST_VAR_DEC
         /* RECURSIVELY PRINT typAndId ... */
         /******************************************/
         if (t != null) t.PrintMe();
-        
+        System.out.println("ID Name: " + name);
 
         /***************************************/
         /* PRINT Node to AST GRAPHVIZ DOT file */
