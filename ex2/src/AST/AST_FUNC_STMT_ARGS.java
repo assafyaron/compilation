@@ -18,7 +18,7 @@ public class AST_FUNC_STMT_ARGS extends AST_FUNC_STMT
         /***************************************/
         /* PRINT CORRESPONDING DERIVATION RULE */
         /***************************************/
-        System.out.println("====================== callFunc -> ID LPAREN expArgs RPAREN\n");
+        System.out.println("====================== FUNC STMT -> FUNC STMT ARGS\n");
 
         /*******************************/
         /* COPY INPUT DATA MEMBERS ... */
@@ -27,20 +27,17 @@ public class AST_FUNC_STMT_ARGS extends AST_FUNC_STMT
         this.eA = eA;
     }
 
-    /***************************************************/
-    /* The printing message for a function call with arguments AST node */
-    /***************************************************/
     public void PrintMe()
     {
         /*********************************/
-        /* AST NODE TYPE = FUNCTION CALL WITH ARGUMENTS */
+        /* AST NODE TYPE = FUNCTION STMT ARGS */
         /*********************************/
-        System.out.println("AST NODE FUNCTION STATEMENT WITH ARGUMENTS");
+        System.out.println("AST NODE FUNC STMT ARGS");
 
         /******************************************/
         /* PRINT name */
         /******************************************/
-        System.out.println("Function Name: " + name);
+        System.out.println("FUNCTION: " + name);
 
         /******************************************/
         /* RECURSIVELY PRINT expArgs */
@@ -52,7 +49,7 @@ public class AST_FUNC_STMT_ARGS extends AST_FUNC_STMT
         /***************************************/
         AST_GRAPHVIZ.getInstance().logNode(
             SerialNumber,
-            "FUNCTION CALL WITH ARGUMENTS\nFunction Name: " + name);
+            "FUNC STMT ARGS\nFUNCTION: " + name);
 
         /****************************************/
         /* PRINT Edges to AST GRAPHVIZ DOT file */
