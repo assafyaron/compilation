@@ -22,8 +22,8 @@ public class AST_FUNC_DEC_ARGS_LIST extends AST_Node
 		/***************************************/
 		/* PRINT CORRESPONDING DERIVATION RULE */
 		/***************************************/
-		if (args != null) System.out.print("====================== funcDecArgs -> COMMA TYPE FUNC DEC ARGS LIST\n");
-		if (args == null) System.out.print("====================== funcDecArgs  -> COMMA TYPE\n");
+		if (args != null) System.out.print("====================== funcDecArgs ->  type ID( %s ) COMMA funcDecArgs\n", name);
+		if (args == null) System.out.print("====================== funcDecArgs  -> type ID( %s )\n", name);
 
 		/*******************************/
 		/* COPY INPUT DATA NENBERS ... */
