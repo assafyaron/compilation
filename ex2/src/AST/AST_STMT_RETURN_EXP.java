@@ -31,9 +31,9 @@ public class AST_STMT_RETURN_EXP extends AST_STMT
     public void PrintMe()
     {
         /*********************************/
-        /* AST NODE TYPE = STATEMENT RETURN WITH EXPRESSION */
+        /* AST NODE TYPE = STMT RETURN EXP */
         /*********************************/
-        System.out.println("AST NODE STATEMENT RETURN WITH EXPRESSION");
+        System.out.println("AST NODE STMT RETURN EXP");
 
         /******************************************/
         /* RECURSIVELY PRINT exp ... */
@@ -45,7 +45,7 @@ public class AST_STMT_RETURN_EXP extends AST_STMT
         /***************************************/
         AST_GRAPHVIZ.getInstance().logNode(
             SerialNumber,
-            "STATEMENT\nRETURN WITH EXPRESSION");
+            "STMT\nRETURN EXP");
 
         /****************************************/
         /* PRINT Edges to AST GRAPHVIZ DOT file */
