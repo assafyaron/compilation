@@ -31,12 +31,12 @@ public class AST_EXP_FUNCTION extends AST_EXP
     public void PrintMe()
     {
         /*********************************/
-        /* AST NODE TYPE = EXP FUNCTION CALL */
+        /* AST NODE TYPE = EXP FUNCTION */
         /*********************************/
-        System.out.println("AST NODE exp FUNCTION CALL");
+        System.out.println("AST NODE EXP FUNCTION");
 
         /******************************************/
-        /* RECURSIVELY PRINT callFunc ... */
+        /* RECURSIVELY PRINT f ... */
         /******************************************/
         if (f != null) f.PrintMe();
 
@@ -45,7 +45,7 @@ public class AST_EXP_FUNCTION extends AST_EXP
         /***************************************/
         AST_GRAPHVIZ.getInstance().logNode(
             SerialNumber,
-            "exp\nFUNCTION CALL");
+            "EXP\nFUNCTION");
 
         /****************************************/
         /* PRINT Edges to AST GRAPHVIZ DOT file */
