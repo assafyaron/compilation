@@ -1,8 +1,8 @@
 package AST;
 
 public class AST_FUNC_STMT_NO_ARGS extends AST_FUNC_STMT {
+    
     public String name;
-
     /******************/
     /* CONSTRUCTOR(S) */
     /******************/
@@ -15,7 +15,7 @@ public class AST_FUNC_STMT_NO_ARGS extends AST_FUNC_STMT {
         /***************************************/
         /* PRINT CORRESPONDING DERIVATION RULE */
         /***************************************/
-        System.out.println("====================== callFunc -> ID LPAREN RPAREN\n");
+        System.out.println("====================== FUNC STMT -> FUNC STMT NO ARGS\n");
 
         /*******************************/
         /* COPY INPUT DATA MEMBERS ... */
@@ -23,25 +23,23 @@ public class AST_FUNC_STMT_NO_ARGS extends AST_FUNC_STMT {
         this.name = name;
     }
 
-    /***************************************************/
-    /* The printing message for a function call without arguments AST node */
-    /***************************************************/
+
     public void PrintMe() {
         /*********************************/
         /* AST NODE TYPE = FUNCTION CALL WITHOUT ARGUMENTS */
         /*********************************/
-        System.out.println("AST NODE FUNCTION CALL WITHOUT ARGUMENTS");
+        System.out.println("AST NODE FUNC STMT NO ARGS");
 
         /******************************************/
         /* PRINT name */
         /******************************************/
-        System.out.println("Function Name: " + name);
+        System.out.println("FUNCTION: " + name);
 
         /***************************************/
         /* PRINT Node to AST GRAPHVIZ DOT file */
         /***************************************/
         AST_GRAPHVIZ.getInstance().logNode(
                 SerialNumber,
-                "FUNCTION CALL WITHOUT ARGUMENTS\nName: " + name);
+                "FUNC STMT NO ARGS\nFUNCTION: " + name);
     }
 }
