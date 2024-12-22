@@ -21,12 +21,42 @@ public class AST_FUNCTION_ARGS extends AST_FUNCTION
         /***************************************/
         /* PRINT CORRESPONDING DERIVATION RULE */
         /***************************************/
-        System.out.format("====================== function -> fuction args\n");
+        System.out.format("====================== FUNCTION -> FUNCTION ARGS\n");
 
         /*******************************/
         /* COPY INPUT DATA MEMBERS ... */
         /*******************************/
         this.name = name;
         this.eA = eA;
+    }
+
+    public void PrintMe()
+    {
+        /*********************************/
+        /* AST NODE TYPE = FUNCTION CALL WITH ARGUMENTS */
+        /*********************************/
+        System.out.println("AST NODE FUNCTION ARGS");
+
+        /******************************************/
+        /* PRINT name */
+        /******************************************/
+        System.out.println("FUNCTION: " + name);
+
+        /******************************************/
+        /* RECURSIVELY PRINT eA */
+        /******************************************/
+        if (eA != null) eA.PrintMe();
+
+        /***************************************/
+        /* PRINT Node to AST GRAPHVIZ DOT file */
+        /***************************************/
+        AST_GRAPHVIZ.getInstance().logNode(
+            SerialNumber,
+            "FUNCTION ARGS\nFUNCTION: " + name);
+
+        /****************************************/
+        /* PRINT Edges to AST GRAPHVIZ DOT file */
+        /****************************************/
+        if (eA != null) AST_GRAPHVIZ.getInstance().logEdge(SerialNumber, eA.SerialNumber);
     }
 }
