@@ -17,7 +17,7 @@ public class AST_FUNCTION_NO_ARGS extends AST_FUNCTION
         /***************************************/
         /* PRINT CORRESPONDING DERIVATION RULE */
         /***************************************/
-        System.out.format("====================== FUNCTION -> ID LPAREN RPAREN\n");
+        System.out.format("====================== function -> ID LPAREN RPAREN\n");
 
         /*******************************/
         /* COPY INPUT DATA MEMBERS ... */
