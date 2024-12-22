@@ -19,15 +19,12 @@ public class AST_TYPE_INT extends AST_TYPE
 
     }
 
-    /***************************************************/
-    /* The printing message for a TYPE_INT AST node */
-    /***************************************************/
     public void PrintMe()
     {
         /*********************************/
-        /* AST NODE TYPE = TYPE_INT */
+        /* AST NODE TYPE = TYPE INT */
         /*********************************/
-        System.out.println("AST NODE TYPE_INT");
+        System.out.println("AST NODE TYPE INT");
 
         /***************************************/
         /* PRINT Node to AST GRAPHVIZ DOT file */
