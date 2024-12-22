@@ -19,15 +19,13 @@ public class AST_TYPE_VOID extends AST_TYPE
 
     }
 
-    /***************************************************/
-    /* The printing message for a TYPE_VOID AST node */
-    /***************************************************/
+
     public void PrintMe()
     {
         /*********************************/
-        /* AST NODE TYPE = TYPE_VOID */
+        /* AST NODE TYPE = TYPE VOID */
         /*********************************/
-        System.out.println("AST NODE TYPE_VOID");
+        System.out.println("AST NODE TYPE VOID");
 
         /***************************************/
         /* PRINT Node to AST GRAPHVIZ DOT file */
