@@ -18,7 +18,7 @@ public class AST_FUNC_STMT_ARGS extends AST_FUNC_STMT
         /***************************************/
         /* PRINT CORRESPONDING DERIVATION RULE */
         /***************************************/
-        System.out.println("====================== FUNC STMT -> FUNC STMT ARGS\n");
+        System.out.println("====================== FUNC STMT -> var DOT ID LPAREN RPAREN SEMICOLON\n");
 
         /*******************************/
         /* COPY INPUT DATA MEMBERS ... */
@@ -30,17 +30,17 @@ public class AST_FUNC_STMT_ARGS extends AST_FUNC_STMT
     public void PrintMe()
     {
         /*********************************/
-        /* AST NODE TYPE = FUNCTION STMT ARGS */
+        /* AST NODE TYPE = FUNC STMT ARGS */
         /*********************************/
         System.out.println("AST NODE FUNC STMT ARGS");
 
         /******************************************/
         /* PRINT name */
         /******************************************/
-        System.out.println("FUNCTION: " + name);
+        System.out.println("Function name: " + name);
 
         /******************************************/
-        /* RECURSIVELY PRINT expArgs */
+        /* RECURSIVELY PRINT eA */
         /******************************************/
         if (eA != null) eA.PrintMe();
 
@@ -49,7 +49,7 @@ public class AST_FUNC_STMT_ARGS extends AST_FUNC_STMT
         /***************************************/
         AST_GRAPHVIZ.getInstance().logNode(
             SerialNumber,
-            "FUNC STMT ARGS\nFUNCTION: " + name);
+            "FUNC STMT ARGS\nFunction name: " + name);
 
         /****************************************/
         /* PRINT Edges to AST GRAPHVIZ DOT file */
