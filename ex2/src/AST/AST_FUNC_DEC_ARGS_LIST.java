@@ -22,8 +22,8 @@ public class AST_FUNC_DEC_ARGS_LIST extends AST_Node
 		/***************************************/
 		/* PRINT CORRESPONDING DERIVATION RULE */
 		/***************************************/
-		if (args != null) System.out.print("====================== FUNC DEC ARGS LIST -> COMMA TYPE FUNC DEC ARGS LIST\n");
-		if (args == null) System.out.print("====================== FUNC DEC ARGS LIST -> COMMA TYPE\n");
+		if (args != null) System.out.print("====================== funcDecArgs -> COMMA TYPE FUNC DEC ARGS LIST\n");
+		if (args == null) System.out.print("====================== funcDecArgs  -> COMMA TYPE\n");
 
 		/*******************************/
 		/* COPY INPUT DATA NENBERS ... */
@@ -37,7 +37,7 @@ public class AST_FUNC_DEC_ARGS_LIST extends AST_Node
         	/*********************************/
         	/* AST NODE TYPE = FUNC DEC ARGS LIST */
         	/*********************************/
-        	System.out.println("AST NODE FUNCTION ARGUMENTS");
+        	System.out.println("AST NODE FUNC DEC ARGS LIST");
 
         	/******************************************/
         	/* RECURSIVELY PRINT t and args ... */
