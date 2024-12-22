@@ -24,4 +24,19 @@ public class AST_EXP_NIL extends AST_EXP
 		/*******************************/
 	}
 
+	public void PrintMe()
+    {
+        /*********************************/
+        /* AST NODE TYPE = EXP NIL */
+        /*********************************/
+        System.out.println("AST NODE EXP NIL");
+
+        /***************************************/
+        /* PRINT Node to AST GRAPHVIZ DOT file */
+        /***************************************/
+        AST_GRAPHVIZ.getInstance().logNode(
+            SerialNumber,
+            "EXP\nNIL");
+
+
 }
