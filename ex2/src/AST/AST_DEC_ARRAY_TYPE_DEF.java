@@ -25,5 +25,29 @@ public class AST_DEC_ARRAY_TYPE_DEF extends AST_DEC
         this.array_type_def = array_type_def;
 
     }
+    public void PrintMe()
+    {
+        /*********************************/
+        /* AST NODE TYPE = ARRAY TYPEDEF DECLARATION */
+        /*********************************/
+        System.out.println("AST NODE ARRAY TYPE DEF DECLARATION");
+
+        /******************************************/
+        /* RECURSIVELY PRINT arrayTypedef ... */
+        /******************************************/
+        if (array_type_def != null) array_type_def.PrintMe();
+
+        /***************************************/
+        /* PRINT Node to AST GRAPHVIZ DOT file */
+        /***************************************/
+        AST_GRAPHVIZ.getInstance().logNode(
+            SerialNumber,
+            "DECLARATION\nARRAY TYPE DEF");
+
+        /****************************************/
+        /* PRINT Edges to AST GRAPHVIZ DOT file */
+        /****************************************/
+        if (array_type_def != null) AST_GRAPHVIZ.getInstance().logEdge(SerialNumber, array_type_def.SerialNumber);
+    }
 
 }
