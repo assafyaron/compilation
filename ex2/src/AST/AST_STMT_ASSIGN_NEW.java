@@ -33,9 +33,9 @@ public class AST_STMT_ASSIGN_NEW extends AST_STMT
     public void PrintMe()
     {
         /*********************************/
-        /* AST NODE TYPE = STATEMENT ASSIGNMENT NEW EXPRESSION */
+        /* AST NODE TYPE = STMT ASSIGN NEW */
         /*********************************/
-        System.out.println("AST NODE STATEMENT ASSIGNMENT NEW EXPRESSION");
+        System.out.println("AST NODE STMT ASSIGN NEW");
 
         /******************************************/
         /* RECURSIVELY PRINT v and new_exp ... */
@@ -48,7 +48,7 @@ public class AST_STMT_ASSIGN_NEW extends AST_STMT
         /***************************************/
         AST_GRAPHVIZ.getInstance().logNode(
             SerialNumber,
-            "STATEMENT\nASSIGNMENT NEW EXPRESSION");
+            "STMT\nASSIGN NEW");
 
         /****************************************/
         /* PRINT Edges to AST GRAPHVIZ DOT file */
