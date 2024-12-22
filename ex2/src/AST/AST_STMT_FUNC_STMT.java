@@ -17,7 +17,7 @@ public class AST_STMT_FUNC_STMT extends AST_STMT
         /***************************************/
         /* PRINT CORRESPONDING DERIVATION RULE */
         /***************************************/
-        System.out.println("====================== STMT -> FUNC STMT");
+        System.out.println("====================== stmt-> funcStmt");
 
         /*******************************/
         /* COPY INPUT DATA MEMBERS ... */
@@ -42,7 +42,7 @@ public class AST_STMT_FUNC_STMT extends AST_STMT
         /***************************************/
         AST_GRAPHVIZ.getInstance().logNode(
             SerialNumber,
-            "FUNC STMT");
+            "STMT\nFUNC STMT");
 
         /****************************************/
         /* PRINT Edges to AST GRAPHVIZ DOT file */
