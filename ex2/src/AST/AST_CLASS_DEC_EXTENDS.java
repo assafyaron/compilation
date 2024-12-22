@@ -37,7 +37,7 @@ public class AST_CLASS_DEC_EXTENDS extends AST_CLASS_DEC
         /*********************************/
         /* AST NODE TYPE = CLASSDEC INHERITANCE */
         /*********************************/
-        System.out.println("AST NODE CLASS_DEC EXTENDS");
+        System.out.println("AST NODE CLASS DECLARATION EXTENDS");
 
         /******************************************/
         /* PRINT class name, superclass, and body ... */
