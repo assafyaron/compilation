@@ -35,7 +35,7 @@ public class AST_CLASS_DEC_SIMPLE extends AST_CLASS_DEC
         /*********************************/
         /* AST NODE TYPE = CLASSDEC SIMPLE */
         /*********************************/
-        System.out.println("AST NODE CLASSDEC SIMPLE");
+        System.out.println("AST NODE CLASS DECLARATION SIMPLE");
 
         /******************************************/
         /* PRINT class name and body ... */
@@ -48,7 +48,7 @@ public class AST_CLASS_DEC_SIMPLE extends AST_CLASS_DEC
         /***************************************/
         AST_GRAPHVIZ.getInstance().logNode(
             SerialNumber,
-            String.format("CLASSDEC\nSIMPLE\n...->%s", name));
+            String.format("CLASS_DEC\nSIMPLE\n...->%s", name));
 
         /****************************************/
         /* PRINT Edges to AST GRAPHVIZ DOT file */
