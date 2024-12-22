@@ -44,7 +44,7 @@ public class AST_FUNC_STMT_VAR_DOT_ARGS extends AST_FUNC_STMT
         System.out.println("FUNCTION: " + name);
 
         /******************************************/
-        /* RECURSIVELY PRINT expArgs */
+        /* RECURSIVELY PRINT eA */
         /******************************************/
         if (eA != null) eA.PrintMe();
 
