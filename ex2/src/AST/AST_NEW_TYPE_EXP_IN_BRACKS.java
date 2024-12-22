@@ -18,7 +18,7 @@ public class AST_NEW_TYPE_EXP_IN_BRACKS extends AST_NEW_EXP
         /***************************************/
         /* PRINT CORRESPONDING DERIVATION RULE */
         /***************************************/
-        System.out.println("====================== newExp -> NEW type [exp]\n");
+        System.out.println("====================== NEW EXP -> NEW TYPE EXP IN BRACKS\n");
 
         /*******************************/
         /* COPY INPUT DATA MEMBERS ... */
@@ -27,18 +27,15 @@ public class AST_NEW_TYPE_EXP_IN_BRACKS extends AST_NEW_EXP
         this.e = e;
     }
 
-    /***************************************************/
-    /* The printing message for a new type with expression in brackets AST node */
-    /***************************************************/
     public void PrintMe()
     {
         /*********************************/
-        /* AST NODE TYPE = NEW TYPE WITH EXPRESSION IN BRACKETS */
+        /* AST NODE TYPE = NEW TYPE EXP IN BRACKS */
         /*********************************/
-        System.out.println("AST NODE NEW TYPE WITH EXPRESSION IN BRACKETS");
+        System.out.println("AST NODE NEW TYPE EXP IN BRACKS");
 
         /******************************************/
-        /* RECURSIVELY PRINT type and exp ... */
+        /* RECURSIVELY PRINT t and e ... */
         /******************************************/
         if (t != null) t.PrintMe();
         if (e != null) e.PrintMe();
@@ -48,7 +45,7 @@ public class AST_NEW_TYPE_EXP_IN_BRACKS extends AST_NEW_EXP
         /***************************************/
         AST_GRAPHVIZ.getInstance().logNode(
             SerialNumber,
-            "NEW TYPE\nWITH EXPRESSION IN BRACKETS");
+            "NEW TYPE\nEXP IN BRACKS");
 
         /****************************************/
         /* PRINT Edges to AST GRAPHVIZ DOT file */
