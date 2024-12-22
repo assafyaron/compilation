@@ -2,13 +2,13 @@ package AST;
 
 public class AST_VAR_SUBSCRIPT extends AST_VAR
 {
-	public AST_VAR var;
-	public AST_EXP subscript;
+	public AST_VAR v;
+	public AST_EXP e;
 	
 	/******************/
 	/* CONSTRUCTOR(S) */
 	/******************/
-	public AST_VAR_SUBSCRIPT(AST_VAR var,AST_EXP subscript)
+	public AST_VAR_SUBSCRIPT(AST_VAR v,AST_EXP e)
 	{
 		/******************************/
 		/* SET A UNIQUE SERIAL NUMBER */
@@ -18,13 +18,13 @@ public class AST_VAR_SUBSCRIPT extends AST_VAR
 		/***************************************/
 		/* PRINT CORRESPONDING DERIVATION RULE */
 		/***************************************/
-		System.out.print("====================== var -> var [ exp ]\n");
+		System.out.print("====================== var -> var LBRACK exp RBRACK\n");
 
 		/*******************************/
 		/* COPY INPUT DATA NENBERS ... */
 		/*******************************/
-		this.var = var;
-		this.subscript = subscript;
+		this.v = v;
+		this.e = e;
 	}
 
 	/*****************************************************/
@@ -33,27 +33,27 @@ public class AST_VAR_SUBSCRIPT extends AST_VAR
 	public void PrintMe()
 	{
 		/*************************************/
-		/* AST NODE TYPE = AST SUBSCRIPT VAR */
+		/* AST NODE TYPE = AST VAR SUBSCRIPT */
 		/*************************************/
-		System.out.print("AST NODE SUBSCRIPT VAR\n");
+		System.out.print("AST NODE VAR SUBSCRIPT\n");
 
 		/****************************************/
 		/* RECURSIVELY PRINT VAR + SUBSRIPT ... */
 		/****************************************/
-		if (var != null) var.PrintMe();
-		if (subscript != null) subscript.PrintMe();
+		if (v != null) v.PrintMe();
+		if (e != null) e.PrintMe();
 		
 		/***************************************/
 		/* PRINT Node to AST GRAPHVIZ DOT file */
 		/***************************************/
 		AST_GRAPHVIZ.getInstance().logNode(
 			SerialNumber,
-			"SUBSCRIPT\nVAR\n...[...]");
+			"VAR\nSUBSCRIPT\n...[...]");
 		
 		/****************************************/
 		/* PRINT Edges to AST GRAPHVIZ DOT file */
 		/****************************************/
-		if (var       != null) AST_GRAPHVIZ.getInstance().logEdge(SerialNumber,var.SerialNumber);
-		if (subscript != null) AST_GRAPHVIZ.getInstance().logEdge(SerialNumber,subscript.SerialNumber);
+		if (v != null) AST_GRAPHVIZ.getInstance().logEdge(SerialNumber,v.SerialNumber);
+		if (e != null) AST_GRAPHVIZ.getInstance().logEdge(SerialNumber,e.SerialNumber);
 	}
 }
