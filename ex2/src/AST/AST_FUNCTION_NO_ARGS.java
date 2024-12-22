@@ -17,7 +17,7 @@ public class AST_FUNCTION_NO_ARGS extends AST_FUNCTION
         /***************************************/
         /* PRINT CORRESPONDING DERIVATION RULE */
         /***************************************/
-        System.out.format("====================== FUNCTION -> FUNCTION NO ARGS\n");
+        System.out.format("====================== FUNCTION -> ID LPAREN RPAREN\n");
 
         /*******************************/
         /* COPY INPUT DATA MEMBERS ... */
@@ -34,13 +34,13 @@ public class AST_FUNCTION_NO_ARGS extends AST_FUNCTION
         /******************************************/
         /* PRINT name */
         /******************************************/
-        System.out.println("FUNCTION: " + name);
+        System.out.println("Function name: " + name);
 
         /***************************************/
         /* PRINT Node to AST GRAPHVIZ DOT file */
         /***************************************/
         AST_GRAPHVIZ.getInstance().logNode(
                 SerialNumber,
-                "FUNCTION NO ARGS\nFUNCTION: " + name);
+                "FUNCTION NO ARGS\nFunction name: " + name);
     }
 }
