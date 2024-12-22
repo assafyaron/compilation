@@ -20,7 +20,7 @@ public class AST_FUNC_DEC_ARGS extends AST_FUNC_DEC
         /***************************************/
         /* PRINT CORRESPONDING DERIVATION RULE */
         /***************************************/
-        System.out.format("====================== funcDec -> func dec args\n");
+        System.out.format("====================== FUNC DEC -> FUNC DEC ARGS\n");
 
         /*******************************/
         /* COPY INPUT DATA MEMBERS ... */
@@ -29,8 +29,35 @@ public class AST_FUNC_DEC_ARGS extends AST_FUNC_DEC
         this.name = name;
         this.args = args;
         this.body = body;
+    }
 
+    public void PrintMe()
+    {
+        /*********************************/
+        /* AST NODE TYPE = FUNC DEC ARGS */
+        /*********************************/
+        System.out.println("AST NODE FUNC DEC ARGS");
 
+        /******************************************/
+        /* RECURSIVELY PRINT t, args, and body ... */
+        /******************************************/
+        if (t != null) t.PrintMe();
+        if (args != null) args.PrintMe();
+        if (body != null) body.PrintMe();
+
+        /***************************************/
+        /* PRINT Node to AST GRAPHVIZ DOT file */
+        /***************************************/
+        AST_GRAPHVIZ.getInstance().logNode(
+            SerialNumber,
+            "FUNC DEC\nARGS");
+
+        /****************************************/
+        /* PRINT Edges to AST GRAPHVIZ DOT file */
+        /****************************************/
+        if (t != null) AST_GRAPHVIZ.getInstance().logEdge(SerialNumber, t.SerialNumber);
+        if (args != null) AST_GRAPHVIZ.getInstance().logEdge(SerialNumber, args.SerialNumber);
+        if (body != null) AST_GRAPHVIZ.getInstance().logEdge(SerialNumber, body.SerialNumber);
     }
 
 }
