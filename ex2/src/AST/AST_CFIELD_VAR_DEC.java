@@ -28,18 +28,28 @@ public class AST_CFIELD_VAR_DEC extends AST_CFIELD
 	/************************************************/
 	/* The printing message for a class field declaration AST node */
 	/************************************************/
-	public void PrintMe()
-	{
-		/*******************************/
-		/* AST NODE TYPE */
-		/*******************************/
-		System.out.format("AST NODE cField varDec");
+	 public void PrintMe()
+    {
+        /*********************************/
+        /* AST NODE TYPE = CLASS FIELD VARIABLE DECLARATION */
+        /*********************************/
+        System.out.println("AST NODE CLASS FIELD VARIABLE DECLARATION");
 
-		/*********************************/
-		/* Print to AST GRAPHIZ DOT file */
-		/*********************************/
-		AST_GRAPHVIZ.getInstance().logNode(
-			SerialNumber,
-			String.format("cField varDec"));
-	}
+        /******************************************/
+        /* RECURSIVELY PRINT varDec ... */
+        /******************************************/
+        if (var_dec != null) var_dec.PrintMe();
+
+        /***************************************/
+        /* PRINT Node to AST GRAPHVIZ DOT file */
+        /***************************************/
+        AST_GRAPHVIZ.getInstance().logNode(
+            SerialNumber,
+            "CLASS FIELD\nVARIABLE DECLARATION");
+
+        /****************************************/
+        /* PRINT Edges to AST GRAPHVIZ DOT file */
+        /****************************************/
+        if (var_dec != null) AST_GRAPHVIZ.getInstance().logEdge(SerialNumber, var_dec.SerialNumber);
+    }
 }
