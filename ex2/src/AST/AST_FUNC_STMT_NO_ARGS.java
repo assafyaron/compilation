@@ -15,7 +15,7 @@ public class AST_FUNC_STMT_NO_ARGS extends AST_FUNC_STMT {
         /***************************************/
         /* PRINT CORRESPONDING DERIVATION RULE */
         /***************************************/
-        System.out.println("====================== funcStmt -> ID:name LPAREN RPAREN SEMICOLON\n");
+        System.out.println("====================== funcStmt -> ID( %s ) LPAREN RPAREN SEMICOLON\n", name);
 
         /*******************************/
         /* COPY INPUT DATA MEMBERS ... */
