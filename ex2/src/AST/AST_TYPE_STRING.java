@@ -19,15 +19,13 @@ public class AST_TYPE_STRING extends AST_TYPE
 
     }
 
-    /***************************************************/
-    /* The printing message for a TYPE_STRING AST node */
-    /***************************************************/
+
     public void PrintMe()
     {
         /*********************************/
-        /* AST NODE TYPE = TYPE_STRING */
+        /* AST NODE TYPE = TYPE STRING */
         /*********************************/
-        System.out.println("AST NODE TYPE_STRING");
+        System.out.println("AST NODE TYPE STRING");
 
         /***************************************/
         /* PRINT Node to AST GRAPHVIZ DOT file */
