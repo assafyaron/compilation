@@ -1,4 +1,4 @@
-package AST;
+varpackage AST;
 
 public class AST_EXP_VAR extends AST_EXP
 {
@@ -26,7 +26,7 @@ public class AST_EXP_VAR extends AST_EXP
 	}
 	
 	/***********************************************/
-	/* The default message for an exp var AST node */
+	/* The default message for an EXP VAR AST node */
 	/***********************************************/
 	public void PrintMe()
 	{
