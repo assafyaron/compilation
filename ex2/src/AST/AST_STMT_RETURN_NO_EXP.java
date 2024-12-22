@@ -20,9 +20,6 @@ public class AST_STMT_RETURN_NO_EXP extends AST_STMT
 
     }
 
-    /***************************************************/
-    /* The printing message for a return statement AST node */
-    /***************************************************/
     public void PrintMe()
     {
         /*********************************/
