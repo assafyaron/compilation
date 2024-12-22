@@ -37,9 +37,9 @@ public class AST_EXP_ARGUMENTS extends AST_Node
 	public void PrintMe()
 	{
 		/**************************************/
-		/* AST NODE TYPE = AST EXP ARGS */
+		/* AST NODE TYPE = AST EXP ARGUMENTS */
 		/**************************************/
-		System.out.print("AST NODE EXP ARGS\n");
+		System.out.print("AST NODE EXP ARGUMENTS\n");
 
 		/*************************************/
 		/* RECURSIVELY PRINT HEAD + TAIL ... */
@@ -52,7 +52,7 @@ public class AST_EXP_ARGUMENTS extends AST_Node
 		/**********************************/
 		AST_GRAPHVIZ.getInstance().logNode(
 			SerialNumber,
-			"EXP\ARGS\n");
+			"EXP\ARGUMENTS\n");
 		
 		/****************************************/
 		/* PRINT Edges to AST GRAPHVIZ DOT file */
