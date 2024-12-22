@@ -29,13 +29,10 @@ public class AST_CLASS_DEC_EXTENDS extends AST_CLASS_DEC
         this.cFR = cFR;
     }
 
-    /***************************************************/
-    /* The printing message for a class declaration with inheritance AST node */
-    /***************************************************/
     public void PrintMe()
     {
         /*********************************/
-        /* AST NODE TYPE = CLASSDEC INHERITANCE */
+        /* AST NODE TYPE = CLASS DEC EXTENDS */
         /*********************************/
         System.out.println("AST NODE CLASS DECLARATION EXTENDS");
 
@@ -51,7 +48,7 @@ public class AST_CLASS_DEC_EXTENDS extends AST_CLASS_DEC
         /***************************************/
         AST_GRAPHVIZ.getInstance().logNode(
             SerialNumber,
-            String.format("CLASS_DEC\nExtends\n...->%s", name1));
+            String.format("CLASS_DEC\nEXTENDS\n...->%s", name1));
 
         /****************************************/
         /* PRINT Edges to AST GRAPHVIZ DOT file */
