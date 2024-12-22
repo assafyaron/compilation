@@ -25,18 +25,15 @@ public class AST_STMT_VAR_DEC extends AST_STMT
         this.var_dec = var_dec;
     }
 
-    /***************************************************/
-    /* The printing message for a variable declaration statement AST node */
-    /***************************************************/
     public void PrintMe()
     {
         /*********************************/
-        /* AST NODE TYPE = STATEMENT VARIABLE DECLARATION */
+        /* AST NODE TYPE = STMT VAR DEC */
         /*********************************/
-        System.out.println("AST NODE STATEMENT VARIABLE DECLARATION");
+        System.out.println("AST NODE STMT VAR DEC");
 
         /******************************************/
-        /* RECURSIVELY PRINT varDec ... */
+        /* RECURSIVELY PRINT var_dec ... */
         /******************************************/
         if (var_dec != null) var_dec.PrintMe();
 
@@ -45,7 +42,7 @@ public class AST_STMT_VAR_DEC extends AST_STMT
         /***************************************/
         AST_GRAPHVIZ.getInstance().logNode(
             SerialNumber,
-            "STATEMENT\nVARIABLE DECLARATION");
+            "STATEMENT\nVAR DEC");
 
         /****************************************/
         /* PRINT Edges to AST GRAPHVIZ DOT file */
