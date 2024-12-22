@@ -19,7 +19,7 @@ public class AST_FUNCTION_VAR_DOT_ARGS extends AST_FUNCTION
         /***************************************/
         /* PRINT CORRESPONDING DERIVATION RULE */
         /***************************************/
-        System.out.format("====================== FUNCTION -> FUNCTION VAR DOT NO ARGS\n");
+        System.out.format("====================== FUNCTION -> FUNCTION VAR DOT ARGS\n");
 
         /*******************************/
         /* COPY INPUT DATA MEMBERS ... */
@@ -32,9 +32,9 @@ public class AST_FUNCTION_VAR_DOT_ARGS extends AST_FUNCTION
     public void PrintMe()
     {
         /*********************************/
-        /* AST NODE TYPE = FUNCTION VAR DOT NO ARGS */
+        /* AST NODE TYPE = FUNCTION VAR DOT ARGS */
         /*********************************/
-        System.out.println("AST NODE FUNCTION VAR DOT NO ARGS");
+        System.out.println("AST NODE FUNCTION VAR DOT ARGS");
 
         /******************************************/
         /* RECURSIVELY PRINT v and name */
