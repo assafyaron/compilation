@@ -48,7 +48,7 @@ public class AST_STMT_WHILE extends AST_STMT
         /***************************************/
         AST_GRAPHVIZ.getInstance().logNode(
             SerialNumber,
-            "STMT WHILE");
+            "STMT\nWHILE");
 
         /****************************************/
         /* PRINT Edges to AST GRAPHVIZ DOT file */
