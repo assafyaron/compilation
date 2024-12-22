@@ -2,13 +2,13 @@ package AST;
 
 public class AST_STMT_ASSIGN_NEW extends AST_STMT
 {
-    public AST_VAR var;
-    public AST_NEW_EXP newExp;
+    public AST_VAR v;
+    public AST_NEW_EXP new_exp;
 
     /******************/
     /* CONSTRUCTOR(S) */
     /******************/
-    public AST_STMT_ASSIGN_NEW(AST_VAR var, AST_NEW_EXP newExp)
+    public AST_STMT_ASSIGN_NEW(AST_VAR v, AST_NEW_EXP new_exp)
     {
         /******************************/
         /* SET A UNIQUE SERIAL NUMBER */
@@ -23,8 +23,8 @@ public class AST_STMT_ASSIGN_NEW extends AST_STMT
         /*******************************/
         /* COPY INPUT DATA MEMBERS ... */
         /*******************************/
-        this.var = var;
-        this.newExp = newExp;
+        this.var = v;
+        this.newExp = new_exp;
     }
 
     /***************************************************/
@@ -38,10 +38,10 @@ public class AST_STMT_ASSIGN_NEW extends AST_STMT
         System.out.println("AST NODE STATEMENT ASSIGNMENT NEW EXPRESSION");
 
         /******************************************/
-        /* RECURSIVELY PRINT var and newExp ... */
+        /* RECURSIVELY PRINT v and new_exp ... */
         /******************************************/
-        if (var != null) var.PrintMe();
-        if (newExp != null) newExp.PrintMe();
+        if (v != null) v.PrintMe();
+        if (new_exp != null) new_exp.PrintMe();
 
         /***************************************/
         /* PRINT Node to AST GRAPHVIZ DOT file */
@@ -53,7 +53,7 @@ public class AST_STMT_ASSIGN_NEW extends AST_STMT
         /****************************************/
         /* PRINT Edges to AST GRAPHVIZ DOT file */
         /****************************************/
-        if (var != null) AST_GRAPHVIZ.getInstance().logEdge(SerialNumber, var.SerialNumber);
-        if (newExp != null) AST_GRAPHVIZ.getInstance().logEdge(SerialNumber, newExp.SerialNumber);
+        if (v != null) AST_GRAPHVIZ.getInstance().logEdge(SerialNumber, v.SerialNumber);
+        if (new_exp != null) AST_GRAPHVIZ.getInstance().logEdge(SerialNumber, new_exp.SerialNumber);
     }
 }
