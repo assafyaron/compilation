@@ -17,7 +17,7 @@ public class AST_NEW_TYPE extends AST_NEW_EXP
         /***************************************/
         /* PRINT CORRESPONDING DERIVATION RULE */
         /***************************************/
-        System.out.println("====================== NEW EXP-> NEW TYPE\n");
+        System.out.println("====================== newExp-> NEW type\n");
 
         /*******************************/
         /* COPY INPUT DATA MEMBERS ... */
@@ -29,7 +29,7 @@ public class AST_NEW_TYPE extends AST_NEW_EXP
     public void PrintMe()
     {
         /*********************************/
-        /* AST NODE TYPE = NEW EXP */
+        /* AST NODE TYPE = NEW TYPE */
         /*********************************/
         System.out.println("AST NODE NEW TYPE");
 
