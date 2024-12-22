@@ -2,13 +2,13 @@ package AST;
 
 public class AST_VAR_DEC_NO_ARGS extends AST_VAR_DEC
 {
-    public AST_TYPE type;
+    public AST_TYPE t;
     public String name;
 
     /******************/
     /* CONSTRUCTOR(S) */
     /******************/
-    public AST_VAR_DEC_NO_ARGS(AST_TYPE type, String name)
+    public AST_VAR_DEC_NO_ARGS(AST_TYPE t, String name)
     {
         /******************************/
         /* SET A UNIQUE SERIAL NUMBER */
@@ -23,8 +23,34 @@ public class AST_VAR_DEC_NO_ARGS extends AST_VAR_DEC
         /*******************************/
         /* COPY INPUT DATA MEMBERS ... */
         /*******************************/
-        this.type = type;
+        this.t = t;
         this.name = name;
+    }
+
+    public void PrintMe()
+    {
+        /*********************************/
+        /* AST NODE TYPE = VAR DEC NO ARGS */
+        /*********************************/
+        System.out.println("AST NODE VAR DEC NO ARGS");
+
+        /******************************************/
+        /* RECURSIVELY PRINT typAndId ... */
+        /******************************************/
+        if (t != null) t.PrintMe();
+        
+
+        /***************************************/
+        /* PRINT Node to AST GRAPHVIZ DOT file */
+        /***************************************/
+        AST_GRAPHVIZ.getInstance().logNode(
+            SerialNumber,
+            "VAR DEC\nNO ARGS");
+
+        /****************************************/
+        /* PRINT Edges to AST GRAPHVIZ DOT file */
+        /****************************************/
+        if (t != null) AST_GRAPHVIZ.getInstance().logEdge(SerialNumber, t.SerialNumber);
     }
 
 }
