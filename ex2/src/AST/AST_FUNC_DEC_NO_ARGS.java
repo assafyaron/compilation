@@ -19,7 +19,7 @@ public class AST_FUNC_DEC_NO_ARGS extends AST_FUNC_DEC
         /***************************************/
         /* PRINT CORRESPONDING DERIVATION RULE */
         /***************************************/
-        System.out.format("====================== funcDec -> typeID LPAREN RPAREN LBRACE stmtList RBRACE\n");
+        System.out.format("====================== funcDec -> type ID( %s ) LPAREN RPAREN LBRACE stmtList RBRACE\n", name);
 
         /*******************************/
         /* COPY INPUT DATA MEMBERS ... */
@@ -50,7 +50,7 @@ public class AST_FUNC_DEC_NO_ARGS extends AST_FUNC_DEC
         /***************************************/
         AST_GRAPHVIZ.getInstance().logNode(
             SerialNumber,
-            "FUNC DEC\nNO ARGS");
+            "FUNC DEC\nNO ARGS\nFunction name:" + name);
 
         /****************************************/
         /* PRINT Edges to AST GRAPHVIZ DOT file */
