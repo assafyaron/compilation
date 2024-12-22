@@ -43,6 +43,7 @@ public class AST_FUNC_DEC_ARGS_LIST extends AST_Node
         	/* RECURSIVELY PRINT t and args ... */
         	/******************************************/
         	if (t != null) t.PrintMe();
+		System.out.format("Function name( %s )\n", name);
         	if (funcArgs != null) funcArgs.PrintMe();
 
         	/***************************************/
