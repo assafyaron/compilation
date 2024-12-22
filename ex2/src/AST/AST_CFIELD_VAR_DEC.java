@@ -25,18 +25,16 @@ public class AST_CFIELD_VAR_DEC extends AST_CFIELD
 		this.var_dec = var_dec;
 	}
 
-	/************************************************/
-	/* The printing message for a class field declaration AST node */
-	/************************************************/
+
 	 public void PrintMe()
     {
         /*********************************/
         /* AST NODE TYPE = CLASS FIELD VARIABLE DECLARATION */
         /*********************************/
-        System.out.println("AST NODE CLASS FIELD VARIABLE DECLARATION");
+        System.out.println("AST NODE CFIELD VAR DEC");
 
         /******************************************/
-        /* RECURSIVELY PRINT varDec ... */
+        /* RECURSIVELY PRINT var_dec ... */
         /******************************************/
         if (var_dec != null) var_dec.PrintMe();
 
