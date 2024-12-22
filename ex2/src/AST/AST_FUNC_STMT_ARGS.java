@@ -18,7 +18,7 @@ public class AST_FUNC_STMT_ARGS extends AST_FUNC_STMT
         /***************************************/
         /* PRINT CORRESPONDING DERIVATION RULE */
         /***************************************/
-        System.out.println("====================== FUNC STMT -> var DOT ID LPAREN RPAREN SEMICOLON\n");
+        System.out.println("====================== funcStmt -> var DOT ID LPAREN RPAREN SEMICOLON\n");
 
         /*******************************/
         /* COPY INPUT DATA MEMBERS ... */
