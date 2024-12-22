@@ -21,7 +21,7 @@ public class AST_STMT_ASSIGN extends AST_STMT
 		/***************************************/
 		/* PRINT CORRESPONDING DERIVATION RULE */
 		/***************************************/
-		System.out.print("====================== stmt -> var ASSIGN exp SEMICOLON\n");
+		System.out.print("====================== STMT -> STMT ASSIGN\n");
 
 		/*******************************/
 		/* COPY INPUT DATA NENBERS ... */
@@ -30,15 +30,12 @@ public class AST_STMT_ASSIGN extends AST_STMT
 		this.exp = exp;
 	}
 
-	/*********************************************************/
-	/* The printing message for an assign statement AST node */
-	/*********************************************************/
 	public void PrintMe()
 	{
 		/********************************************/
-		/* AST NODE TYPE = AST ASSIGNMENT STATEMENT */
+		/* AST NODE TYPE = AST STMT ASSIGN */
 		/********************************************/
-		System.out.print("AST NODE ASSIGN STMT\n");
+		System.out.print("AST NODE STMT ASSIGN\n");
 
 		/***********************************/
 		/* RECURSIVELY PRINT VAR + EXP ... */
@@ -51,7 +48,7 @@ public class AST_STMT_ASSIGN extends AST_STMT
 		/***************************************/
 		AST_GRAPHVIZ.getInstance().logNode(
 			SerialNumber,
-			"ASSIGN\nleft := right\n");
+			"STMT\nASSIGN\n");
 		
 		/****************************************/
 		/* PRINT Edges to AST GRAPHVIZ DOT file */
