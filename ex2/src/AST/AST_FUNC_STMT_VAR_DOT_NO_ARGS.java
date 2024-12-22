@@ -18,7 +18,7 @@ public class AST_FUNC_STMT_VAR_DOT_NO_ARGS extends AST_FUNC_STMT
         /***************************************/
         /* PRINT CORRESPONDING DERIVATION RULE */
         /***************************************/
-        System.out.format("====================== callFunc -> var Dot ID LPAREN RPAREN\n");
+        System.out.format("====================== FUNC STMT-> FUNC STMT VAR DOT NO ARGS\n");
 
         /*******************************/
         /* COPY INPUT DATA MEMBERS ... */
@@ -27,28 +27,26 @@ public class AST_FUNC_STMT_VAR_DOT_NO_ARGS extends AST_FUNC_STMT
         this.name = name;
     }
 
-    /***************************************************/
-    /* The printing message for a function call with variable and dot without arguments AST node */
-    /***************************************************/
+
     public void PrintMe()
     {
         /*********************************/
-        /* AST NODE TYPE = FUNCTION CALL WITH VAR AND DOT WITHOUT ARGUMENTS */
+        /* AST NODE TYPE = FUNC STMT VAR DOT NO ARGS */
         /*********************************/
-        System.out.println("AST NODE FUNCTION CALL WITH VAR AND DOT WITHOUT ARGUMENTS");
+        System.out.println("AST NODE FUNC STMT VAR DOT NO ARGS");
 
         /******************************************/
         /* RECURSIVELY PRINT var and name ... */
         /******************************************/
         if (var != null) var.PrintMe();
-        System.out.println("Function Name: " + name);
+        System.out.println("FUNCTION: " + name);
 
         /***************************************/
         /* PRINT Node to AST GRAPHVIZ DOT file */
         /***************************************/
         AST_GRAPHVIZ.getInstance().logNode(
             SerialNumber,
-            "FUNCTION CALL WITH VAR AND DOT WITHOUT ARGUMENTS\nFunction Name: " + name);
+            "FUNC STMT VAR DOT NO ARGS\nFUNCTION: " + name);
 
         /****************************************/
         /* PRINT Edges to AST GRAPHVIZ DOT file */
