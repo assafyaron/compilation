@@ -25,13 +25,10 @@ public class AST_EXP_VAR extends AST_EXP
 		this.var = var;
 	}
 	
-	/***********************************************/
-	/* The default message for an EXP VAR AST node */
-	/***********************************************/
 	public void PrintMe()
 	{
 		/************************************/
-		/* AST NODE TYPE = EXP VAR AST NODE */
+		/* AST NODE TYPE = EXP VAR */
 		/************************************/
 		System.out.print("AST NODE EXP VAR\n");
 
