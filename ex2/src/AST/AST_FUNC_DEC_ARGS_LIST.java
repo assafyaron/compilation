@@ -51,7 +51,7 @@ public class AST_FUNC_DEC_ARGS_LIST extends AST_Node
         	/***************************************/
         	AST_GRAPHVIZ.getInstance().logNode(
             		SerialNumber,
-            		"FUNC DEC ARGS LIST");
+            		"FUNC DEC ARGS LIST\n");
 
         	/****************************************/
         	/* PRINT Edges to AST GRAPHVIZ DOT file */
