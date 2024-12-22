@@ -17,7 +17,7 @@ public class AST_EXP_MINUS_INT extends AST_EXP
 		/***************************************/
 		/* PRINT CORRESPONDING DERIVATION RULE */
 		/***************************************/
-		System.out.format("====================== exp -> MINUS INT( %d )\n", 0-i);
+		System.out.format("====================== exp -> MINUS INT( %d )\n");
 
 		/*******************************/
 		/* COPY INPUT DATA NENBERS ... */
@@ -26,14 +26,20 @@ public class AST_EXP_MINUS_INT extends AST_EXP
 	}
 
 	/************************************************/
-	/* The printing message for an INT EXP AST node */
+	/* The printing message for an EXP MINUS INT AST node */
 	/************************************************/
 	public void PrintMe()
 	{
 		/*******************************/
-		/* AST NODE TYPE = AST INT EXP */
+		/* AST NODE TYPE = EXP MINUS INT */
 		/*******************************/
-		System.out.format("AST NODE INT( %d )\n",i);
+
+		System.out.println("AST NODE EXP MINUS INT");
+
+        	/******************************************/
+        	/* PRINT i ... */
+        	/******************************************/
+		 System.out.format("INT VALUE( %d )\n", i);
 
 		/*********************************/
 		/* Print to AST GRAPHIZ DOT file */
