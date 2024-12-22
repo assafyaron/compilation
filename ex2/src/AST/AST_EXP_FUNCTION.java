@@ -27,20 +27,17 @@ public class AST_EXP_FUNCTION extends AST_EXP
 
     }
 
-    /***************************************************/
-    /* The printing message for a class declaration with inheritance AST node */
-    /***************************************************/
+
     public void PrintMe()
     {
         /*********************************/
-        /* AST NODE TYPE = CLASS DEC INHERITANCE */
+        /* AST NODE TYPE = EXP FUNCTION CALL */
         /*********************************/
-        System.out.println("AST NODE CLASS DEC INHERITANCE");
+        System.out.println("AST NODE exp FUNCTION CALL");
 
         /******************************************/
-        /* PRINT class name1, name2, and clist rec... */
+        /* RECURSIVELY PRINT callFunc ... */
         /******************************************/
-        System.out.format("Function\n", f);
         if (f != null) f.PrintMe();
 
         /***************************************/
@@ -48,7 +45,7 @@ public class AST_EXP_FUNCTION extends AST_EXP
         /***************************************/
         AST_GRAPHVIZ.getInstance().logNode(
             SerialNumber,
-            String.format("CLASS DEC\n EXTENDS\n...->%s", f));
+            "exp\nFUNCTION CALL");
 
         /****************************************/
         /* PRINT Edges to AST GRAPHVIZ DOT file */
