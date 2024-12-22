@@ -17,7 +17,7 @@ public class AST_STMT_FUNC_STMT extends AST_STMT
         /***************************************/
         /* PRINT CORRESPONDING DERIVATION RULE */
         /***************************************/
-        System.out.println("====================== stmt -> callFunc SEMICOLON");
+        System.out.println("====================== STMT -> FUNC STMT");
 
         /*******************************/
         /* COPY INPUT DATA MEMBERS ... */
@@ -25,18 +25,15 @@ public class AST_STMT_FUNC_STMT extends AST_STMT
         this.f = f;
     }
 
-    /***************************************************/
-    /* The printing message for a function call statement AST node */
-    /***************************************************/
     public void PrintMe()
     {
         /*********************************/
-        /* AST NODE TYPE = FUNCTION CALL STATEMENT */
+        /* AST NODE TYPE = STMT FUNC STMT */
         /*********************************/
-        System.out.println("AST NODE FUNCTION CALL STATEMENT");
+        System.out.println("AST NODE STMT FUNC STMT");
 
         /******************************************/
-        /* RECURSIVELY PRINT callFunc ... */
+        /* RECURSIVELY PRINT  ... */
         /******************************************/
         if (f != null) f.PrintMe();
 
@@ -45,7 +42,7 @@ public class AST_STMT_FUNC_STMT extends AST_STMT
         /***************************************/
         AST_GRAPHVIZ.getInstance().logNode(
             SerialNumber,
-            "FUNCTION CALL STATEMENT");
+            "FUNC STMT");
 
         /****************************************/
         /* PRINT Edges to AST GRAPHVIZ DOT file */
