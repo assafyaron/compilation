@@ -20,7 +20,7 @@ public class AST_FUNC_DEC_ARGS extends AST_FUNC_DEC
         /***************************************/
         /* PRINT CORRESPONDING DERIVATION RULE */
         /***************************************/
-        System.out.format("====================== FUNC DEC -> FUNC DEC ARGS\n");
+        System.out.format("====================== FUNC DEC -> typeID LPAREN funcArgs RPAREN LBRACE stmtList RBRACE\n");
 
         /*******************************/
         /* COPY INPUT DATA MEMBERS ... */
@@ -42,6 +42,7 @@ public class AST_FUNC_DEC_ARGS extends AST_FUNC_DEC
         /* RECURSIVELY PRINT t, args, and body ... */
         /******************************************/
         if (t != null) t.PrintMe();
+        System.out.println("AST NODE FUNC DEC ARGS");
         if (args != null) args.PrintMe();
         if (body != null) body.PrintMe();
 
