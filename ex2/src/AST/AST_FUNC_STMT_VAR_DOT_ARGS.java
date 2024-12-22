@@ -2,14 +2,14 @@ package AST;
 
 public class AST_FUNC_STMT_VAR_DOT_ARGS extends AST_FUNC_STMT
 {
-    public AST_VAR var;
+    public AST_VAR v;
     public String name;
     public AST_EXP_ARGUMENTS eA;
 
     /******************/
     /* CONSTRUCTOR(S) */
     /******************/
-    public AST_FUNC_STMT_VAR_DOT_ARGS(AST_VAR var, String name, AST_EXP_ARGUMENTS eA)
+    public AST_FUNC_STMT_VAR_DOT_ARGS(AST_VAR v, String name, AST_EXP_ARGUMENTS eA)
     {
         /******************************/
         /* SET A UNIQUE SERIAL NUMBER */
@@ -24,7 +24,7 @@ public class AST_FUNC_STMT_VAR_DOT_ARGS extends AST_FUNC_STMT
         /*******************************/
         /* COPY INPUT DATA MEMBERS ... */
         /*******************************/
-        this.var = var;
+        this.v = v;
         this.name = name;
         this.eA = eA;
     }
@@ -38,9 +38,9 @@ public class AST_FUNC_STMT_VAR_DOT_ARGS extends AST_FUNC_STMT
         System.out.println("AST NODE FUNC STMT VAR DOT ARGS");
 
         /******************************************/
-        /* RECURSIVELY PRINT var and name */
+        /* RECURSIVELY PRINT v and name */
         /******************************************/
-        if (var != null) var.PrintMe();
+        if (v != null) v.PrintMe();
         System.out.println("Function name: " + name);
 
         /******************************************/
@@ -58,7 +58,7 @@ public class AST_FUNC_STMT_VAR_DOT_ARGS extends AST_FUNC_STMT
         /****************************************/
         /* PRINT Edges to AST GRAPHVIZ DOT file */
         /****************************************/
-        if (var != null) AST_GRAPHVIZ.getInstance().logEdge(SerialNumber, var.SerialNumber);
+        if (v != null) AST_GRAPHVIZ.getInstance().logEdge(SerialNumber, v.SerialNumber);
         if (eA != null) AST_GRAPHVIZ.getInstance().logEdge(SerialNumber, eA.SerialNumber);
     }
 }
