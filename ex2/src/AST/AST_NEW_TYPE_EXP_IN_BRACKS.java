@@ -18,7 +18,7 @@ public class AST_NEW_TYPE_EXP_IN_BRACKS extends AST_NEW_EXP
         /***************************************/
         /* PRINT CORRESPONDING DERIVATION RULE */
         /***************************************/
-        System.out.println("====================== NEW EXP -> NEW TYPE EXP IN BRACKS\n");
+        System.out.println("====================== newExp -> NEW type LBRACK exp RBRACK");
 
         /*******************************/
         /* COPY INPUT DATA MEMBERS ... */
