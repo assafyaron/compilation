@@ -5,13 +5,13 @@ public class AST_STMT_ASSIGN extends AST_STMT
 	/***************/
 	/*  var := exp */
 	/***************/
-	public AST_VAR var;
-	public AST_EXP exp;
+	public AST_VAR v;
+	public AST_EXP e;
 
 	/*******************/
 	/*  CONSTRUCTOR(S) */
 	/*******************/
-	public AST_STMT_ASSIGN(AST_VAR var,AST_EXP exp)
+	public AST_STMT_ASSIGN(AST_VAR v,AST_EXP e)
 	{
 		/******************************/
 		/* SET A UNIQUE SERIAL NUMBER */
@@ -21,13 +21,13 @@ public class AST_STMT_ASSIGN extends AST_STMT
 		/***************************************/
 		/* PRINT CORRESPONDING DERIVATION RULE */
 		/***************************************/
-		System.out.print("====================== STMT -> STMT ASSIGN\n");
+		System.out.print("====================== stmt-> var ASSIGN exp SEMICOLON\n");
 
 		/*******************************/
 		/* COPY INPUT DATA NENBERS ... */
 		/*******************************/
-		this.var = var;
-		this.exp = exp;
+		this.var = v;
+		this.exp = e;
 	}
 
 	public void PrintMe()
@@ -40,8 +40,8 @@ public class AST_STMT_ASSIGN extends AST_STMT
 		/***********************************/
 		/* RECURSIVELY PRINT VAR + EXP ... */
 		/***********************************/
-		if (var != null) var.PrintMe();
-		if (exp != null) exp.PrintMe();
+		if (v != null) v.PrintMe();
+		if (e != null) e.PrintMe();
 
 		/***************************************/
 		/* PRINT Node to AST GRAPHVIZ DOT file */
@@ -53,7 +53,7 @@ public class AST_STMT_ASSIGN extends AST_STMT
 		/****************************************/
 		/* PRINT Edges to AST GRAPHVIZ DOT file */
 		/****************************************/
-		AST_GRAPHVIZ.getInstance().logEdge(SerialNumber,var.SerialNumber);
-		AST_GRAPHVIZ.getInstance().logEdge(SerialNumber,exp.SerialNumber);
+		AST_GRAPHVIZ.getInstance().logEdge(SerialNumber,v.SerialNumber);
+		AST_GRAPHVIZ.getInstance().logEdge(SerialNumber,e.SerialNumber);
 	}
 }
