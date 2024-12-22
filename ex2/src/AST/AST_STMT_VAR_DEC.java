@@ -42,7 +42,7 @@ public class AST_STMT_VAR_DEC extends AST_STMT
         /***************************************/
         AST_GRAPHVIZ.getInstance().logNode(
             SerialNumber,
-            "STATEMENT\nVAR DEC");
+            "STMT\nVAR DEC");
 
         /****************************************/
         /* PRINT Edges to AST GRAPHVIZ DOT file */
