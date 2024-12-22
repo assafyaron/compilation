@@ -26,4 +26,29 @@ public class AST_DEC_FUNC_DEC extends AST_DEC
 
     }
 
+    public void PrintMe()
+    {
+        /*********************************/
+        /* AST NODE TYPE = FUN DEC*/
+        /*********************************/
+        System.out.println("AST NODE FUNC DEC");
+
+        /******************************************/
+        /* RECURSIVELY PRINT func_dec ... */
+        /******************************************/
+        if (func_dec != null) func_dec.PrintMe();
+
+        /***************************************/
+        /* PRINT Node to AST GRAPHVIZ DOT file */
+        /***************************************/
+        AST_GRAPHVIZ.getInstance().logNode(
+            SerialNumber,
+            "DEC\nFUNC DEC");
+
+        /****************************************/
+        /* PRINT Edges to AST GRAPHVIZ DOT file */
+        /****************************************/
+        if (func_dec != null) AST_GRAPHVIZ.getInstance().logEdge(SerialNumber, func_dec.SerialNumber);
+    }
+
 }
