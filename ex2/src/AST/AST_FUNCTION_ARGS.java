@@ -21,7 +21,7 @@ public class AST_FUNCTION_ARGS extends AST_FUNCTION
         /***************************************/
         /* PRINT CORRESPONDING DERIVATION RULE */
         /***************************************/
-        System.out.format("====================== function -> ID LPAREN expArgs RPAREN\n");
+        System.out.format("====================== function -> ID( %s ) LPAREN expArgs RPAREN\n", name);
 
         /*******************************/
         /* COPY INPUT DATA MEMBERS ... */
