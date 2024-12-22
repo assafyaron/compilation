@@ -27,18 +27,15 @@ public class AST_CLASS_DEC_SIMPLE extends AST_CLASS_DEC
         this.cFR = cFR;
     }
 
-    /***************************************************/
-    /* The printing message for a simple class declaration AST node */
-    /***************************************************/
     public void PrintMe()
     {
         /*********************************/
-        /* AST NODE TYPE = CLASSDEC SIMPLE */
+        /* AST NODE TYPE = CLASS DEC SIMPLE */
         /*********************************/
-        System.out.println("AST NODE CLASS DECLARATION SIMPLE");
+        System.out.println("AST NODE CLASS DEC SIMPLE");
 
         /******************************************/
-        /* PRINT class name and body ... */
+        /* PRINT class name and cFR ... */
         /******************************************/
         System.out.format("CLASS NAME( %s )\n", name);
         if (cFR != null) cFR.PrintMe();
@@ -48,7 +45,7 @@ public class AST_CLASS_DEC_SIMPLE extends AST_CLASS_DEC
         /***************************************/
         AST_GRAPHVIZ.getInstance().logNode(
             SerialNumber,
-            String.format("CLASS_DEC\nSIMPLE\n...->%s", name));
+            String.format("CLASS DEC\nSIMPLE\n...->%s", name));
 
         /****************************************/
         /* PRINT Edges to AST GRAPHVIZ DOT file */
