@@ -2,14 +2,14 @@ package AST;
 
 public class AST_VAR_DEC_NEW_EXP_ARGS extends AST_VAR_DEC
 {
-    public AST_TYPE type;
+    public AST_TYPE t;
     public String name;
-    public AST_NEW_EXP newExp;
+    public AST_NEW_EXP new_exp;
 
     /******************/
     /* CONSTRUCTOR(S) */
     /******************/
-    public AST_VAR_DEC_NEW_EXP_ARGS(AST_TYPE type, String name, AST_NEW_EXP newExp)
+    public AST_VAR_DEC_NEW_EXP_ARGS(AST_TYPE t, String name, AST_NEW_EXP new_exp)
     {
         /******************************/
         /* SET A UNIQUE SERIAL NUMBER */
@@ -24,37 +24,34 @@ public class AST_VAR_DEC_NEW_EXP_ARGS extends AST_VAR_DEC
         /*******************************/
         /* COPY INPUT DATA MEMBERS ... */
         /*******************************/
-        this.type = type;
+        this.t = t;
         this.name = name;
-        this.newExp = newExp;
+        this.new_exp = new_exp;
     }
 
-    /***************************************************/
-    /* The printing message for a variable declaration with type, ID, and new expression AST node */
-    /***************************************************/
     public void PrintMe()
     {
         /*********************************/
-        /* AST NODE TYPE = VARDEC TYPE AND ID NEW EXP */
+        /* AST NODE TYPE = VAR DEC NEW EXP */
         /*********************************/
-        System.out.println("AST NODE VARDEC TYPE AND ID NEW EXP");
+        System.out.println("AST NODE VAR DEC NEW EXP");
 
         /******************************************/
-        /* RECURSIVELY PRINT typAndId and nex ... */
+        /* RECURSIVELY PRINT t and new_exp ... */
         /******************************************/
-        if (type != null) type.PrintMe();
-        if (newExp != null) newExp.PrintMe();
+        if (t != null) t.PrintMe();
+        if (new_exp != null) new_exp.PrintMe();
         /***************************************/
         /* PRINT Node to AST GRAPHVIZ DOT file */
         /***************************************/
         AST_GRAPHVIZ.getInstance().logNode(
             SerialNumber,
-            "VARDEC\nTYPE\nAND\nID\nNEW EXP");
+            "VAR DEC\nNEW EXP");
 
         /****************************************/
         /* PRINT Edges to AST GRAPHVIZ DOT file */
         /****************************************/
-        if (type != null) AST_GRAPHVIZ.getInstance().logEdge(SerialNumber, type.SerialNumber);
-        if (newExp != null) AST_GRAPHVIZ.getInstance().logEdge(SerialNumber, newExp.SerialNumber);
+        if (t != null) AST_GRAPHVIZ.getInstance().logEdge(SerialNumber, t.SerialNumber);
+        if (new_exp != null) AST_GRAPHVIZ.getInstance().logEdge(SerialNumber, new_exp.SerialNumber);
     }
 }
