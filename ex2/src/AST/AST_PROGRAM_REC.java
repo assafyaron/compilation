@@ -2,7 +2,7 @@ package AST;
 
 public class AST_PROGRAM_REC extends AST_PROGRAM {
 
-    /****************/
+   	/****************/
 	/* DATA MEMBERS */
 	/****************/
     public AST_DEC dec;
@@ -21,8 +21,8 @@ public class AST_PROGRAM_REC extends AST_PROGRAM {
         /***************************************/
         /* PRINT CORRESPONDING DERIVATION RULE */
         /***************************************/
-        if(prog == null) System.out.println("====================== PROGRAM -> DEC\n");
-        else System.out.println("====================== PROGRAM -> DEC PROGRAM\n");
+        if(prog == null) System.out.println("====================== program-> dec\n");
+        else System.out.println("====================== program -> dec program\n");
 
         /*******************************/
         /* COPY INPUT DATA NENBERS ... */
@@ -49,7 +49,7 @@ public class AST_PROGRAM_REC extends AST_PROGRAM {
         /***************************************/
         AST_GRAPHVIZ.getInstance().logNode(
             SerialNumber,
-            "PROGRAM\nDEC");
+            "PROGRAM\nREC");
 
         /****************************************/
         /* PRINT Edges to AST GRAPHVIZ DOT file */
