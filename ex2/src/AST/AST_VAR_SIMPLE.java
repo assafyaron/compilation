@@ -2,9 +2,7 @@ package AST;
 
 public class AST_VAR_SIMPLE extends AST_VAR
 {
-	/************************/
-	/* simple variable name */
-	/************************/
+
 	public String name;
 	
 	/******************/
@@ -28,21 +26,19 @@ public class AST_VAR_SIMPLE extends AST_VAR
 		this.name = name;
 	}
 
-	/**************************************************/
-	/* The printing message for a simple var AST node */
-	/**************************************************/
+
 	public void PrintMe()
 	{
 		/**********************************/
-		/* AST NODE TYPE = AST SIMPLE VAR */
+		/* AST NODE TYPE = AST VAR SIMPLE */
 		/**********************************/
-		System.out.format("AST NODE SIMPLE VAR( %s )\n",name);
+		System.out.format("AST NODE VAR SIMPLE( %s )\n",name);
 
 		/*********************************/
 		/* Print to AST GRAPHIZ DOT file */
 		/*********************************/
 		AST_GRAPHVIZ.getInstance().logNode(
 			SerialNumber,
-			String.format("SIMPLE\nVAR\n(%s)",name));
+			String.format("VAR\nSIMPLE\n(%s)",name));
 	}
 }
