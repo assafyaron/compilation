@@ -34,7 +34,7 @@ public class AST_EXP_MINUS_INT extends AST_EXP
 		/* AST NODE TYPE = EXP MINUS INT */
 		/*******************************/
 
-		System.out.println("AST NODE EXP MINUS INT");
+		System.out.println("AST NODE EXP MINUS INT\n");
 
         	/******************************************/
         	/* PRINT i ... */
@@ -46,6 +46,6 @@ public class AST_EXP_MINUS_INT extends AST_EXP
 		/*********************************/
 		AST_GRAPHVIZ.getInstance().logNode(
 			SerialNumber,
-			String.format("INT(%d)",i));
+            S		tring.format("EXP\MINUS INT\n(%d)",i));
 	}
 }
