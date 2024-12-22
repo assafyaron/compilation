@@ -39,9 +39,10 @@ public class AST_FUNC_DEC_NO_ARGS extends AST_FUNC_DEC
         System.out.println("AST NODE FUNC DEC NO ARGS");
 
         /******************************************/
-        /* RECURSIVELY PRINT t and body ... */
+        /* RECURSIVELY PRINT t, name and body ... */
         /******************************************/
         if (t != null) t.PrintMe();
+        System.out.format("Function name( %s )\n", name);
         if (body != null) body.PrintMe();
 
         /***************************************/
