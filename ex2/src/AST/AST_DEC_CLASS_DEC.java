@@ -26,4 +26,29 @@ public class AST_DEC_CLASS_DEC extends AST_DEC
 
     }
 
+    public void PrintMe()
+    {
+        /*********************************/
+        /* AST NODE TYPE = CLASS DECLARATION */
+        /*********************************/
+        System.out.println("AST NODE CLASS DEC");
+
+        /******************************************/
+        /* RECURSIVELY PRINT class_dec ... */
+        /******************************************/
+        if (class_dec != null) class_dec.PrintMe();
+
+        /***************************************/
+        /* PRINT Node to AST GRAPHVIZ DOT file */
+        /***************************************/
+        AST_GRAPHVIZ.getInstance().logNode(
+            SerialNumber,
+            "DEC\nCLASS DEC");
+
+        /****************************************/
+        /* PRINT Edges to AST GRAPHVIZ DOT file */
+        /****************************************/
+        if (class_dec != null) AST_GRAPHVIZ.getInstance().logEdge(SerialNumber, class_dec.SerialNumber);
+    }
+
 }
