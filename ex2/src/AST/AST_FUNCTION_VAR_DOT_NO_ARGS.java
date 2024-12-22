@@ -18,7 +18,7 @@ public class AST_FUNCTION_VAR_DOT_NO_ARGS extends AST_FUNCTION
         /***************************************/
         /* PRINT CORRESPONDING DERIVATION RULE */
         /***************************************/
-        System.out.format("====================== function -> varDot ID LPAREN RPAREN\n");
+        System.out.format("====================== function -> varDot ID( %s ) LPAREN RPAREN\n", name);
 
         /*******************************/
         /* COPY INPUT DATA MEMBERS ... */
