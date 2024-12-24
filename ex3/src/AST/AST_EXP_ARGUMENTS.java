@@ -52,7 +52,7 @@ public class AST_EXP_ARGUMENTS extends AST_Node
 		/**********************************/
 		AST_GRAPHVIZ.getInstance().logNode(
 			SerialNumber,
-			"EXP\ARGUMENTS\n");
+			"EXP\nARGUMENTS\n");
 		
 		/****************************************/
 		/* PRINT Edges to AST GRAPHVIZ DOT file */

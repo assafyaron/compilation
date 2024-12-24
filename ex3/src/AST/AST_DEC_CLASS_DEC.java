@@ -1,7 +1,5 @@
 package AST;
-
 import TYPES.*;
-import SYMBOL_TABLE.*;
 
 public class AST_DEC_CLASS_DEC extends AST_DEC
 {
@@ -54,7 +52,7 @@ public class AST_DEC_CLASS_DEC extends AST_DEC
 			AST_GRAPHVIZ.getInstance().logEdge(SerialNumber,classDec.SerialNumber);
 		} 
 	}
-	
+
 	public TYPE SemantMe()
 	{	
 		if (classDec != null)
