@@ -1,4 +1,5 @@
 package AST;
+import TYPES.*;
 
 public class AST_EXP_BINOP extends AST_EXP
 {
