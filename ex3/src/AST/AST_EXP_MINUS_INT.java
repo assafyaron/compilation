@@ -46,6 +46,6 @@ public class AST_EXP_MINUS_INT extends AST_EXP
 		/*********************************/
 		AST_GRAPHVIZ.getInstance().logNode(
 			SerialNumber,
-            S		tring.format("EXP\MINUS INT\n(%d)",i));
+            String.format("EXP\nMINUS INT\n(%d)",i));
 	}
 }
