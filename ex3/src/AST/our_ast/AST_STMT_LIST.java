@@ -1,5 +1,7 @@
 package AST;
 
+import TYPES.*;
+
 public class AST_STMT_LIST extends AST_Node
 {
 	/****************/
@@ -21,7 +23,7 @@ public class AST_STMT_LIST extends AST_Node
 		/***************************************/
 		/* PRINT CORRESPONDING DERIVATION RULE */
 		/***************************************/
-		if (tail != null) System.out.print("====================== stmts -> stmt stmtList\n");
+		if (tail != null) System.out.print("====================== stmts -> stmt stmts\n");
 		if (tail == null) System.out.print("====================== stmts -> stmt      \n");
 
 		/*******************************/
@@ -31,10 +33,13 @@ public class AST_STMT_LIST extends AST_Node
 		this.tail = tail;
 	}
 
+	/******************************************************/
+	/* The printing message for a statement list AST node */
+	/******************************************************/
 	public void PrintMe()
 	{
 		/**************************************/
-		/* AST NODE TYPE = AST STMT LIST */
+		/* AST NODE TYPE = AST STATEMENT LIST */
 		/**************************************/
 		System.out.print("AST NODE STMT LIST\n");
 
@@ -57,5 +62,12 @@ public class AST_STMT_LIST extends AST_Node
 		if (head != null) AST_GRAPHVIZ.getInstance().logEdge(SerialNumber,head.SerialNumber);
 		if (tail != null) AST_GRAPHVIZ.getInstance().logEdge(SerialNumber,tail.SerialNumber);
 	}
-
+	
+	public TYPE SemantMe()
+	{
+		if (head != null) head.SemantMe();
+		if (tail != null) tail.SemantMe();
+		
+		return null;
+	}
 }
