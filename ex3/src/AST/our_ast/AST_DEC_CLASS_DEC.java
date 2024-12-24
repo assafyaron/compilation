@@ -1,54 +1,83 @@
 package AST;
 
-public class AST_DEC_CLASS_DEC extends AST_DEC
+import TYPES.*;
+import SYMBOL_TABLE.*;
+
+public class AST_DEC_CLASS extends AST_DEC
 {
-    public AST_CLASS_DEC class_dec;
+	/********/
+	/* NAME */
+	/********/
+	public String name;
 
-    /******************/
-    /* CONSTRUCTOR(S) */
-    /******************/
-    public AST_DEC_CLASS_DEC(AST_CLASS_DEC class_dec)
-    {
-        /******************************/
-        /* SET A UNIQUE SERIAL NUMBER */
-        /******************************/
-        SerialNumber = AST_Node_Serial_Number.getFresh();
+	/****************/
+	/* DATA MEMBERS */
+	/****************/
+	public AST_TYPE_NAME_LIST data_members;
+	
+	/******************/
+	/* CONSTRUCTOR(S) */
+	/******************/
+	public AST_DEC_CLASS(String name,AST_TYPE_NAME_LIST data_members)
+	{
+		/******************************/
+		/* SET A UNIQUE SERIAL NUMBER */
+		/******************************/
+		SerialNumber = AST_Node_Serial_Number.getFresh();
+	
+		this.name = name;
+		this.data_members = data_members;
+	}
 
-        /***************************************/
-        /* PRINT CORRESPONDING DERIVATION RULE */
-        /***************************************/
-        System.out.format("====================== dec -> classDec\n");
+	/*********************************************************/
+	/* The printing message for a class declaration AST node */
+	/*********************************************************/
+	public void PrintMe()
+	{
+		/*************************************/
+		/* RECURSIVELY PRINT HEAD + TAIL ... */
+		/*************************************/
+		System.out.format("CLASS DEC = %s\n",name);
+		if (data_members != null) data_members.PrintMe();
+		
+		/***************************************/
+		/* PRINT Node to AST GRAPHVIZ DOT file */
+		/***************************************/
+		AST_GRAPHVIZ.getInstance().logNode(
+			SerialNumber,
+			String.format("CLASS\n%s",name));
+		
+		/****************************************/
+		/* PRINT Edges to AST GRAPHVIZ DOT file */
+		/****************************************/
+		AST_GRAPHVIZ.getInstance().logEdge(SerialNumber,data_members.SerialNumber);		
+	}
+	
+	public TYPE SemantMe()
+	{	
+		/*************************/
+		/* [1] Begin Class Scope */
+		/*************************/
+		SYMBOL_TABLE.getInstance().beginScope();
 
-        /*******************************/
-        /* COPY INPUT DATA MEMBERS ... */
-        /*******************************/
-        this.class_dec = class_dec;
+		/***************************/
+		/* [2] Semant Data Members */
+		/***************************/
+		TYPE_CLASS t = new TYPE_CLASS(null,name,data_members.SemantMe());
 
-    }
+		/*****************/
+		/* [3] End Scope */
+		/*****************/
+		SYMBOL_TABLE.getInstance().endScope();
 
-    public void PrintMe()
-    {
-        /*********************************/
-        /* AST NODE TYPE = CLASS DECLARATION */
-        /*********************************/
-        System.out.println("AST NODE CLASS DEC");
+		/************************************************/
+		/* [4] Enter the Class Type to the Symbol Table */
+		/************************************************/
+		SYMBOL_TABLE.getInstance().enter(name,t);
 
-        /******************************************/
-        /* RECURSIVELY PRINT class_dec ... */
-        /******************************************/
-        if (class_dec != null) class_dec.PrintMe();
-
-        /***************************************/
-        /* PRINT Node to AST GRAPHVIZ DOT file */
-        /***************************************/
-        AST_GRAPHVIZ.getInstance().logNode(
-            SerialNumber,
-            "DEC\nCLASS DEC");
-
-        /****************************************/
-        /* PRINT Edges to AST GRAPHVIZ DOT file */
-        /****************************************/
-        if (class_dec != null) AST_GRAPHVIZ.getInstance().logEdge(SerialNumber, class_dec.SerialNumber);
-    }
-
+		/*********************************************************/
+		/* [5] Return value is irrelevant for class declarations */
+		/*********************************************************/
+		return null;		
+	}
 }
