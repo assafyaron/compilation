@@ -1,7 +1,14 @@
-varpackage AST;
+package AST;
+import TYPES.*;
 
 public class AST_EXP_VAR extends AST_EXP
 {
+
+	public TYPE SemantMe() 
+	{
+		return null;
+	}
+
 	public AST_VAR var;
 
 	/******************/
