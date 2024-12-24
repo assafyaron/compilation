@@ -3,7 +3,7 @@ package AST;
 import TYPES.*;
 import SYMBOL_TABLE.*;
 
-public class AST_DEC_FUNC extends AST_DEC
+public class AST_DEC_FUNC_DEC extends AST_DEC
 {
 	/****************/
 	/* DATA MEMBERS */
@@ -16,7 +16,7 @@ public class AST_DEC_FUNC extends AST_DEC
 	/******************/
 	/* CONSTRUCTOR(S) */
 	/******************/
-	public AST_DEC_FUNC(
+	public AST_DEC_FUNC_DEC(
 		String returnTypeName,
 		String name,
 		AST_TYPE_NAME_LIST params,
