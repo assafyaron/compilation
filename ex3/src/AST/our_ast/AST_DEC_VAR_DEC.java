@@ -35,8 +35,8 @@ public class AST_DEC_VAR_DEC extends AST_DEC
 		/********************************/
 		/* AST NODE TYPE = AST DEC LIST */
 		/********************************/
-		if (initialValue != null) System.out.format("VAR-DEC(%s):%s := initialValue\n",name,type);
-		if (initialValue == null) System.out.format("VAR-DEC(%s):%s                \n",name,type);
+		if (initialValue != null) System.out.format("DEC-VAR-DEC(%s):%s := initialValue\n",name,type);
+		if (initialValue == null) System.out.format("DEC-VAR-DEC(%s):%s                \n",name,type);
 
 		/**************************************/
 		/* RECURSIVELY PRINT initialValue ... */
@@ -48,7 +48,7 @@ public class AST_DEC_VAR_DEC extends AST_DEC
 		/**********************************/
 		AST_GRAPHVIZ.getInstance().logNode(
 			SerialNumber,
-			String.format("VAR\nDEC(%s)\n:%s",name,type));
+			String.format("DEC\nVAR\nDEC(%s)\n:%s",name,type));
 
 		/****************************************/
 		/* PRINT Edges to AST GRAPHVIZ DOT file */
