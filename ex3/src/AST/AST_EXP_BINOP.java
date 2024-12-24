@@ -1,5 +1,4 @@
 package AST;
-
 import TYPES.*;
 
 public class AST_EXP_BINOP extends AST_EXP
@@ -43,20 +42,23 @@ public class AST_EXP_BINOP extends AST_EXP
 		/*********************************/
 		if (OP == 0) {sOP = "+";}
 		if (OP == 1) {sOP = "-";}
-		if (OP == 3) {sOP = "=";}
-
+		if (OP == 2) {sOP = "*";}	
+		if (OP == 3) {sOP = "/";}
+		if (OP == 4) {sOP = "<";}
+		if (OP == 5) {sOP = ">";}
+		if (OP == 6) {sOP = "=";}
+		
 		/*************************************/
-		/* AST NODE TYPE = AST SUBSCRIPT VAR */
+		/* AST NODE TYPE = AST BINOP EXP */
 		/*************************************/
-		System.out.print("AST NODE BINOP EXP\n");
-		System.out.format("BINOP EXP(%s)\n",sOP);
+		System.out.print("AST NODE EXP BINOP\n");
 
 		/**************************************/
 		/* RECURSIVELY PRINT left + right ... */
 		/**************************************/
 		if (left != null) left.PrintMe();
 		if (right != null) right.PrintMe();
-
+		
 		/***************************************/
 		/* PRINT Node to AST GRAPHVIZ DOT file */
 		/***************************************/
@@ -70,6 +72,7 @@ public class AST_EXP_BINOP extends AST_EXP
 		if (left  != null) AST_GRAPHVIZ.getInstance().logEdge(SerialNumber,left.SerialNumber);
 		if (right != null) AST_GRAPHVIZ.getInstance().logEdge(SerialNumber,right.SerialNumber);
 	}
+
 	public TYPE SemantMe()
 	{
 		TYPE t1 = null;
@@ -85,5 +88,4 @@ public class AST_EXP_BINOP extends AST_EXP
 		System.exit(0);
 		return null;
 	}
-
 }
