@@ -3,7 +3,7 @@ package AST;
 import TYPES.*;
 import SYMBOL_TABLE.*;
 
-public class AST_DEC_CLASS extends AST_DEC
+public class AST_DEC_CLASS_DEC extends AST_DEC
 {
 	/********/
 	/* NAME */
@@ -18,7 +18,7 @@ public class AST_DEC_CLASS extends AST_DEC
 	/******************/
 	/* CONSTRUCTOR(S) */
 	/******************/
-	public AST_DEC_CLASS(String name,AST_TYPE_NAME_LIST data_members)
+	public AST_DEC_CLASS_DEC(String name,AST_TYPE_NAME_LIST data_members)
 	{
 		/******************************/
 		/* SET A UNIQUE SERIAL NUMBER */
