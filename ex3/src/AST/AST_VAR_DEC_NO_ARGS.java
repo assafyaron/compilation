@@ -18,7 +18,7 @@ public class AST_VAR_DEC_NO_ARGS extends AST_VAR_DEC
         /***************************************/
         /* PRINT CORRESPONDING DERIVATION RULE */
         /***************************************/
-        System.out.println("====================== varDec -> type ID( %s ) SEMICOLON\n", name);
+        System.out.println("====================== varDec -> type ID( %s ) SEMICOLON\n" + name);
 
         /*******************************/
         /* COPY INPUT DATA MEMBERS ... */
@@ -45,7 +45,7 @@ public class AST_VAR_DEC_NO_ARGS extends AST_VAR_DEC
         /***************************************/
         AST_GRAPHVIZ.getInstance().logNode(
             SerialNumber,
-            "VAR DEC\nNO ARGS\n", name);
+            "VAR DEC\nNO ARGS\n" + name);
 
         /****************************************/
         /* PRINT Edges to AST GRAPHVIZ DOT file */

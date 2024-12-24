@@ -1,19 +1,18 @@
 package AST;
-
 import TYPES.*;
 
-public class AST_PROGRAM_DEC extends AST_PROGRAM
+public class AST_PROGRAM_REC extends AST_PROGRAM
 {
 	/****************/
 	/* DATA MEMBERS */
 	/****************/
 	public AST_PROGRAM head;
-	public AST_PROGRAM_DEC tail;
+	public AST_PROGRAM_REC tail;
 
 	/******************/
 	/* CONSTRUCTOR(S) */
 	/******************/
-	public AST_PROGRAM_DEC(AST_PROGRAM head,AST_PROGRAM_DEC tail)
+	public AST_PROGRAM_REC(AST_PROGRAM head,AST_PROGRAM_REC tail)
 	{
 		/******************************/
 		/* SET A UNIQUE SERIAL NUMBER */

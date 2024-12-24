@@ -37,7 +37,7 @@ public class AST_VAR_FIELD extends AST_VAR
 		/**********************************************/
 		/* RECURSIVELY PRINT v, then name ... */
 		/**********************************************/
-		if (var != null) var.PrintMe();
+		if (v != null) v.PrintMe();
 		System.out.format("FIELD NAME( %s )\n",name);
 
 		/***************************************/

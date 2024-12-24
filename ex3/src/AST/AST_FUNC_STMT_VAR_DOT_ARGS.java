@@ -19,7 +19,7 @@ public class AST_FUNC_STMT_VAR_DOT_ARGS extends AST_FUNC_STMT
         /***************************************/
         /* PRINT CORRESPONDING DERIVATION RULE */
         /***************************************/
-        System.out.println("====================== funcStmt-> var DOT ID( %s ) LPAREN expArguments RPAREN SEMICOLON\n", name);
+        System.out.println("====================== funcStmt-> var DOT ID( %s ) LPAREN expArguments RPAREN SEMICOLON\n" + name);
 
         /*******************************/
         /* COPY INPUT DATA MEMBERS ... */

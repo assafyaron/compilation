@@ -19,7 +19,7 @@ public class AST_VAR_DEC_NEW_EXP_ARGS extends AST_VAR_DEC
         /***************************************/
         /* PRINT CORRESPONDING DERIVATION RULE */
         /***************************************/
-        System.out.println("====================== varDec -> type ID( %s ) ASSIGN newExp SEMICOLON\n", name);
+        System.out.println("====================== varDec -> type ID( %s ) ASSIGN newExp SEMICOLON\n" + name);
 
         /*******************************/
         /* COPY INPUT DATA MEMBERS ... */
@@ -47,7 +47,7 @@ public class AST_VAR_DEC_NEW_EXP_ARGS extends AST_VAR_DEC
         /***************************************/
         AST_GRAPHVIZ.getInstance().logNode(
             SerialNumber,
-            "VAR DEC\nNEW EXP", name);
+            "VAR DEC\nNEW EXP" + name);
 
         /****************************************/
         /* PRINT Edges to AST GRAPHVIZ DOT file */

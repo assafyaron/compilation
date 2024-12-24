@@ -20,7 +20,7 @@ public class AST_VAR_DEC_ARGS extends AST_VAR_DEC
 		/***************************************/
 		/* PRINT CORRESPONDING DERIVATION RULE */
 		/***************************************/
-		System.out.print("====================== varDec -> type ID( %s ) ASSIGN exp SEMICOLON\n", name);
+		System.out.print("====================== varDec -> type ID( %s ) ASSIGN exp SEMICOLON\n" + name);
 
 		/*******************************/
 		/* COPY INPUT DATA NENBERS ... */
@@ -49,7 +49,7 @@ public class AST_VAR_DEC_ARGS extends AST_VAR_DEC
         /***************************************/
         AST_GRAPHVIZ.getInstance().logNode(
             SerialNumber,
-            "VAR DEC\nARGS", name);
+            "VAR DEC\nARGS" + name);
 
         /****************************************/
         /* PRINT Edges to AST GRAPHVIZ DOT file */

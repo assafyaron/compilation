@@ -7,12 +7,12 @@ public class AST_STMT_VAR_DEC extends AST_STMT
 	/****************/
 	/* DATA MEMBERS */
 	/****************/
-	public AST_DEC_VAR var;
+	public AST_VAR_DEC var;
 	
 	/******************/
 	/* CONSTRUCTOR(S) */
 	/******************/
-	public AST_STMT_VAR_DEC(AST_DEC_VAR var)
+	public AST_STMT_VAR_DEC(AST_VAR_DEC var)
 	{
 		/******************************/
 		/* SET A UNIQUE SERIAL NUMBER */

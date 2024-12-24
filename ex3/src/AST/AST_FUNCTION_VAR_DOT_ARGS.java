@@ -57,7 +57,7 @@ public class AST_FUNCTION_VAR_DOT_ARGS extends AST_FUNCTION
         /****************************************/
         /* PRINT Edges to AST GRAPHVIZ DOT file */
         /****************************************/
-        if (V != null) AST_GRAPHVIZ.getInstance().logEdge(SerialNumber, V.SerialNumber);
+        if (v != null) AST_GRAPHVIZ.getInstance().logEdge(SerialNumber, v.SerialNumber);
         if (eA != null) AST_GRAPHVIZ.getInstance().logEdge(SerialNumber, eA.SerialNumber);
     }
 }
