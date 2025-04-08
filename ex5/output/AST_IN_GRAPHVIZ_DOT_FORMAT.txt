@@ -1,0 +1,102 @@
+digraph
+{
+graph [ordering = "out"]
+v0 [label = "TYPE
+INT"];
+v1 [label = "INT(5)"];
+v2 [label = "VAR DEC
+ARGSy"];
+v2 -> v0;
+v2 -> v1;
+v3 [label = "CLASS FIELD
+VARIABLE DECLARATION"];
+v3 -> v2;
+v4 [label = "cField
+rec
+"];
+v4 -> v3;
+v5 [label = "CLASS DEC
+SIMPLE
+...->Person"];
+v5 -> v4;
+v6 [label = "DEC
+CLASS DEC
+"];
+v6 -> v5;
+v7 [label = "TYPE
+VOID"];
+v8 [label = "TYPE
+ID
+...->Person"];
+v9 [label = "VAR DEC
+NO ARGS
+x"];
+v9 -> v8;
+v10 [label = "STMT
+VAR
+DEC"];
+v10 -> v9;
+v11 [label = "VAR
+SIMPLE
+(x)"];
+v12 [label = "VAR
+FIELD
+...->y"];
+v12 -> v11;
+v13 [label = "INT(8)"];
+v14 [label = "STMT
+ASSIGN
+"];
+v14 -> v12;
+v14 -> v13;
+v15 [label = "STMT
+LIST
+"];
+v15 -> v14;
+v16 [label = "STMT
+LIST
+"];
+v16 -> v10;
+v16 -> v15;
+v17 [label = "FUNC DEC
+NO ARGS
+Function name:foo"];
+v17 -> v7;
+v17 -> v16;
+v18 [label = "DEC
+FUNC DEC"];
+v18 -> v17;
+v19 [label = "TYPE
+VOID"];
+v20 [label = "FUNC STMT NO ARGS
+Function name: foo"];
+v21 [label = "STMT
+FUNC STMT"];
+v21 -> v20;
+v22 [label = "STMT
+LIST
+"];
+v22 -> v21;
+v23 [label = "FUNC DEC
+NO ARGS
+Function name:main"];
+v23 -> v19;
+v23 -> v22;
+v24 [label = "DEC
+FUNC DEC"];
+v24 -> v23;
+v25 [label = "PROGRAM
+REC
+"];
+v25 -> v24;
+v26 [label = "PROGRAM
+REC
+"];
+v26 -> v18;
+v26 -> v25;
+v27 [label = "PROGRAM
+REC
+"];
+v27 -> v6;
+v27 -> v26;
+}
