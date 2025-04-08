@@ -1,2 +1,1 @@
-mail for any questions:
-assafyaron@mail.tau.ac.il
+For any questions please contact me at: assafyaron@mail.tau.ac.il
