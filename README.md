@@ -18,7 +18,7 @@ Transforms the AST into a language-independent IR. This IR is designed for optim
 ### ex5 – Code Generation (IR to MIPS32)
 This is the final and most critical stage of the compiler. It converts the IR into valid MIPS32 assembly code.
 
-## Key Directories and Files (ex5):
+## Key Directories and Files:
 
 **src/:** Contains all Java source code for code generation.
 ```src/
