@@ -1,5 +1,5 @@
 # Compilation Course Project
-This repository contains a series of exercises that gradually build a full compiler for the L programming language, targeting MIPS32 assembly. The project is organized into five exercises, each representing a critical compilation stageץ
+This repository contains a series of exercises that gradually build a full compiler for the L programming language, targeting MIPS32 assembly. The project is organized into five exercises, each representing a critical compilation stage.
 
 ## Project Structure
 
